@@ -1,0 +1,55 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a href="{{ path('EP_show_offre') }}">Offres</a></li>
+  <li>Liste</li>
+ 
+</ul>
+
+<h3>Liste des Offres</h3>
+
+ 
+  
+   <table class="data" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>nom Entreprise</th>
+        <th>titreOffre</th>
+        <th>typeContrat</th>
+
+         
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th>nom Entreprise</th>
+        <th>titreOffre</th>
+        <th>typeContrat</th>
+            
+      </tr>
+    </tfoot>  
+    <tbody>
+
+  {% for offre in listOffres %}
+
+  <tr>
+  <td>   {{ offre.nomEntreprise }} </td> 
+  <td> {{ offre.titreOffre }} </td>
+  <td> {{ offre.typeContrat }} </td>
+    <td> <a href=""><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
+        <a href="" onclick="return confirm('Etes vous sûr de vouloir supprimer l'offre?')" ><span class="glyphicon glyphicon-trash"></span></a> 
+        </td>
+
+    </tr>
+  {% endfor %}
+ 
+ </tbody>
+ </table>
+  <a class="btn btn btn-success" href="{{ path('EP_n_offre') }}" role="button">Ajouter une Offre</a>
+
+
+{% endblock %}

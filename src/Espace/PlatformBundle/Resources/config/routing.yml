@@ -4,3 +4,9 @@ espace_platform_homepage:
 EP_n_offre:
     path:     /offre/new
     defaults: { _controller: EspacePlatformBundle:Offre:n_offre }
+EP_show_offre:
+    path:     /offre/show
+    defaults: { _controller: EspacePlatformBundle:Offre:show_offre }
+EP_update_offre:
+    path:     /offre/update/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:update_offre }
