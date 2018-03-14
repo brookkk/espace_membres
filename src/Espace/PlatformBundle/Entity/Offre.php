@@ -113,6 +113,15 @@ class Offre
     private $cPE;
 
 
+
+//Date par défaut lors de la creation d'une new Offre
+    public function __construct()
+    {
+        $this->dateDePublication = new \Datetime();
+        $this->dateDepublication = new \Datetime();
+    }
+
+
     /**
      * Get id
      *

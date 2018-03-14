@@ -1,6 +1,12 @@
  
+  {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
  
- 
+
+ <ul class="breadcrumb">
+  <li><a href="{{ path('espace_platform_homepage') }}">Offre</a></li>
+  <li>MAJ</li>
  
 <h3>Cours</h3>
 
@@ -8,4 +14,4 @@
   {{ form(form) }}
 </div>
 
- 
+ {% endblock %}
