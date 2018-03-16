@@ -47,7 +47,7 @@ class OffreController extends Controller
 
 
 
-        return $this->redirectToRoute('espace_platform_homepage');
+        return $this->redirectToRoute('EP_show_offre');
       }
     }
 
@@ -129,6 +129,33 @@ class OffreController extends Controller
 
   }
 
+
+
+public function delete_offreAction(Request $request, $id)
+  {
+    $em= $this->getDoctrine()->getManager();
+
+    $repository = $em  ->getRepository('EspacePlatformBundle:Offre');
+
+    $offre = $repository->find($id);
+
+    if (null === $offre) {
+      throw new NotFoundHttpException("Votre Offre na pas été trouvée");
+    }
+
+
+    $em->remove($offre);
+    $em->flush();
+
+    $request->getSession()->getFlashBag()->add('notice', 'Offre a été supprimée');
+
+  
+
+
+    return $this->redirectToRoute('EP_show_offre');
+
+
+  }
 
 
 }
