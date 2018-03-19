@@ -17,10 +17,15 @@ class OffreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('refOffre')->add('nomEntreprise')->add('titreOffre')->add('typeContrat')->add('descOffre')->add('dureeContrat')
+        $builder->add('refOffre')->add('nomEntreprise')->add('titreOffre')->add('descOffre')->add('dureeContrat')
 
         ->add('niveauFormationP', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))
+        ->add('typeContrat', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Type_de_contrat',
                 'choice_label' => 'nom',
                 'multiple'     => false,
                 ))

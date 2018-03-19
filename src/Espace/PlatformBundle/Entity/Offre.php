@@ -42,11 +42,14 @@ class Offre
      */
     private $titreOffre;
 
+   
+
+
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="Type_contrat", type="string", length=255)
-     */
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Type_de_contrat")
+   * @ORM\JoinColumn(nullable=false)
+   */
     private $typeContrat;
 
     /**
