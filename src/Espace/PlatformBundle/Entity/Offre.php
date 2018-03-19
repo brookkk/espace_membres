@@ -52,6 +52,12 @@ class Offre
    */
     private $typeContrat;
 
+     /**
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Secteur_d_activite")
+   * @ORM\JoinColumn(nullable=false)
+   */
+    private $secteurActivite;
+
     /**
      * @var string
      *
@@ -241,6 +247,34 @@ class Offre
     {
         return $this->typeContrat;
     }
+
+
+
+
+/**
+     * Set Secteur_activite
+     *
+     * @param string $secteurActivite
+     *
+     * @return Offre
+     */
+    public function setSecteurActivite($secteurActivite)
+    {
+        $this->secteurActivite = $secteurActivite;
+
+        return $this;
+    }
+
+    /**
+     * Get Secteur_activite
+     *
+     * @return string
+     */
+    public function getSecteurActivite()
+    {
+        return $this->secteurActivite;
+    }
+
 
     /**
      * Set descOffre

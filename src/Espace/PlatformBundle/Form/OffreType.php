@@ -29,6 +29,11 @@ class OffreType extends AbstractType
                 'choice_label' => 'nom',
                 'multiple'     => false,
                 ))
+        ->add('Secteur_activite', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Secteur_d_activite',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))
         ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')->add('cPE')
         /*->add('dateDePublication')->add('dateDepublication')*/
         /*->add('niveauFormationP')*/
