@@ -73,9 +73,9 @@ class OffreController extends Controller
       throw new NotFoundHttpException("Aucune Offre na été trouvé");
     }
 
-
-    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(
-      'listOffres' => $listOffres   ));
+    echo "tototo";
+    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres   ));
+    //return $this->render('EspacePlatformBundle:Default:index.html.twig');
   }
 
 

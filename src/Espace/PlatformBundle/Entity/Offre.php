@@ -63,12 +63,23 @@ class Offre
      */
     private $dureeContrat;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Niveau_formation_p", type="string", length=255)
-     */
+  
+
+
+
+
+
+ /**
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation")
+   * @ORM\JoinColumn(nullable=false)
+   */
     private $niveauFormationP;
+
+
+
+
+
+
 
     /**
      * @var \DateTime

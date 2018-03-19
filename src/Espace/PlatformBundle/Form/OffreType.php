@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 
 class OffreType extends AbstractType
@@ -15,7 +17,16 @@ class OffreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('refOffre')->add('nomEntreprise')->add('titreOffre')->add('typeContrat')->add('descOffre')->add('dureeContrat')->add('niveauFormationP')/*->add('dateDePublication')->add('dateDepublication')*/->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')->add('cPE')
+        $builder->add('refOffre')->add('nomEntreprise')->add('titreOffre')->add('typeContrat')->add('descOffre')->add('dureeContrat')
+
+        ->add('niveauFormationP', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))
+        ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')->add('cPE')
+        /*->add('dateDePublication')->add('dateDepublication')*/
+        /*->add('niveauFormationP')*/
         ->add('Sauvegarder',      SubmitType::class);
     }
     

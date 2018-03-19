@@ -17,8 +17,9 @@
     <thead>
       <tr>
         <th>nom Entreprise</th>
-        <th>titreOffre</th>
+        <th>niveau de formation</th>
         <th>typeContrat</th>
+        <th>action</th>
 
          
       </tr>
@@ -27,8 +28,9 @@
     <tfoot>
       <tr>
         <th>nom Entreprise</th>
-        <th>titreOffre</th>
+        <th>niveau de formation</th>
         <th>typeContrat</th>
+        <th>action</th>
             
       </tr>
     </tfoot>  
@@ -38,7 +40,7 @@
 
   <tr>
   <td>   {{ offre.nomEntreprise }} </td> 
-  <td> {{ offre.titreOffre }} </td>
+  <td> {{ offre.niveauFormationP.nom }} </td>
   <td> {{ offre.typeContrat }} </td>
     <td> <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
         <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a> 
