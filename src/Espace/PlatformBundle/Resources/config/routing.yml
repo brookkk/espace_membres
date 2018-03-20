@@ -13,3 +13,6 @@ EP_update_offre:
 EP_delete_offre:
     path:     /offre/delete/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:delete_offre }
+EP_search_offre:
+    path:     /offre/search
+    defaults: { _controller: EspacePlatformBundle:Offre:search_offre }
