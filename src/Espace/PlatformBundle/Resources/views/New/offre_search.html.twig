@@ -1,15 +1,20 @@
- 
-  {% extends "EspacePlatformBundle:Show:offre.html.twig" %}
+  {% extends "EspacePlatformBundle::layout.html.twig" %}
 
-{% block search_body %}
+{% block body %}
  
 
  
+  <ul class="breadcrumb">
+  <li><a href="{{ path('espace_platform_homepage') }}">Offre</a></li>
+  <li>Recherche</li>
  
 <h3>Offre</h3>
 
 <div >
   {{ form(form) }}
 </div>
+
+
+<a class="btn btn btn-success" href="{{ path('EP_show_offre') }}" role="button">Afficher toutes les offres</a>
 
  {% endblock %}
