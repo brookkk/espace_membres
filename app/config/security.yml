@@ -5,8 +5,8 @@ security:
         Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN:       ROLE_ETUDIANT, ROLE_ENTREPRISE, ROLE_ALUMNI
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
@@ -22,9 +22,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        main_login:
+            pattern: ^/login$
+            anonymous: true
         main:
             pattern:   ^/
-            anonymous: true
+            anonymous: false
             form_login:
                 login_path: login
                 check_path: login_check
