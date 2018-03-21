@@ -13,8 +13,11 @@ security:
         in_memory:
             memory: 
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    etudiant:  { password: etudiantpass, roles: [ 'ROLE_ETUDIANT' ] }
+                    entreprise:  { password: entreprisepass, roles: [ 'ROLE_ENTREPRISE' ] }
+                    alumni:  { password: alumnipass, roles: [ 'ROLE_ALUMNI' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    super_admin: { password: super_adminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
