@@ -16,3 +16,6 @@ EP_delete_offre:
 EP_search_offre:
     path:     /offre/search
     defaults: { _controller: EspacePlatformBundle:Offre:search_offre }
+EP_admin_homepage:
+    path:     /admin/
+    defaults: { _controller: EspacePlatformBundle:Admin:index }
