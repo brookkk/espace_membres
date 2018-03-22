@@ -3,6 +3,7 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        Espace\UserBundle\Entity\User: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_ETUDIANT, ROLE_ENTREPRISE, ROLE_ALUMNI
@@ -10,6 +11,10 @@ security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        main:
+            entity:
+                class: Espace\UserBundle\Entity\User
+                property: username
         in_memory:
             memory: 
                 users:
@@ -31,6 +36,7 @@ security:
         main:
             pattern:   ^/
             anonymous: false
+            provider: main
             switch_user : true
             form_login:
                 login_path: login

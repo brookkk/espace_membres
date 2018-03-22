@@ -3,6 +3,8 @@
 namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * User
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -61,6 +63,10 @@ class User
   {
   }
 
+public function  __construct()
+{
+    $this->roles = array('ROLE_ENTREPRISE');
+}
 
     /**
      * Get id
