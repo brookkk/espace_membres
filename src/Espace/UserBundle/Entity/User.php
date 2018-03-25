@@ -37,6 +37,14 @@ class User implements UserInterface
      */
     private $password;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
     /**
      * @var string
      *
@@ -196,6 +204,17 @@ public function  __construct()
     public function getProfil()
     {
         return $this->profil;
+    }
+
+
+        public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 }
 
