@@ -34,7 +34,10 @@
     <ul class="nav navbar-nav">
       <li ><a href="{{ path('espace_platform_homepage') }}">Accueil</a></li>
       <li ><a href="{{ path('espace_platform_homepage') }}">Offres</a></li>
-      <li ><a href="{{ path('espace_platform_homepage') }}">{{app.user.username}}</a></li>
+      {% if is_granted('ROLE_ENTREPRISE') %}
+        <li ><a href="{{ path('espace_platform_homepage') }}">CVThèque</a></li>
+      {% endif %}
+      <!--<li ><a href="{{ path('espace_platform_homepage') }}">{{app.user.username}}</a></li>-->
      
     </ul>
     <ul class="nav navbar-nav navbar-right">
