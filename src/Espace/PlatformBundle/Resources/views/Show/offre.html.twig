@@ -24,7 +24,9 @@
         <th>Type de Contrat</th>
         <th>Secteur d'activité</th>
         <th>Domaine de compétence</th>
-        <th>Action</th>
+        {% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Action</th>
+      {% endif %}
 
          
       </tr>
@@ -37,7 +39,12 @@
         <th>Type de Contrat</th>
         <th>Secteur d'activité</th>
         <th>Domaine de compétence</th>
-        <th>Action</th>
+
+{% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Action</th>
+      {% endif %}
+
+      
 
       </tr>
     </tfoot>  
@@ -51,17 +58,29 @@
   <td> {{ offre.typeContrat.nom }} </td>
   <td> {{ offre.secteurActivite.nom | capitalize}} </td>
   <td> {{ offre.secteurActivite.nom |capitalize}} </td>
-    <td> <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
-        <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a> 
+    
+
+{% if is_granted('ROLE_ENTREPRISE') %}
+<td>
+   <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
+        <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
+</td>
+      {% endif %}
+   
   
-        </td>
+        
 
     </tr>
   {% endfor %}
  
  </tbody>
  </table>
+
+
+      {% if is_granted('ROLE_ENTREPRISE') %}
   <a class="btn btn btn-success" href="{{ path('EP_n_offre') }}" role="button">Ajouter une Offre</a>
+      {% endif %}
+
   <a class="btn btn btn-info" href="{{ path('EP_search_offre') }}" role="button">Rechercher</a>
 
 

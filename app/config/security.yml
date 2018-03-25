@@ -6,8 +6,8 @@ security:
         Espace\UserBundle\Entity\User: plaintext
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_ETUDIANT, ROLE_ENTREPRISE, ROLE_ALUMNI
-        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN:       ROLE_ETUDIANT, ROLE_ENTREPRISE, ROLE_ALUMNI, ROLE_ALLOWED_TO_SWITCH
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN]
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
@@ -36,7 +36,7 @@ security:
         main:
             pattern:   ^/
             anonymous: false
-            provider: in_memory
+            provider: main
             switch_user : true
             form_login:
                 login_path: login

@@ -10,6 +10,9 @@ use Espace\PlatformBundle\Entity\Offre;
 use Espace\PlatformBundle\Form\OffreType;
 use Espace\PlatformBundle\Form\OffreSearchType;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
 
 
 class OffreController extends Controller
@@ -21,6 +24,11 @@ class OffreController extends Controller
 
 
 
+
+  /**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
      public function n_offreAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
@@ -79,7 +87,10 @@ class OffreController extends Controller
   }
 
 
-
+/**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
   public function update_offreAction(Request $request, $id)
   {
 
@@ -130,7 +141,10 @@ class OffreController extends Controller
   }
 
 
-
+/**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
 public function delete_offreAction(Request $request, $id)
   {
     $em= $this->getDoctrine()->getManager();
