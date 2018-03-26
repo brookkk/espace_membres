@@ -10,3 +10,6 @@ EU_new_etudiant:
 EU_new_entreprise:
     path:     /entreprise/new
     defaults: { _controller: EspaceUserBundle:Entreprise:n_entreprise }
+EU_new_alumni:
+    path:     /alumni/new
+    defaults: { _controller: EspaceUserBundle:Alumni:n_alumni }
