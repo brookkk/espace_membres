@@ -6,4 +6,4 @@ espace_show_user:
     defaults: { _controller: EspaceUserBundle:User:index }
 EU_new_etudiant:
     path:     /etudiant/new
-    defaults: { _controller: EspaceUserBundle:Etudiant:index }
+    defaults: { _controller: EspaceUserBundle:Etudiant:n_etudiant }

@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use Espace\UserBundle\Entity\Etudiant;
-use Espace\UserBundle\Form\OffreType;
+use Espace\UserBundle\Entity\User;
+use Espace\UserBundle\Form\EtudiantType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -31,7 +32,8 @@ class EtudiantController extends Controller
      public function n_etudiantAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $etudiant= new Offre();
+    $etudiant= new Etudiant();
+    $user= new User();
 
  
 
@@ -46,8 +48,13 @@ class EtudiantController extends Controller
  
       if($form->isValid()   
         ){
+        $etudiant->setRoles(array('ROLE_ETUDIANT'));
+        $etudiant -> setProfil('ETUDIANT');
+        $etudiant ->setSalt('');
+        $user = $etudiant;
+
         $em= $this->getDoctrine()->getManager();
-      $em->persist($etudiant);
+      $em->persist($user);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('notice', 'Etudiant Bien enregistrée.');
@@ -55,12 +62,12 @@ class EtudiantController extends Controller
 
 
 
-        return $this->redirectToRoute('EU_show_user');
+        return $this->redirectToRoute('espace_show_user');
       }
     }
 
 //sinon (ou bien premier landing sur le form), on affiche le formulaire
-    return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
+    return $this->render('EspaceUserBundle:New:etudiant.html.twig', array(
      'form'=>$form->createView(),
      ));
 
