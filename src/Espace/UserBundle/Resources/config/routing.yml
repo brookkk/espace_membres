@@ -1,3 +1,9 @@
 espace_user_homepage:
-    path:     /users/show
-    defaults: { _controller: EspaceUserBundle:User:show_user }
+    path:     /
+    defaults: { _controller: EspacePlatformBundle:Default:index }
+espace_show_user:
+    path:     /user/show
+    defaults: { _controller: EspaceUserBundle:User:index }
+EU_new_etudiant:
+    path:     /etudiant/new
+    defaults: { _controller: EspaceUserBundle:Etudiant:index }

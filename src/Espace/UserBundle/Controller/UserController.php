@@ -5,30 +5,25 @@ namespace Espace\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+//use Espace\UserBundle\Entity\User;
+//use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+
+
+use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
+
 class UserController extends Controller
 {
 
+   public function indexAction()
+    {
+    return $this->render('EspaceUserBundle:Show:index.html.twig');
 
-
-
-
-//Action pour Afficher tous les utilisateurs existants
-  public function show_userAction(Request $request)
-  {
-    $em= $this  ->getDoctrine()  ->getManager();
-
-    $repository = $em  ->getRepository('EspaceUserBundle:User');
-    
-
-    $listUsers = $repository->findAll();
-
-    if (null === $listUsers) {
-      throw new NotFoundHttpException("Aucun utilisateur na été trouvé");
     }
 
-    //echo "tototo";
-    return $this->render('EspaceUserBundle:Show:user.html.twig', array(      'listUsers' => $listUsers   ));
-  }
 
 
 }

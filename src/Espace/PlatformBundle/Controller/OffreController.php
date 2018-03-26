@@ -5,6 +5,7 @@ namespace Espace\PlatformBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Espace\PlatformBundle\Entity\Offre;
 use Espace\PlatformBundle\Form\OffreType;
