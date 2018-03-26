@@ -7,3 +7,6 @@ espace_show_user:
 EU_new_etudiant:
     path:     /etudiant/new
     defaults: { _controller: EspaceUserBundle:Etudiant:n_etudiant }
+EU_new_entreprise:
+    path:     /entreprise/new
+    defaults: { _controller: EspaceUserBundle:Entreprise:n_entreprise }
