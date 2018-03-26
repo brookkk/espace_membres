@@ -2,7 +2,7 @@ espace_user_homepage:
     path:     /
     defaults: { _controller: EspacePlatformBundle:Default:index }
 espace_show_user:
-    path:     /user/show
+    path:     /admin/user/show
     defaults: { _controller: EspaceUserBundle:User:index }
 espace_show_register:
     path:     /inscription
