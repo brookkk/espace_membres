@@ -4,7 +4,7 @@ espace_platform:
 
 espace_user:
     resource: "@EspaceUserBundle/Resources/config/routing.yml"
-    prefix:   /admin
+    prefix:   /
 
 app:
     resource: '@AppBundle/Controller/'

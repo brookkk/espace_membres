@@ -4,6 +4,9 @@ espace_user_homepage:
 espace_show_user:
     path:     /user/show
     defaults: { _controller: EspaceUserBundle:User:index }
+espace_show_register:
+    path:     /inscription
+    defaults: { _controller: EspaceUserBundle:User:types_profil }
 EU_new_etudiant:
     path:     /etudiant/new
     defaults: { _controller: EspaceUserBundle:Etudiant:n_etudiant }

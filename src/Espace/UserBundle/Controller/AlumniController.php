@@ -5,9 +5,9 @@ namespace Espace\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use Espace\UserBundle\Entity\Entreprise;
+use Espace\UserBundle\Entity\Alumni;
 use Espace\UserBundle\Entity\User;
-use Espace\UserBundle\Form\EntrepriseType;
+use Espace\UserBundle\Form\AlumniType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -29,15 +29,15 @@ class AlumniController extends Controller
 
 
 
-     public function n_entrepriseAction(Request $request)
+     public function n_alumniAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $entreprise= new Entreprise();
+    $alumni= new Alumni();
     $user= new User();
 
  
 
-    $form = $this->createForm(EntrepriseType::class, $entreprise);
+    $form = $this->createForm(AlumniType::class, $alumni);
 
 
 //si le formulaire est bien rempli, on l'enregistre dans la BD
@@ -49,16 +49,16 @@ class AlumniController extends Controller
       if($form->isValid()   
         ){
 
-      $entreprise->setRoles(array('ROLE_ENTREPRISE'));
-      $entreprise -> setProfil('ENTREPRISE');
-      $entreprise ->setSalt('');
-      $user = $entreprise;
+      $alumni->setRoles(array('ROLE_ALUMNI'));
+      $alumni -> setProfil('ALUMNI');
+      $alumni ->setSalt('');
+      $user = $alumni;
 
       $em= $this->getDoctrine()->getManager();
       $em->persist($user);
       $em->flush();
 
-      $request->getSession()->getFlashBag()->add('notice', 'Entreprise Bien enregistrée.');
+      $request->getSession()->getFlashBag()->add('notice', 'Alumni Bien enregistrée.');
 
 
 
@@ -68,7 +68,7 @@ class AlumniController extends Controller
     }
 
 //sinon (ou bien premier landing sur le form), on affiche le formulaire
-    return $this->render('EspaceUserBundle:New:entreprise.html.twig', array(
+    return $this->render('EspaceUserBundle:New:alumni.html.twig', array(
      'form'=>$form->createView(),
      ));
 

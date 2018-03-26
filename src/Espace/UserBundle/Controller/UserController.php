@@ -25,5 +25,12 @@ class UserController extends Controller
     }
 
 
+     public function types_profilAction()
+    {
+    return $this->render('EspaceUserBundle:Show:types_profils.html.twig');
+
+    }
+
+
 
 }
