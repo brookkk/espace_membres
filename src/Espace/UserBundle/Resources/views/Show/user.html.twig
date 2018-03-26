@@ -4,7 +4,7 @@
 {% block body %}
 
 <ul class="breadcrumb">
-  <li><a href="{{ path('EU_show_user') }}">Users</a></li>
+  <li><a href="{{ path('espace_show_user') }}">Users</a></li>
   <li>Liste</li>
  
 </ul>
@@ -50,7 +50,7 @@
 
   <tr>
   <td>   {{ user.username }} </td> 
-  <td> {{ user.email.nom }} </td>
+  <td> {{ user.email }} </td>
   <td> {{ user.profil }} </td>
   
     
@@ -60,7 +60,6 @@
    <a href=""><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
       
           
-        <a href="" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
      
 
      
@@ -77,11 +76,8 @@
  </table>
 
 
-      {% if is_granted('ROLE_ENTREPRISE') %}
-  <a class="btn btn btn-success" href="" role="button">Ajouter une Offre</a>
-      {% endif %}
 
-  <a class="btn btn btn-info" href="" role="button">Rechercher</a>
+
 
 
 {% endblock %}

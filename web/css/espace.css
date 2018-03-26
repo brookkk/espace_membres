@@ -1,0 +1,120 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+.footer_{
+  margin-bottom: 20px;
+  background: repeating-linear-gradient(-45deg, #e5e5e5, #e5e5e5 10px, transparent 10px, transparent 19px);
+}
+
+        .footer-menu,
+        .footer-infos {
+          line-height: 33px;
+          ul {
+            li {
+              display: inline-block!important;
+              margin: 0 25px; } } }
+        .footer-menu {
+          .menu-social {
+            #stay-connected {
+              display: inline-block!important;
+              padding-right: 5px; }
+            #footer-social-icons {
+              display: inline-block;
+              .icon-social {
+                border: 2px solid map-get($colors, blue);
+                border-radius: 5px;
+                font-size: 18px;
+                height: 25px;
+                padding: 2px 5px;
+                transition: all 0.2s ease;
+                width: 25px;
+                &:hover {
+                  background-color: map-get($colors, blue);
+                  color: white;
+                  transition: all 0.2s ease; } } } } }
+
+  #footer {
+    background: repeating-linear-gradient(-45deg,#e5e5e5,#e5e5e5 10px,transparent 10px,transparent 19px);
+    clear: both;
+    float: none;
+    padding: 0 !important;
+    .container {
+      @include container(960px);
+      min-height: $footer-height;
+      #block-footer {
+        text-align: center;
+        .footer-menu,
+        .footer-infos {
+          line-height: 33px;
+          ul {
+            li {
+              display: inline-block;
+              margin: 0 25px; } } }
+        .footer-menu {
+          .menu-social {
+            #stay-connected {
+              display: inline-block;
+              padding-right: 5px; }
+            #footer-social-icons {
+              display: inline-block;
+              .icon-social {
+                border: 2px solid map-get($colors, blue);
+                border-radius: 5px;
+                font-size: 18px;
+                height: 25px;
+                padding: 2px 5px;
+                transition: all 0.2s ease;
+                width: 25px;
+                &:hover {
+                  background-color: map-get($colors, blue);
+                  color: white;
+                  transition: all 0.2s ease; } } } } }
+        .footer-infos {
+          .icon {
+            font-size: 20px;
+            padding-right: 5px;
+            vertical-align: middle; }
+          .icon-home {
+            font-size: 22px;
+            vertical-align: top; }
+          .icon-phone {
+            font-size: 18px; } } } } } 
+
