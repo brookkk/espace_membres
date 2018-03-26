@@ -2,6 +2,10 @@ espace_platform:
     resource: "@EspacePlatformBundle/Resources/config/routing.yml"
     prefix:   /
 
+espace_user:
+    resource: "@EspaceUserBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
