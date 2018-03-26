@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use Espace\UserBundle\Entity\Etudiant;
-use Espace\UserBundle\Form\OffreType;
+use Espace\UserBundle\Entity\User;
+use Espace\UserBundle\Form\EtudiantType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
