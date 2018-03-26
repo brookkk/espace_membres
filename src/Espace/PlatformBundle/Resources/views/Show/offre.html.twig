@@ -1,0 +1,92 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a href="{{ path('EP_show_offre') }}">Offres</a></li>
+  <li>Liste</li>
+ 
+</ul>
+
+<h3>Liste des Offres</h3>
+
+ {% block search_body %}
+ {% endblock %}
+
+ 
+  
+   <table class="data" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Nom Entreprise</th>
+        <th>Niveau de formation</th>
+        <th>Type de Contrat</th>
+        <th>Secteur d'activité</th>
+        <th>Domaine de compétence</th>
+        {% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Action</th>
+      {% endif %}
+
+         
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th>Nom Entreprise</th>
+        <th>Niveau de formation</th>
+        <th>Type de Contrat</th>
+        <th>Secteur d'activité</th>
+        <th>Domaine de compétence</th>
+
+{% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Action</th>
+      {% endif %}
+
+      
+
+      </tr>
+    </tfoot>  
+    <tbody>
+
+  {% for offre in listOffres %}
+
+  <tr>
+  <td>   {{ offre.nomEntreprise }} </td> 
+  <td> {{ offre.niveauFormationP.nom }} </td>
+  <td> {{ offre.typeContrat.nom }} </td>
+  <td> {{ offre.secteurActivite.nom | capitalize}} </td>
+  <td> {{ offre.secteurActivite.nom |capitalize}} </td>
+    
+
+{% if is_granted('ROLE_ENTREPRISE') %}
+<td>
+   <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
+      
+          {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
+      {% endif %}
+
+     
+</td>
+      {% endif %}
+   
+  
+        
+
+    </tr>
+  {% endfor %}
+ 
+ </tbody>
+ </table>
+
+
+      {% if is_granted('ROLE_ENTREPRISE') %}
+  <a class="btn btn btn-success" href="{{ path('EP_n_offre') }}" role="button">Ajouter une Offre</a>
+      {% endif %}
+
+  <a class="btn btn btn-info" href="{{ path('EP_search_offre') }}" role="button">Rechercher</a>
+
+
+{% endblock %}

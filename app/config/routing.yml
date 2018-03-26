@@ -1,0 +1,22 @@
+espace_platform:
+    resource: "@EspacePlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+espace_user:
+    resource: "@EspaceUserBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+login:
+    path: /login
+    defaults:
+        _controller: EspaceUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout

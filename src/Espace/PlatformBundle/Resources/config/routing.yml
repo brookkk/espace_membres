@@ -1,0 +1,18 @@
+espace_platform_homepage:
+    path:     /
+    defaults: { _controller: EspacePlatformBundle:Default:index }
+EP_n_offre:
+    path:     /offre/new
+    defaults: { _controller: EspacePlatformBundle:Offre:n_offre }
+EP_show_offre:
+    path:     /offre/show
+    defaults: { _controller: EspacePlatformBundle:Offre:show_offre }
+EP_update_offre:
+    path:     /offre/update/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:update_offre }
+EP_delete_offre:
+    path:     /offre/delete/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:delete_offre }
+EP_search_offre:
+    path:     /offre/search
+    defaults: { _controller: EspacePlatformBundle:Offre:search_offre }

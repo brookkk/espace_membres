@@ -1,0 +1,87 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a href="{{ path('EU_show_user') }}">Users</a></li>
+  <li>Liste</li>
+ 
+</ul>
+
+<h3>Liste des Utilisateurs</h3>
+
+
+
+ 
+  
+   <table class="data" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Login</th>
+        <th>Email</th>
+        <th>Profil</th>
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+     <th>Action</th>
+      {% endif %}
+
+         
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th>Login</th>
+        <th>Email</th>
+        <th>Profil</th>
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+     <th>Action</th>
+      {% endif %}
+
+      
+
+      </tr>
+    </tfoot>  
+    <tbody>
+
+  {% for user in listUsers %}
+
+  <tr>
+  <td>   {{ user.username }} </td> 
+  <td> {{ user.email.nom }} </td>
+  <td> {{ user.profil }} </td>
+  
+    
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+<td>
+   <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
+      
+          
+        <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
+     
+
+     
+</td>
+      {% endif %}
+   
+  
+        
+
+    </tr>
+  {% endfor %}
+ 
+ </tbody>
+ </table>
+
+
+      {% if is_granted('ROLE_ENTREPRISE') %}
+  <a class="btn btn btn-success" href="{{ path('EP_n_offre') }}" role="button">Ajouter une Offre</a>
+      {% endif %}
+
+  <a class="btn btn btn-info" href="{{ path('EP_search_offre') }}" role="button">Rechercher</a>
+
+
+{% endblock %}
