@@ -31,7 +31,7 @@ security:
             security: false
 
         main_login:
-            pattern: ^/login|(/etudiant/new)|(/entreprise/new)|(/alumni/new)|/inscription$
+            pattern: ^/(login|etudiant/new|entreprise/new|alumni/new|inscription)$
             anonymous: true
         main:
             pattern:   ^/
