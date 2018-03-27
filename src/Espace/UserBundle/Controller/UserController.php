@@ -25,5 +25,31 @@ class UserController extends Controller
     }
 
 
+     public function types_profilAction()
+    {
+    return $this->render('EspaceUserBundle:Show:types_profils.html.twig');
+
+    }
+
+
+
+    public function show_userAction(Request $request)
+  {
+    $em= $this  ->getDoctrine()  ->getManager();
+
+    $repository = $em  ->getRepository('EspaceUserBundle:User');
+    
+
+    $listUsers = $repository->findAll();
+
+    if (null === $listUsers) {
+      throw new NotFoundHttpException("Aucun Utilisateur na été trouvé");
+    }
+
+    //echo "tototo";
+    return $this->render('EspaceUserBundle:Show:user.html.twig', array(      'listUsers' => $listUsers   ));
+  }
+
+
 
 }

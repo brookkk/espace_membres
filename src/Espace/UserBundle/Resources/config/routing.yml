@@ -2,8 +2,17 @@ espace_user_homepage:
     path:     /
     defaults: { _controller: EspacePlatformBundle:Default:index }
 espace_show_user:
-    path:     /user/show
-    defaults: { _controller: EspaceUserBundle:User:index }
+    path:     /admin/user/show
+    defaults: { _controller: EspaceUserBundle:User:show_user }
+espace_show_register:
+    path:     /inscription
+    defaults: { _controller: EspaceUserBundle:User:types_profil }
 EU_new_etudiant:
     path:     /etudiant/new
     defaults: { _controller: EspaceUserBundle:Etudiant:n_etudiant }
+EU_new_entreprise:
+    path:     /entreprise/new
+    defaults: { _controller: EspaceUserBundle:Entreprise:n_entreprise }
+EU_new_alumni:
+    path:     /alumni/new
+    defaults: { _controller: EspaceUserBundle:Alumni:n_alumni }
