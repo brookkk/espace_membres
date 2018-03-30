@@ -3,6 +3,7 @@
 namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Espace\UserBundle\Entity\User;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 

@@ -30,6 +30,14 @@ class User implements UserInterface
      */
     private $username;
 
+
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="civilite", type="string", length=255)
+     */
+    private $civilite;
+
     /**
      * @var string
      *

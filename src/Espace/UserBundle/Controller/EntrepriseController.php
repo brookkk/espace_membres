@@ -63,7 +63,7 @@ class EntrepriseController extends Controller
 
 
 
-        return $this->redirectToRoute('espace_show_user');
+        return $this->redirectToRoute('espace_platform_homepage');
       }
     }
 
@@ -73,7 +73,7 @@ class EntrepriseController extends Controller
      ));
 
 
-        return $this->render('EspacePlatformBundle:Default:index.html.twig');
+        //return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }
