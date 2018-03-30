@@ -11,7 +11,7 @@ use Espace\UserBundle\Entity\User;
 /**
  * Entreprise
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="entreprise")
  * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\EntrepriseRepository")
  */
 class Entreprise extends User

@@ -11,7 +11,7 @@ use Espace\UserBundle\Entity\User;
 /**
  * Alumni
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="alumni")
  * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\AlumniRepository")
  */
 class Alumni extends User

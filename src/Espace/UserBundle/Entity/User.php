@@ -31,10 +31,18 @@ class User implements UserInterface
     private $username;
 
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255, unique=true)
+     */
+    private $nom;
+
+
         /**
      * @var string
      *
-     * @ORM\Column(name="civilite", type="string", length=255)
+     * @ORM\Column(name="civilite", type="boolean")
      */
     private $civilite;
 
@@ -116,6 +124,48 @@ public function  __construct()
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return User
+     */
+        public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+
+        public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return string
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
     }
 
     /**
