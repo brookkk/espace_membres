@@ -26,7 +26,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @ORM\Column(name="username", type="string", length=255, nullable=true)
      */
     private $username;
 
@@ -357,7 +357,7 @@ public function  __construct()
      *
      * @return User
      */
-        public function setDescriptionE($nomE)
+        public function setDescriptionE($descriptionE)
     {
         $this->descriptionE = $descriptionE;
 
