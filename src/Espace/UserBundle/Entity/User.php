@@ -64,6 +64,15 @@ class User implements UserInterface
     private $password;
 
 
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+
    
 
 
@@ -187,6 +196,32 @@ public function  __construct()
     public function getPrenom()
     {
         return $this->prenom;
+    }
+
+
+
+     /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return User
+     */
+        public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
     }
 
 
