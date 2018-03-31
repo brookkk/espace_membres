@@ -39,6 +39,14 @@ class User implements UserInterface
     private $nom;
 
 
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="nomE", type="string", length=255)
+     */
+    private $nomE;
+
+
      /**
      * @var string
      *
@@ -111,7 +119,7 @@ class User implements UserInterface
 
 public function  __construct()
 {
-    $this->roles = array('ROLE_ENTREPRISE');
+    $this->roles = array('ROLEENTREPRISE');
 }
 
     /**
@@ -170,6 +178,32 @@ public function  __construct()
     public function getNom()
     {
         return $this->nom;
+    }
+
+
+
+    /**
+     * Set nomE
+     *
+     * @param string $nomE
+     *
+     * @return User
+     */
+        public function setNomE($nomE)
+    {
+        $this->nomE = $nomE;
+
+        return $this;
+    }
+
+    /**
+     * Get nomE
+     *
+     * @return string
+     */
+    public function getNomE()
+    {
+        return $this->nomE;
     }
 
 
