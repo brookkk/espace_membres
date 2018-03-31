@@ -17,7 +17,9 @@ class EntrepriseType extends AbstractType
 
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('civilite')->add('nom')->add('prenom')->add('password')->add('email')->add('telephone')->add('nomE')->add('descriptionE')->add('Sauvegarder', SubmitType::class);
+        $builder->add('civilite')->add('nom')->add('prenom')->add('password')->add('email')->add('telephone')->add('nomE')->add('descriptionE')
+        ->add('adresseE')->add('codePostalE')->add('villeE')->add('votreFonction')
+        ->add('Sauvegarder', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
