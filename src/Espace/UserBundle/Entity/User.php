@@ -47,6 +47,14 @@ class User implements UserInterface
     private $nomE;
 
 
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="descriptionE", type="text")
+     */
+    private $descriptionE;
+
+
      /**
      * @var string
      *
@@ -204,6 +212,33 @@ public function  __construct()
     public function getNomE()
     {
         return $this->nomE;
+    }
+
+
+
+
+    /**
+     * Set descriptionE
+     *
+     * @param string $descriptionE
+     *
+     * @return User
+     */
+        public function setDescriptionE($nomE)
+    {
+        $this->descriptionE = $descriptionE;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionE
+     *
+     * @return string
+     */
+    public function getDescriptionE()
+    {
+        return $this->descriptionE;
     }
 
 
