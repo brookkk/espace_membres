@@ -211,6 +211,13 @@ class User implements UserInterface
     private $profil;
 
 
+    /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation")        
+   * @ORM\JoinColumn(nullable=true)        
+   */       
+    private $niveauFormation;   
+
+
       public function eraseCredentials()
   {
   }
@@ -666,6 +673,17 @@ public function  __construct()
     public function setDdn($ddn)
     {
         $this->ddn = $ddn;
+    }
+
+
+    public function getNiveauFormation()
+    {
+        return $this->niveauFormation;
+    }
+
+    public function setNiveauFormation($niveauFormation)
+    {
+        $this->niveauFormation = $niveauFormation;
     }
 }
 

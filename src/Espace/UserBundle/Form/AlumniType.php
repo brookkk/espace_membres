@@ -15,6 +15,9 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class AlumniType extends AbstractType
 {
@@ -43,7 +46,16 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
             ))
-        ->add('niveau')
+        /*->add('niveauFormation', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))*/
+        ->add('niveauFormation', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
+                'choice_label' => 'nom',
+                'multiple'     => true,
+                ))
         ->add('Sauvegarder', SubmitType::class);
 
     }
