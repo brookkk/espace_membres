@@ -51,6 +51,7 @@ class EntrepriseController extends Controller
 
       $entreprise->setRoles(array('ROLE_ENTREPRISE'));
       $entreprise -> setProfil('ENTREPRISE');
+      $entreprise -> setUsername($entreprise->getNom());
       $entreprise ->setSalt('');
       $user = $entreprise;
 

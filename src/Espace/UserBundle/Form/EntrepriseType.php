@@ -27,9 +27,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Mot de Passe"
             ) )
         ->add('email')->add('telephone')
-        ->add('nomE', TextType::class, array(
+        /*->add('nomE', TextType::class, array(
                 'label'=> "Nom de l'entreprise"
-            ))
+            ))*/
         ->add('descriptionE')
         ->add('adresseE')->add('codePostalE')->add('villeE')->add('votreFonction')
         ->add('Sauvegarder', SubmitType::class);
