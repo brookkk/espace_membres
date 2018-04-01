@@ -116,6 +116,12 @@ class User implements UserInterface
       /**
      * @var string
      *
+     *@Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
+     *      
+     * )     
      * @ORM\Column(name="codePostal", type="integer", nullable=true)
      */
     private $codePostal;
