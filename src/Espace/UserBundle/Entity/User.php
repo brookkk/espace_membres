@@ -87,6 +87,15 @@ class User implements UserInterface
     private $villeE;
 
 
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=255, nullable=true)
+     */
+    private $ville;
+
+
      /**
      * @var string
      *
@@ -627,6 +636,17 @@ public function  __construct()
     public function setCodePostal($codePostal)
     {
         $this->codePostal = $codePostal;
+    }
+
+
+        public function getVille()
+    {
+        return $this->ville;
+    }
+
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
     }
 }
 
