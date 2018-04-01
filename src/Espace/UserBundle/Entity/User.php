@@ -618,5 +618,15 @@ public function  __construct()
     {
         $this->adresse = $adresse;
     }
+
+        public function getCodePostal()
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+    }
 }
 

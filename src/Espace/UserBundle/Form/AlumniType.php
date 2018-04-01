@@ -30,7 +30,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
 
          $builder->add('civilite')->add('nom')->add('prenom')
         
-
+         ->add('adresse')->add('codePostal')
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
