@@ -36,12 +36,14 @@ public function buildForm(FormBuilderInterface $builder, array $options)
          ->add('ddn', DateType::class, array(
             'widget' => 'choice',
             'years' => range(2017,1940),
+            'format' => 'dd-MM-yyyy',
             ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
             ))
+        ->add('niveau')
         ->add('Sauvegarder', SubmitType::class);
 
     }
