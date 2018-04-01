@@ -4,6 +4,8 @@ namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
@@ -104,19 +106,23 @@ class User implements UserInterface
      */
     private $civilite;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+  
+
+   
+
+      /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
      */
-    private $password;
+    private $plainPassword;
 
     /**
-     * @var string
+     * The below length depends on the "algorithm" you use for encoding
+     * the password, but this works well with bcrypt.
      *
-     * @ORM\Column(name="passwordC", type="string", length=255, nullable=false)
+     * @ORM\Column(name="password", type="string", length=64)
      */
-    private $passwordC;
+    private $password;
 
 
 
@@ -476,31 +482,17 @@ public function  __construct()
     }
 
 
-
-
-     /**
-     * Set password
-     *
-     * @param string $passwordC
-     *
-     * @return User
-     */
-    public function setPasswordC($passwordC)
+        public function getPlainPassword()
     {
-        $this->passwordC = $passwordC;
-
-        return $this;
+        return $this->plainPassword;
     }
 
-    /**
-     * Get passwordC
-     *
-     * @return string
-     */
-    public function getPasswordC()
+    public function setPlainPassword($password)
     {
-        return $this->passwordC;
+        $this->plainPassword = $password;
     }
+
+
 
     /**
      * Set salt

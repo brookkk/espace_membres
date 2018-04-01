@@ -10,6 +10,8 @@ use Espace\UserBundle\Entity\User;
 use Espace\UserBundle\Form\EntrepriseType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 
 
@@ -34,7 +36,7 @@ class EntrepriseController extends Controller
 //nouvelle instance de l'entité Offre
     $entreprise= new User();
     //$user= new User();
-
+$passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(EntrepriseType::class, $entreprise);
@@ -54,6 +56,8 @@ class EntrepriseController extends Controller
       $entreprise -> setUsername($entreprise->getEmail());
       $entreprise ->setSalt('');
       //$user = $entreprise;
+      $password = $passwordEncoder->encodePassword($entreprise, $entreprise->getPlainPassword());
+      $entreprise->setPassword($password);
 
       $em= $this->getDoctrine()->getManager();
       $em->persist($entreprise);
