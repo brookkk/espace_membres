@@ -145,9 +145,8 @@ class User implements UserInterface
 
 
         /**
-     * @var string
+    * * @ORM\Column(name="ddn", type="date", nullable=true)
      *@Assert\Date()
-     * @ORM\Column(name="ddn",  nullable=true)
      */
     private $ddn;
 

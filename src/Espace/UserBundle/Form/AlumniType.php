@@ -36,11 +36,11 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         
          ->add('adresse')->add('codePostal')->add('ville')->add('email', EmailType::class)
          ->add('telephone')
-         /*->add('ddn', DateType::class, array(
+         ->add('ddn', DateType::class, array(
             'widget' => 'choice',
             'years' => range(2017,1940),
             'format' => 'dd-MM-yyyy',
-            ))*/
+            ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
@@ -54,7 +54,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('niveauFormation', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',
                 'choice_label' => 'nom',
-                'multiple'     => true,
+                'multiple'     => false,
                 ))
         ->add('Sauvegarder', SubmitType::class);
 
