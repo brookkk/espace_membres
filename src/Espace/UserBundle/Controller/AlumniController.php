@@ -33,7 +33,7 @@ class AlumniController extends Controller
   {
     $alumni= new User();
 
-//$passwordEncoder = $this->get('security.password_encoder');
+$passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(AlumniType::class, $alumni);
