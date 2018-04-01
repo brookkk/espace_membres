@@ -143,6 +143,14 @@ class User implements UserInterface
      */
     private $civilite;
 
+
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="ddn", type="date", nullable=true)
+     */
+    private $ddn;
+
   
 
    
@@ -647,6 +655,17 @@ public function  __construct()
     public function setVille($ville)
     {
         $this->ville = $ville;
+    }
+
+
+        public function getDdn()
+    {
+        return $ddn->ddn;
+    }
+
+    public function setDdn($ddn)
+    {
+        $this->ddn = $ddn;
     }
 }
 
