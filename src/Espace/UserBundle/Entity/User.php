@@ -213,7 +213,8 @@ class User implements UserInterface
 
     /**        
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation")        
-   * @ORM\JoinColumn(nullable=true)        
+   * @ORM\JoinColumn(nullable=true) 
+   * @ORM\Column(name="niveauFormation", type="array")   
    */       
     private $niveauFormation;   
 
