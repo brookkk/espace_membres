@@ -31,15 +31,14 @@ class AlumniController extends Controller
 
      public function n_alumniAction(Request $request)
   {
-    $alumni= new User();
+    //$alumni= new User();
 
-$passwordEncoder = $this->get('security.password_encoder');
+//$passwordEncoder = $this->get('security.password_encoder');
  
 
-    $form = $this->createForm(AlumniType::class, $alumni);
+  //  $form = $this->createForm(AlumniType::class, $alumni);
 
-
-//si le formulaire est bien rempli, on l'enregistre dans la BD
+/*
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
@@ -64,14 +63,12 @@ $passwordEncoder = $this->get('security.password_encoder');
         return $this->redirectToRoute('espace_platform_homepage');
       }
     }
-
-//sinon (ou bien premier landing sur le form), on affiche le formulaire
-    return $this->render('EspaceUserBundle:New:alumni.html.twig', array(
+*/
+    return $this->render('EspaceUserBundle:New:alumni.html.twig'/*, array(
      'form'=>$form->createView(),
-     ));
+     )*/);
 
 
-        //return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }
