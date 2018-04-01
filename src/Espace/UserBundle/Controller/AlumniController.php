@@ -31,14 +31,14 @@ class AlumniController extends Controller
 
      public function n_alumniAction(Request $request)
   {
-    //$alumni= new User();
+    $alumni= new User();
 
 //$passwordEncoder = $this->get('security.password_encoder');
  
 
-  //  $form = $this->createForm(AlumniType::class, $alumni);
+    $form = $this->createForm(AlumniType::class, $alumni);
 
-/*
+
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
@@ -63,12 +63,15 @@ class AlumniController extends Controller
         return $this->redirectToRoute('espace_platform_homepage');
       }
     }
-*/
-    return $this->render('EspaceUserBundle:New:alumni.html.twig'/*, array(
+
+    
+
+    return $this->render('EspaceUserBundle:New:alumni.html.twig', array(
      'form'=>$form->createView(),
-     )*/);
+     ));
 
 
+     //   return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }
