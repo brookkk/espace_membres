@@ -12,12 +12,15 @@
   <li>MAJ</li>
  
 <h3>Entreprise</h3>
-{% form_theme form 'bootstrap_3_horizontal_layout.html.twig'   %}
-<div >
+	
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
 {{ form_start(form) }}
     {{ form_errors(form) }}
 
-    {{ form_row(form.civilite) }}
+  {#
+{{ form_row(form.civilite) }}
     {{ form_row(form.nom) }}
     {{ form_row(form.prenom) }}
     {{ form_row(form.password) }}
@@ -28,9 +31,11 @@
     {{ form_row(form.votreFonction) }}
     {{ form_row(form.Sauvegarder) }}
 
-<div class="italic">
+  #}  
+
+
     {{ form_end(form) }}
-</div>
+
 
 
 </div>
