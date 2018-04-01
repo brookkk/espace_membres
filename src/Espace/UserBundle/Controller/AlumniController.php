@@ -32,9 +32,10 @@ class AlumniController extends Controller
      public function n_alumniAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $alumni= new Alumni();
-    $user= new User();
+    $alumni= new User();
+    //$user= new User();
 
+$passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(AlumniType::class, $alumni);

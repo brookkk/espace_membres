@@ -36,11 +36,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'second_options' => array('label' => 'Repeat Password'),
             ))
         ->add('email', EmailType::class)->add('telephone')
-        ->add('nomE', TextType::class, array(
-                'label'=> "Nom de l'entreprise"
-            ))
-        ->add('descriptionE')
-        ->add('adresseE')->add('codePostalE')->add('villeE')->add('votreFonction')
+        
         ->add('Sauvegarder', SubmitType::class);
 
     }
