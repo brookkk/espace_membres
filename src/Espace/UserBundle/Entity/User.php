@@ -68,7 +68,13 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="codePostalE", type="string", length=255, nullable=true)
+    * @Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
+     *      
+     * )     
+     * @ORM\Column(name="codePostalE", type="integer",  nullable=true)
      */
     private $codePostalE;
 
@@ -96,7 +102,23 @@ class User implements UserInterface
      */
     private $prenom;
 
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255, nullable=true)
+     */
+    private $adresse;
+
     
+
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="codePostal", type="integer", nullable=true)
+     */
+    private $codePostal;
 
 
         /**
@@ -208,6 +230,9 @@ public function  __construct()
     {
         return $this->username;
     }
+
+
+
 
     /**
      * Set nom
@@ -575,6 +600,17 @@ public function  __construct()
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+
+        public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
     }
 }
 
