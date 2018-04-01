@@ -32,8 +32,8 @@ class EntrepriseController extends Controller
      public function n_entrepriseAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $entreprise= new Entreprise();
-    $user= new User();
+    $entreprise= new User();
+    //$user= new User();
 
  
 
@@ -51,12 +51,12 @@ class EntrepriseController extends Controller
 
       $entreprise->setRoles(array('ROLE_ENTREPRISE'));
       $entreprise -> setProfil('ENTREPRISE');
-      $entreprise -> setUsername($entreprise->getNom());
+      $entreprise -> setUsername($entreprise->getEmail());
       $entreprise ->setSalt('');
-      $user = $entreprise;
+      //$user = $entreprise;
 
       $em= $this->getDoctrine()->getManager();
-      $em->persist($user);
+      $em->persist($entreprise);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('notice', 'Entreprise Bien enregistrée.');

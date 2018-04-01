@@ -34,7 +34,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
 
@@ -50,7 +50,7 @@ class User implements UserInterface
       /**
      * @var string
      *
-     * @ORM\Column(name="descriptionE", type="text")
+     * @ORM\Column(name="descriptionE", type="text", nullable=true)
      */
     private $descriptionE;
 
@@ -58,7 +58,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="adresseE", type="text")
+     * @ORM\Column(name="adresseE", type="text", nullable=true)
      */
     private $adresseE;
 
@@ -66,7 +66,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="codePostalE", type="string", length=255)
+     * @ORM\Column(name="codePostalE", type="string", length=255, nullable=true)
      */
     private $codePostalE;
 
@@ -74,7 +74,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="villeE", type="string", length=255)
+     * @ORM\Column(name="villeE", type="string", length=255, nullable=true)
      */
     private $villeE;
 
@@ -82,7 +82,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="votreFonction", type="string", length=255)
+     * @ORM\Column(name="votreFonction", type="string", length=255, nullable=true)
      */
     private $votreFonction;
 
@@ -90,7 +90,7 @@ class User implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=255, nullable=false)
      */
     private $prenom;
 
@@ -100,23 +100,30 @@ class User implements UserInterface
         /**
      * @var string
      *
-     * @ORM\Column(name="civilite", type="boolean")
+     * @ORM\Column(name="civilite", type="boolean", nullable=false)
      */
     private $civilite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="passwordC", type="string", length=255, nullable=false)
+     */
+    private $passwordC;
 
 
 
      /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255, nullable=false)
      */
     private $telephone;
 
@@ -127,7 +134,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
     private $email;
 
@@ -466,6 +473,33 @@ public function  __construct()
     public function getPassword()
     {
         return $this->password;
+    }
+
+
+
+
+     /**
+     * Set password
+     *
+     * @param string $passwordC
+     *
+     * @return User
+     */
+    public function setPasswordC($passwordC)
+    {
+        $this->passwordC = $passwordC;
+
+        return $this;
+    }
+
+    /**
+     * Get passwordC
+     *
+     * @return string
+     */
+    public function getPasswordC()
+    {
+        return $this->passwordC;
     }
 
     /**
