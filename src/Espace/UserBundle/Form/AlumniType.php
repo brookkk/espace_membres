@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class AlumniType extends AbstractType
 {
@@ -31,7 +32,11 @@ public function buildForm(FormBuilderInterface $builder, array $options)
          $builder->add('civilite')->add('nom')->add('prenom')
         
          ->add('adresse')->add('codePostal')->add('ville')->add('email', EmailType::class)
-         ->add('telephone')/*->add('ddn')*/
+         ->add('telephone')
+         ->add('ddn', DateType::class, array(
+            'widget' => 'choice',
+            'years' => range(2017,1940),
+            ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
