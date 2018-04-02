@@ -42,6 +42,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ))
         ->add('descriptionE')
         ->add('adresseE')->add('codePostalE')->add('villeE')->add('votreFonction')
+        ->add('newsletter')
         ->add('Sauvegarder', SubmitType::class);
     }
 
