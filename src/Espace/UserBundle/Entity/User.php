@@ -145,6 +145,14 @@ class User implements UserInterface
 
 
         /**
+     * @var string
+     *
+     * @ORM\Column(name="newsletter", type="boolean", nullable=false)
+     */
+    private $newsletter;
+
+
+        /**
     * * @ORM\Column(name="ddn", type="date", nullable=true)
      *@Assert\Date()
      */
@@ -702,6 +710,17 @@ public function  __construct()
     public function setDiplome($diplome)
     {
         $this->diplome = $diplome;
+    }
+
+
+    public function getNewsletter()
+    {
+        return $this->newsletter;
+    }
+
+    public function setNewsletter($newsletter)
+    {
+        $this->newsletter = $newsletter;
     }
 }
 
