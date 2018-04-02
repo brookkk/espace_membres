@@ -164,9 +164,11 @@ public function delete_offreAction(Request $request, $id)
 
     $request->getSession()->getFlashBag()->add('notice', 'Offre a été supprimée');
 
+    return $this->redirectToRoute('EP_show_offre');
+
   
 
-    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres   ));
+    //return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres   ));
 
 
 
