@@ -34,7 +34,7 @@ class OffreController extends Controller
   {
 //nouvelle instance de l'entité Offre
     $offre= new Offre();
-
+$user= $this->getUser();
  
 
     $form = $this->createForm(OffreType::class, $offre);
@@ -48,6 +48,7 @@ class OffreController extends Controller
  
       if($form->isValid()   
         ){
+        $offre->setEntreprise($user);
         $em= $this->getDoctrine()->getManager();
       $em->persist($offre);
       $em->flush();
@@ -73,10 +74,19 @@ class OffreController extends Controller
   public function show_offreAction(Request $request)
   {
     $em= $this  ->getDoctrine()  ->getManager();
+    $user= $this->getUser();
 
     $repository = $em  ->getRepository('EspacePlatformBundle:Offre');
     
+    $ss = $user->getId();
 
+    
+    if($user->getProfil()=='ENTREPRISE')
+      $listOffres = $repository->findBy([
+      'entreprise' => $user->getId() ,
+    ]);
+
+   else
     $listOffres = $repository->findAll();
 
     if (null === $listOffres) {

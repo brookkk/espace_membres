@@ -5,6 +5,7 @@
 namespace Espace\PlatformBundle\Entity;     
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Espace\UserBundle\Entity\User;
 
         
 use Doctrine\ORM\Mapping as ORM;        
@@ -48,7 +49,12 @@ class Offre
     private $titreOffre;        
         
         
-        
+     /**     
+   * @ORM\ManyToOne(targetEntity="Espace\UserBundle\Entity\User")        
+   * @ORM\JoinColumn(nullable=true)        
+   */       
+    private $entreprise; 
+    
         
         
     /**     
@@ -509,4 +515,25 @@ class Offre
     {       
         return $this->codePostal;      
     }       
+
+
+
+    public function setEntreprise($entreprise)        
+    {       
+        $this->entreprise = $entreprise;      
+        
+        return $this;       
+    }       
+        
+      
+    public function getEntreprise()        
+    {       
+        return $this->entreprise;      
+    }  
+
+
+    public function addEntreprise(User $entreprise)
+  {
+    $this->entreprise[] = $entreprise;
+  }
 }       
