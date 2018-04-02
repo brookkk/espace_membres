@@ -54,8 +54,8 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('newsletter')
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options'  => array('label' => 'Mot de Passe'),
+                'second_options' => array('label' => 'Confirmer votre mot de passe'),
             ))
         ->add('Sauvegarder', SubmitType::class);
 
