@@ -212,10 +212,17 @@ class User implements UserInterface
 
     /**        
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation")        
-   * @ORM\JoinColumn(nullable=true) 
-   * @ORM\Column(name="niveauFormation", type="array")   
+   * @ORM\JoinColumn(nullable=true)
    */       
     private $niveauFormation;   
+
+
+     /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Diplome")        
+   * @ORM\JoinColumn(nullable=true) 
+   * @ORM\Column(name="diplome", type="array")   
+   */       
+    private $diplome;   
 
 
       public function eraseCredentials()
@@ -684,6 +691,17 @@ public function  __construct()
     public function setNiveauFormation($niveauFormation)
     {
         $this->niveauFormation = $niveauFormation;
+    }
+
+
+    public function getDiplome()
+    {
+        return $this->diplome;
+    }
+
+    public function setDiplome($diplome)
+    {
+        $this->diplome = $diplome;
     }
 }
 

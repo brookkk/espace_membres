@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Niveau_de_formation
  *
  * @ORM\Table(name="diplome")
- * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\DiplomenRepository")
+ * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\DiplomeRepository")
  */
 class Diplome
 {

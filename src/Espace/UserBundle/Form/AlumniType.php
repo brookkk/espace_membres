@@ -41,21 +41,22 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'years' => range(2017,1940),
             'format' => 'dd-MM-yyyy',
             ))
-        ->add('plainPassword', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
-            ))
-        /*->add('niveauFormation', EntityType::class, array(
-                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
-                'choice_label' => 'nom',
-                'multiple'     => false,
-                ))*/
         ->add('niveauFormation', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',
                 'choice_label' => 'nom',
                 'multiple'     => false,
                 ))
+        ->add('diplome', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Diplome',
+                'choice_label' => 'nom',
+                'multiple'     => true,
+                ))
+        ->add('plainPassword', RepeatedType::class, array(
+                'type' => PasswordType::class,
+                'first_options'  => array('label' => 'Password'),
+                'second_options' => array('label' => 'Repeat Password'),
+            ))
+        ->add('newsletter')
         ->add('Sauvegarder', SubmitType::class);
 
     }
