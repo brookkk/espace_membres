@@ -36,16 +36,17 @@ class OffreType extends AbstractType
             'years' => range(2018,2020),
             'format' => 'dd-MM-yyyy',
             ))
-        /*->add('refOffre')*/
+         ->add('dateDeduplication', DateType::class, array(
+            'widget' => 'choice',
+            'years' => range(2018,2020),
+            'format' => 'dd-MM-yyyy',
+            ))
+        ->add('codePostal')
 
        
        
-        ->add('Secteur_activite', EntityType::class, array(
-                'class'        => 'EspacePlatformBundle:Secteur_d_activite',
-                'choice_label' => 'nom',
-                'multiple'     => false,
-                ))
-        ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')->add('cPE')
+        
+        ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')
         /*->add('dateDePublication')->add('dateDepublication')*/
         /*->add('niveauFormationP')*/
         ->add('Sauvegarder',      SubmitType::class);
