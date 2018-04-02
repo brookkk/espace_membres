@@ -41,7 +41,7 @@ class OffreType extends AbstractType
             'years' => range(2018,2020),
             'format' => 'dd-MM-yyyy',
             ))
-        ->add('codePostal')
+        
 
        
        

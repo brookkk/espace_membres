@@ -2,6 +2,7 @@
 
       
         
+use Symfony\Component\Validator\Constraints as Assert;
 namespace Espace\PlatformBundle\Entity;     
         
 use Doctrine\ORM\Mapping as ORM;        
@@ -496,7 +497,7 @@ class Offre
     }       
         
     /**     
-     * Get cPE      
+     * Get codePostal      
      *      
      * @return int      
      */     
