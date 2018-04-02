@@ -44,7 +44,12 @@ class OffreType extends AbstractType
         /*->add('refOffre')*/
         ->add('codePostal')
         ->add('villeE')
-        ->add('domaineCompetence')->add('pieceJointeOffre')
+        ->add('domaineCompetence', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Domaine_de_competence',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))
+        ->add('pieceJointeOffre')
         /*->add('dateDePublication')->add('dateDepublication')*/
         /*->add('niveauFormationP')*/
         ->add('Sauvegarder',      SubmitType::class);

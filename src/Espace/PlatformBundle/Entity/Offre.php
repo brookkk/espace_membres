@@ -116,12 +116,14 @@ class Offre
      */     
     private $villeE;        
         
-    /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="Domaine_competence", type="string", length=255)        
-     */     
-    private $domaineCompetence;     
+   
+
+
+    /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
+   * @ORM\JoinColumn(nullable=false)        
+   */       
+    private $domaineCompetence;   
         
     /**     
      * @var string      
