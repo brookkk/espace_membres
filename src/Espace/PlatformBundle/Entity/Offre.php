@@ -26,7 +26,7 @@ class Offre
     /**     
      * @var \DateTime       
      *      
-     * @ORM\Column(name="Ref_offre", type="date")       
+     * @ORM\Column(name="Ref_offre", type="date", nullable=true)       
      */     
     private $refOffre;      
         
