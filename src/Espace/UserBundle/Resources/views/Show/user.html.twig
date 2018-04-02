@@ -18,7 +18,8 @@
    <table class="data" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
-        <th>Login</th>
+        <th>nom</th>
+        <th>prenom</th>
         <th>Email</th>
         <th>Profil</th>
 
@@ -32,7 +33,8 @@
 
     <tfoot>
       <tr>
-        <th>Login</th>
+        <th>nom</th>
+        <th>prenom</th>
         <th>Email</th>
         <th>Profil</th>
 
@@ -49,7 +51,8 @@
   {% for user in listUsers %}
 
   <tr>
-  <td>   {{ user.username }} </td> 
+  <td>   {{ user.nom }} </td> 
+  <td>   {{ user.prenom }} </td> 
   <td> {{ user.email }} </td>
   <td> {{ user.profil }} </td>
   
