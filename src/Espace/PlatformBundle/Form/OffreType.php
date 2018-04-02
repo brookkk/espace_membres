@@ -41,12 +41,10 @@ class OffreType extends AbstractType
             'years' => range(2018,2020),
             'format' => 'dd-MM-yyyy',
             ))
-        
-
-       
-       
-        
-        ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')
+        /*->add('refOffre')*/
+        ->add('codePostal')
+        ->add('villeE')
+        ->add('domaineCompetence')->add('pieceJointeOffre')
         /*->add('dateDePublication')->add('dateDepublication')*/
         /*->add('niveauFormationP')*/
         ->add('Sauvegarder',      SubmitType::class);
