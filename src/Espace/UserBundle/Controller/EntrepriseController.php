@@ -55,6 +55,9 @@ $passwordEncoder = $this->get('security.password_encoder');
       $entreprise -> setProfil('ENTREPRISE');
       $entreprise -> setUsername($entreprise->getEmail());
       $entreprise ->setSalt('');
+
+      if($entreprise->getDiplome()==null)
+      $entreprise->setDiplome('N;');
       //$user = $entreprise;
       $password = $passwordEncoder->encodePassword($entreprise, $entreprise->getPlainPassword());
       $entreprise->setPassword($password);

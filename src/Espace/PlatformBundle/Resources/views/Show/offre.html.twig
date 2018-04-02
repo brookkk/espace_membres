@@ -8,7 +8,6 @@
   <li>Liste</li>
  
 </ul>
-{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
 
 <h3>Liste des Offres</h3>
 
@@ -20,10 +19,9 @@
    <table class="data" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
-        <th>Nom Entreprise</th>
+        
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
-        <th>Secteur d'activité</th>
         <th>Domaine de compétence</th>
         {% if is_granted('ROLE_ENTREPRISE') %}
      <th>Action</th>
@@ -35,10 +33,8 @@
 
     <tfoot>
       <tr>
-        <th>Nom Entreprise</th>
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
-        <th>Secteur d'activité</th>
         <th>Domaine de compétence</th>
 
 {% if is_granted('ROLE_ENTREPRISE') %}
@@ -54,11 +50,9 @@
   {% for offre in listOffres %}
 
   <tr>
-  <td>   {{ offre.nomEntreprise }} </td> 
   <td> {{ offre.niveauFormationP.nom }} </td>
   <td> {{ offre.typeContrat.nom }} </td>
-  <td> {{ offre.secteurActivite.nom | capitalize}} </td>
-  <td> {{ offre.secteurActivite.nom |capitalize}} </td>
+  <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
     
 
 {% if is_granted('ROLE_ENTREPRISE') %}

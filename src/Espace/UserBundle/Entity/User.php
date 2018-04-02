@@ -228,7 +228,7 @@ class User implements UserInterface
      /**        
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Diplome")        
    * @ORM\JoinColumn(nullable=true) 
-   * @ORM\Column(name="diplome", type="array")   
+   * @ORM\Column(name="diplome", type="array", nullable=TRUE )   
    */       
     private $diplome;   
 

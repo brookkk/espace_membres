@@ -36,7 +36,7 @@ class Offre
     /**     
      * @var string      
      *      
-     * @ORM\Column(name="Nom_entreprise", type="string", length=255)        
+     * @ORM\Column(name="Nom_entreprise", type="string", length=255, nullable=true)        
      */     
     private $nomEntreprise;     
         
@@ -59,7 +59,7 @@ class Offre
         
      /**        
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Secteur_d_activite")     
-   * @ORM\JoinColumn(nullable=false)        
+   * @ORM\JoinColumn(nullable=true)        
    */       
     private $secteurActivite;       
         
