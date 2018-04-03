@@ -7,6 +7,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 
 
@@ -17,24 +19,37 @@ class OffreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('refOffre')->add('nomEntreprise')->add('titreOffre')->add('descOffre')->add('dureeContrat')
-
-        ->add('niveauFormationP', EntityType::class, array(
-                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
-                'choice_label' => 'nom',
-                'multiple'     => false,
-                ))
-        ->add('typeContrat', EntityType::class, array(
+        $builder->add('titreOffre')
+         ->add('typeContrat', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Type_de_contrat',
                 'choice_label' => 'nom',
                 'multiple'     => false,
                 ))
-        ->add('Secteur_activite', EntityType::class, array(
-                'class'        => 'EspacePlatformBundle:Secteur_d_activite',
+        /*->add('nomEntreprise')*/->add('descOffre')->add('dureeContrat')
+         ->add('niveauFormationP', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Niveau_de_formation',
                 'choice_label' => 'nom',
                 'multiple'     => false,
                 ))
-        ->add('villeE')->add('domaineCompetence')->add('pieceJointeOffre')->add('cPE')
+         ->add('dateDePublication', DateType::class, array(
+            'widget' => 'choice',
+            'years' => range(2018,2020),
+            'format' => 'dd-MM-yyyy',
+            ))
+         ->add('dateDeduplication', DateType::class, array(
+            'widget' => 'choice',
+            'years' => range(2018,2020),
+            'format' => 'dd-MM-yyyy',
+            ))
+        /*->add('refOffre')*/
+        ->add('codePostal')
+        ->add('villeE')
+        ->add('domaineCompetence', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Domaine_de_competence',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                ))
+        ->add('pieceJointeOffre')
         /*->add('dateDePublication')->add('dateDepublication')*/
         /*->add('niveauFormationP')*/
         ->add('Sauvegarder',      SubmitType::class);

@@ -2,8 +2,8 @@
 # https://symfony.com/doc/current/security.html
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-        Espace\UserBundle\Entity\User: plaintext
+        Symfony\Component\Security\Core\User\User: bcrypt
+        Espace\UserBundle\Entity\User: bcrypt
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_ETUDIANT, ROLE_ENTREPRISE, ROLE_ALUMNI, ROLE_ALLOWED_TO_SWITCH

@@ -5,12 +5,12 @@ namespace Espace\PlatformBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Test
+ * Niveau_de_formation
  *
- * @ORM\Table(name="test")
- * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\TestRepository")
+ * @ORM\Table(name="diplome")
+ * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\DiplomeRepository")
  */
-class Test
+class Diplome
 {
     /**
      * @var int
@@ -24,7 +24,7 @@ class Test
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=true, unique=true)
      */
     private $nom;
 
@@ -44,7 +44,7 @@ class Test
      *
      * @param string $nom
      *
-     * @return Test
+     * @return Niveau_de_formation
      */
     public function setNom($nom)
     {

@@ -31,16 +31,14 @@ class AlumniController extends Controller
 
      public function n_alumniAction(Request $request)
   {
-//nouvelle instance de l'entité Offre
-    $alumni= new Alumni();
-    $user= new User();
+    $alumni= new User();
 
+$passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(AlumniType::class, $alumni);
 
 
-//si le formulaire est bien rempli, on l'enregistre dans la BD
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
@@ -52,53 +50,34 @@ class AlumniController extends Controller
       $alumni->setRoles(array('ROLE_ALUMNI'));
       $alumni -> setProfil('ALUMNI');
       $alumni ->setSalt('');
-      $user = $alumni;
+      $alumni -> setUsername($alumni->getEmail());
+      $password = $passwordEncoder->encodePassword($alumni, $alumni->getPlainPassword());
+      $alumni->setPassword($password);
 
       $em= $this->getDoctrine()->getManager();
-      $em->persist($user);
+      $em->persist($alumni);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('notice', 'Alumni Bien enregistrée.');
 
-
-
-
-        return $this->redirectToRoute('espace_show_user');
+        return $this->redirectToRoute('espace_platform_homepage');
       }
     }
 
-//sinon (ou bien premier landing sur le form), on affiche le formulaire
+    
+
     return $this->render('EspaceUserBundle:New:alumni.html.twig', array(
      'form'=>$form->createView(),
      ));
 
 
-        return $this->render('EspacePlatformBundle:Default:index.html.twig');
+     //   return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }
 
 
 
-
-   /*public function show_userAction(Request $request)
-{
-    $em= $this  ->getDoctrine()  ->getManager();
-
-    $repository = $em  ->getRepository('EspaceUserBundle:User');
-    
-
-    $listUsers = $repository->findAll();
-
-    if (null === $listUsers) {
-      //throw new NotFoundHttpException("Aucun utilisateur na été trouvé");
-  
-echo("toto");
-else
-    return $this->render('EspaceUserBundle:Show:index.html.twig');
-
-    //return $this->render('EspaceUserBundle:Show:user.html.twig', array('listUsers'=>$listUsers) );
-  }*/
 
 
 }

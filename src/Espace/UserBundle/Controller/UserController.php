@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 //use Espace\UserBundle\Entity\User;
-//use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 
@@ -46,8 +46,9 @@ class UserController extends Controller
       throw new NotFoundHttpException("Aucun Utilisateur na été trouvé");
     }
 
-    //echo "tototo";
     return $this->render('EspaceUserBundle:Show:user.html.twig', array(      'listUsers' => $listUsers   ));
+   // return $this->render('EspaceUserBundle:Show:index.html.twig');
+
   }
 
 

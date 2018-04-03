@@ -10,6 +10,8 @@ use Espace\UserBundle\Entity\User;
 use Espace\UserBundle\Form\EntrepriseType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 
 
@@ -32,9 +34,9 @@ class EntrepriseController extends Controller
      public function n_entrepriseAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $entreprise= new Entreprise();
-    $user= new User();
-
+    $entreprise= new User();
+    //$user= new User();
+$passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(EntrepriseType::class, $entreprise);
@@ -51,11 +53,17 @@ class EntrepriseController extends Controller
 
       $entreprise->setRoles(array('ROLE_ENTREPRISE'));
       $entreprise -> setProfil('ENTREPRISE');
+      $entreprise -> setUsername($entreprise->getEmail());
       $entreprise ->setSalt('');
-      $user = $entreprise;
+
+      if($entreprise->getDiplome()==null)
+      $entreprise->setDiplome('N;');
+      //$user = $entreprise;
+      $password = $passwordEncoder->encodePassword($entreprise, $entreprise->getPlainPassword());
+      $entreprise->setPassword($password);
 
       $em= $this->getDoctrine()->getManager();
-      $em->persist($user);
+      $em->persist($entreprise);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('notice', 'Entreprise Bien enregistrée.');
@@ -63,7 +71,7 @@ class EntrepriseController extends Controller
 
 
 
-        return $this->redirectToRoute('espace_show_user');
+        return $this->redirectToRoute('espace_platform_homepage');
       }
     }
 
@@ -73,7 +81,7 @@ class EntrepriseController extends Controller
      ));
 
 
-        return $this->render('EspacePlatformBundle:Default:index.html.twig');
+        //return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }

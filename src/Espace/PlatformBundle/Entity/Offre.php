@@ -3,6 +3,10 @@
       
         
 namespace Espace\PlatformBundle\Entity;     
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Espace\UserBundle\Entity\User;
+
         
 use Doctrine\ORM\Mapping as ORM;        
         
@@ -26,14 +30,14 @@ class Offre
     /**     
      * @var \DateTime       
      *      
-     * @ORM\Column(name="Ref_offre", type="date")       
+     * @ORM\Column(name="Ref_offre", type="date", nullable=true)       
      */     
     private $refOffre;      
         
     /**     
      * @var string      
      *      
-     * @ORM\Column(name="Nom_entreprise", type="string", length=255)        
+     * @ORM\Column(name="Nom_entreprise", type="string", length=255, nullable=true)        
      */     
     private $nomEntreprise;     
         
@@ -45,7 +49,12 @@ class Offre
     private $titreOffre;        
         
         
-        
+     /**     
+   * @ORM\ManyToOne(targetEntity="Espace\UserBundle\Entity\User")        
+   * @ORM\JoinColumn(nullable=true)        
+   */       
+    private $entreprise; 
+    
         
         
     /**     
@@ -56,7 +65,7 @@ class Offre
         
      /**        
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Secteur_d_activite")     
-   * @ORM\JoinColumn(nullable=false)        
+   * @ORM\JoinColumn(nullable=true)        
    */       
     private $secteurActivite;       
         
@@ -104,7 +113,7 @@ class Offre
      *      
      * @ORM\Column(name="Date_depublication", type="datetime")      
      */     
-    private $dateDepublication;     
+    private $dateDeduplication;     
         
     /**     
      * @var string      
@@ -113,12 +122,14 @@ class Offre
      */     
     private $villeE;        
         
-    /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="Domaine_competence", type="string", length=255)        
-     */     
-    private $domaineCompetence;     
+   
+
+
+    /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
+   * @ORM\JoinColumn(nullable=false)        
+   */       
+    private $domaineCompetence;   
         
     /**     
      * @var string      
@@ -127,20 +138,29 @@ class Offre
      */     
     private $pieceJointeOffre;      
         
-    /**     
-     * @var int     
+   
+
+
+      /**
+     * @var string
+     *
+    * @Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
      *      
-     * @ORM\Column(name="CP_e", type="integer")     
-     */     
-    private $cPE;       
+     * )     
+     * @ORM\Column(name="codePostal", type="integer",  nullable=true)
+     */
+    private $codePostal;       
         
         
         
 //Date par défaut lors de la creation d'une new Offre       
     public function __construct()       
     {       
-        $this->dateDePublication = new \Datetime();     
-        $this->dateDepublication = new \Datetime();     
+       // $this->dateDePublication = new \Datetime();     
+       // $this->dateDeduplication = new \Datetime();     
     }       
         
         
@@ -373,6 +393,32 @@ class Offre
     {       
         return $this->dateDePublication;        
     }       
+
+
+    /**     
+     * Set dateDeduplication        
+     *      
+     * @param \DateTime $dateDeduplication      
+     *      
+     * @return Offre        
+     */     
+    public function setDateDeduplication($dateDeduplication)        
+    {       
+        $this->dateDeduplication = $dateDeduplication;      
+        
+        return $this;       
+    }       
+        
+    /**     
+     * Get dateDeduplication        
+     *      
+     * @return \DateTime        
+     */     
+    public function getDateDeduplication()      
+    {       
+        return $this->dateDeduplication;        
+    }       
+        
         
     /**     
      * Set villeE       
@@ -447,26 +493,47 @@ class Offre
     }       
         
     /**     
-     * Set cPE      
+     * Set codePostal      
      *      
-     * @param integer $cPE      
+     * @param integer $codePostal      
      *      
      * @return Offre        
      */     
-    public function setCPE($cPE)        
+    public function setCodePostal($codePostal)        
     {       
-        $this->cPE = $cPE;      
+        $this->codePostal = $codePostal;      
         
         return $this;       
     }       
         
     /**     
-     * Get cPE      
+     * Get codePostal      
      *      
      * @return int      
      */     
-    public function getCPE()        
+    public function getCodePostal()        
     {       
-        return $this->cPE;      
+        return $this->codePostal;      
     }       
+
+
+
+    public function setEntreprise($entreprise)        
+    {       
+        $this->entreprise = $entreprise;      
+        
+        return $this;       
+    }       
+        
+      
+    public function getEntreprise()        
+    {       
+        return $this->entreprise;      
+    }  
+
+
+    public function addEntreprise(User $entreprise)
+  {
+    $this->entreprise[] = $entreprise;
+  }
 }       

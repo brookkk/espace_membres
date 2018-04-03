@@ -63,7 +63,7 @@ class EtudiantController extends Controller
 
 
 
-        return $this->redirectToRoute('espace_show_user');
+        return $this->redirectToRoute('espace_platform_homepage');
       }
     }
 
