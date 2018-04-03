@@ -6,6 +6,8 @@ namespace Espace\PlatformBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Espace\UserBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
         
 use Doctrine\ORM\Mapping as ORM;        
@@ -25,7 +27,13 @@ class Offre
      * @ORM\Id      
      * @ORM\GeneratedValue(strategy="AUTO")     
      */     
-    private $id;        
+    private $id;     
+
+
+    /**
+   * @ORM\ManyToMany(targetEntity="Brains\PlatformBundle\Entity\User", cascade={"persist"})
+   */
+  private $Users;   
         
     /**     
      * @var \DateTime       
@@ -161,6 +169,8 @@ class Offre
     {       
        // $this->dateDePublication = new \Datetime();     
        // $this->dateDeduplication = new \Datetime();     
+
+        $this->users = new ArrayCollection();
     }       
         
         
