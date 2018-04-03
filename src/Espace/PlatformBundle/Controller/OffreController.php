@@ -89,12 +89,22 @@ $user= $this->getUser();
    else
     $listOffres = $repository->findAll();
 
+
+
+  $has_applied = array();
+    $nb_users=array();
+foreach($listOffres as $offre){
+  $nb_users[$offre->getid()] = $this->countUsersAction( $offre->getid());
+  $has_applied[$offre->getid()] = $this->hasAppliedAction( $offre->getid());
+}
+
     if (null === $listOffres) {
       throw new NotFoundHttpException("Aucune Offre na été trouvé");
     }
 
     //echo "tototo";
-    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres   ));
+    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres, 'nb_users' => $nb_users,
+     'has_applied' =>$has_applied  ));
   }
 
 
@@ -282,11 +292,37 @@ public function delete_offreAction(Request $request, $id)
       
     
 
-    /*return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
-     'form'=>$form->createView(),
-     ));*/
 
-        //return $this->redirectToRoute('EP_show_offre');
+  }
+
+  public function countUsersAction($id)
+  {
+    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+    $offre = $repository->find($id);
+
+    $users = $offre->getUsers();
+    $count = count($users);
+    return $count;
+
+
+  }
+
+
+
+  public function hasAppliedAction($id)
+  {
+    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+    $offre = $repository->find($id);
+
+    $user = $this->getUser();
+
+    if(  in_array($user, $offre->getUsers()->toArray())         )
+      return 1;
+    else return 0;
+    
+
 
   }
 

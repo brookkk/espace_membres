@@ -27,7 +27,9 @@
      <th>Postuler</th>
       {% endif %}
         {% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Postuleurs</th>
      <th>Action</th>
+
       {% endif %}
 
          
@@ -44,6 +46,7 @@
       {% endif %}
 
 {% if is_granted('ROLE_ENTREPRISE') %}
+     <th>Postuleurs</th>
      <th>Action</th>
       {% endif %}
 
@@ -61,14 +64,22 @@
   <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
     
 
-{% if is_granted('ROLE_ETUDIANT') %}
+{% if is_granted('ROLE_ETUDIANT')  %}
      <td>
+
+     {%  if nb_users[offre.id]==0   %}
 <a href="{{ path('EP_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase"></span> </a> &nbsp 
+      {% else %}
+<a href="{{ path('EP_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase" style="color:red"></span> </a> &nbsp 
+      {% endif %}
      </td>
       {% endif %}
 
 
 {% if is_granted('ROLE_ENTREPRISE') %}
+<td>
+<td><a href="" title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
+</td>
 <td>
    <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
       

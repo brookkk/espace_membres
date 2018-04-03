@@ -33,7 +33,7 @@ class Offre
     /**
    * @ORM\ManyToMany(targetEntity="Espace\UserBundle\Entity\User", cascade={"persist"})
    */
-  private $Users;   
+  private $users;   
         
     /**     
      * @var \DateTime       
