@@ -19,3 +19,6 @@ EP_search_offre:
 EP_apply_offre:
     path:     /offre/apply/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:apply }
+EP_in_apply_offre:
+    path:     /offre/in_apply/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:in_apply }

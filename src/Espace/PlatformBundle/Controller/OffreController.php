@@ -295,6 +295,51 @@ public function delete_offreAction(Request $request, $id)
 
   }
 
+
+
+
+   /**
+   * @Security("has_role('ROLE_ETUDIANT')")
+   * 
+   */
+   //Pour dépostuler d'une offre
+     public function in_applyAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  $user= $this->getUser();
+
+    
+
+
+    //$form = $this->createForm(OffreType::class, $offre);
+  
+      //$form->handleRequest($request);
+
+        
+        $offre->removeUser($user);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+     
+
+
+        return $this->redirectToRoute('EP_show_offre');
+      
+    
+
+
+  }
+
   public function countUsersAction($id)
   {
     $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
