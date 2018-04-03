@@ -33,7 +33,7 @@ $builder->add('titreOffre', TextType::class, array(
                 ))
         
         ->add('descOffre', TextType::class, array(
-                'label'=> "Descriptif (mission, profil recherché, compétences, qualités, etc) "
+                'label'=> "Descriptif (mission, profil recherché, compétences, qualités, etc)"
             ))
         ->add('dureeContrat', TextType::class, array(
                 'label'=> "Durée du contrat"
@@ -67,7 +67,7 @@ $builder->add('titreOffre', TextType::class, array(
                 'multiple'     => false,
                 'label'=> "Domaine de compétence"
                 ))
-        ->add('pieceJointeOffre', IntegerType::class, array(
+        ->add('pieceJointeOffre', TextType::class, array(
                 'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) "
             ))
         ->add('Sauvegarder',      SubmitType::class);
