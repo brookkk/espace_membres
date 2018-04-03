@@ -23,6 +23,9 @@
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
+        {% if is_granted('ROLE_ETUDIANT') %}
+     <th>Postuler</th>
+      {% endif %}
         {% if is_granted('ROLE_ENTREPRISE') %}
      <th>Action</th>
       {% endif %}
@@ -36,6 +39,9 @@
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
+        {% if is_granted('ROLE_ETUDIANT') %}
+     <th>Postuler</th>
+      {% endif %}
 
 {% if is_granted('ROLE_ENTREPRISE') %}
      <th>Action</th>
@@ -54,6 +60,13 @@
   <td> {{ offre.typeContrat.nom }} </td>
   <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
     
+
+{% if is_granted('ROLE_ETUDIANT') %}
+     <td>
+<a href="{{ path('EP_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase"></span> </a> &nbsp 
+     </td>
+      {% endif %}
+
 
 {% if is_granted('ROLE_ENTREPRISE') %}
 <td>

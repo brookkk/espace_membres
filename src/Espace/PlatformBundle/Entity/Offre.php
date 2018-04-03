@@ -31,7 +31,7 @@ class Offre
 
 
     /**
-   * @ORM\ManyToMany(targetEntity="Brains\PlatformBundle\Entity\User", cascade={"persist"})
+   * @ORM\ManyToMany(targetEntity="Espace\UserBundle\Entity\User", cascade={"persist"})
    */
   private $Users;   
         

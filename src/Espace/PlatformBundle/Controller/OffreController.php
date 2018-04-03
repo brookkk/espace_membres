@@ -248,42 +248,45 @@ public function delete_offreAction(Request $request, $id)
    * @Security("has_role('ROLE_ETUDIANT')")
    * 
    */
-     public function n_offreAction(Request $request)
+     public function applyAction(Request $request, $id)
   {
-//nouvelle instance de l'entité Offre
-    $offre= new Offre();
-$user= $this->getUser();
- 
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
 
-    $form = $this->createForm(OffreType::class, $offre);
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  $user= $this->getUser();
+
+    
 
 
-//si le formulaire est bien rempli, on l'enregistre dans la BD
-    if($request->isMethod('POST')){
+    //$form = $this->createForm(OffreType::class, $offre);
+  
+      //$form->handleRequest($request);
 
-      $form->handleRequest($request);
+        
+        $offre->addUser($user);
 
- 
-      if($form->isValid()   
-        ){
-        $offre->setEntreprise($user);
         $em= $this->getDoctrine()->getManager();
-      $em->persist($offre);
-      $em->flush();
+        $em->persist($offre);
+        $em->flush();
 
-      $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistrée.');
-
-
+        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+     
 
 
         return $this->redirectToRoute('EP_show_offre');
-      }
-    }
+      
+    
 
-//sinon (ou bien premier landing sur le form), on affiche le formulaire
-    return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
+    /*return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
      'form'=>$form->createView(),
-     ));
+     ));*/
+
+        //return $this->redirectToRoute('EP_show_offre');
 
   }
 
