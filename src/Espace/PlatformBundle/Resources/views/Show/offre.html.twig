@@ -24,6 +24,7 @@
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
         {% if is_granted('ROLE_ETUDIANT') %}
+     <th>Details de l'offre</th>
      <th>Postuler</th>
       {% endif %}
         {% if is_granted('ROLE_ENTREPRISE') %}
@@ -42,6 +43,7 @@
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
         {% if is_granted('ROLE_ETUDIANT') %}
+     <th>Details de l'offre</th>
      <th>Postuler</th>
       {% endif %}
 
@@ -65,6 +67,8 @@
     
 
 {% if is_granted('ROLE_ETUDIANT')  %}
+  <td> {{ offre.typeContrat.nom }} </td>
+
      <td>
 
      {%  if nb_users[offre.id]==0   %}
