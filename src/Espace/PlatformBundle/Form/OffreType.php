@@ -58,7 +58,7 @@ $builder->add('titreOffre', TextType::class, array(
         ->add('codePostal', IntegerType::class, array(
                 'label'=> "Code postal"
             ))
-        ->add('villeE', IntegerType::class, array(
+        ->add('villeE', TextType::class, array(
                 'label'=> "Ville"
             ))
         ->add('domaineCompetence', EntityType::class, array(
