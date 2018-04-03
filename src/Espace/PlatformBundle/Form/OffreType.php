@@ -8,6 +8,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 
 
 
@@ -19,11 +21,14 @@ class OffreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titreOffre')
+$builder->add('titreOffre', TextType::class, array(
+                'label'=> "Titre de l'offre"
+            ))
          ->add('typeContrat', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Type_de_contrat',
                 'choice_label' => 'nom',
                 'multiple'     => false,
+                'label'=> "Type de l'offre"
                 ))
         /*->add('nomEntreprise')*/->add('descOffre')->add('dureeContrat')
          ->add('niveauFormationP', EntityType::class, array(
@@ -41,7 +46,6 @@ class OffreType extends AbstractType
             'years' => range(2018,2020),
             'format' => 'dd-MM-yyyy',
             ))
-        /*->add('refOffre')*/
         ->add('codePostal')
         ->add('villeE')
         ->add('domaineCompetence', EntityType::class, array(
