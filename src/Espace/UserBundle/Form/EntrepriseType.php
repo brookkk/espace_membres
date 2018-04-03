@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 
@@ -41,7 +42,19 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Nom de l'entreprise"
             ))
         ->add('descriptionE')
-        ->add('adresseE')->add('codePostalE')->add('villeE')->add('votreFonction')
+        ->add('descriptionE', TextType::class, array(
+                'label'=> "Description de l'entreprise"
+            ))
+        ->add('adresseE', TextType::class, array(
+                'label'=> "Adresse de l'entreprise"
+            ))
+        ->add('codePostalE', IntegerType::class, array(
+                'label'=> "Code postal de l'entreprise"
+            ))
+        ->add('villeE', IntegerType::class, array(
+                'label'=> "Ville de l'entreprise"
+            ))
+        ->add('votreFonction')
         ->add('newsletter')
         ->add('Sauvegarder', SubmitType::class);
     }
