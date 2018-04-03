@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 
 
@@ -28,13 +29,20 @@ $builder->add('titreOffre', TextType::class, array(
                 'class'        => 'EspacePlatformBundle:Type_de_contrat',
                 'choice_label' => 'nom',
                 'multiple'     => false,
-                'label'=> "Type de l'offre"
+                'label'=> "Type de contrat"
                 ))
-        /*->add('nomEntreprise')*/->add('descOffre')->add('dureeContrat')
+        
+        ->add('descOffre', TextType::class, array(
+                'label'=> "Descriptif (mission, profil recherché, compétences, qualités, etc) "
+            ))
+        ->add('dureeContrat', TextType::class, array(
+                'label'=> "Durée du contrat"
+            ))
          ->add('niveauFormationP', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',
                 'choice_label' => 'nom',
                 'multiple'     => false,
+                'label'=> "Niveau de formation"
                 ))
          ->add('dateDePublication', DateType::class, array(
             'widget' => 'choice',
@@ -45,17 +53,23 @@ $builder->add('titreOffre', TextType::class, array(
             'widget' => 'choice',
             'years' => range(2018,2020),
             'format' => 'dd-MM-yyyy',
+            'label'=> "Date de déduplication"
             ))
-        ->add('codePostal')
-        ->add('villeE')
+        ->add('codePostal', IntegerType::class, array(
+                'label'=> "Code postal"
+            ))
+        ->add('villeE', IntegerType::class, array(
+                'label'=> "Ville"
+            ))
         ->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => false,
+                'label'=> "Domaine de compétence"
                 ))
-        ->add('pieceJointeOffre')
-        /*->add('dateDePublication')->add('dateDepublication')*/
-        /*->add('niveauFormationP')*/
+        ->add('pieceJointeOffre', IntegerType::class, array(
+                'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) "
+            ))
         ->add('Sauvegarder',      SubmitType::class);
     }
     
