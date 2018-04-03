@@ -241,4 +241,51 @@ public function delete_offreAction(Request $request, $id)
   }
 
 
+
+
+
+   /**
+   * @Security("has_role('ROLE_ETUDIANT')")
+   * 
+   */
+     public function n_offreAction(Request $request)
+  {
+//nouvelle instance de l'entité Offre
+    $offre= new Offre();
+$user= $this->getUser();
+ 
+
+    $form = $this->createForm(OffreType::class, $offre);
+
+
+//si le formulaire est bien rempli, on l'enregistre dans la BD
+    if($request->isMethod('POST')){
+
+      $form->handleRequest($request);
+
+ 
+      if($form->isValid()   
+        ){
+        $offre->setEntreprise($user);
+        $em= $this->getDoctrine()->getManager();
+      $em->persist($offre);
+      $em->flush();
+
+      $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistrée.');
+
+
+
+
+        return $this->redirectToRoute('EP_show_offre');
+      }
+    }
+
+//sinon (ou bien premier landing sur le form), on affiche le formulaire
+    return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
+     'form'=>$form->createView(),
+     ));
+
+  }
+
+
 }
