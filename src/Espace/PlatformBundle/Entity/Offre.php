@@ -172,6 +172,25 @@ class Offre
 
         $this->users = new ArrayCollection();
     }       
+
+
+
+  public function addUser(User $user)
+  {
+    $this->users[] = $user;
+
+    return $this;
+  }
+
+  public function removeUser(User $user)
+  {
+    $this->users->removeElement($user);
+  }
+
+  public function getUsers()
+  {
+    return $this->users;
+  }
         
         
     /**     
