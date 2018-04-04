@@ -23,11 +23,11 @@
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
-        {% if is_granted('ROLE_ETUDIANT') %}
+        {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
      <th>Details de l'offre</th>
      <th>Postuler</th>
       {% endif %}
-        {% if is_granted('ROLE_ENTREPRISE') %}
+        {% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
      <th>Postuleurs</th>
      <th>Action</th>
 
@@ -42,12 +42,12 @@
         <th>Niveau de formation</th>
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
-        {% if is_granted('ROLE_ETUDIANT') %}
+        {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
      <th>Details de l'offre</th>
      <th>Postuler</th>
       {% endif %}
 
-{% if is_granted('ROLE_ENTREPRISE') %}
+{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
      <th>Postuleurs</th>
      <th>Action</th>
       {% endif %}
@@ -66,7 +66,7 @@
   <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
     
 
-{% if is_granted('ROLE_ETUDIANT')  %}
+{% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
   <td> {{ offre.typeContrat.nom }} </td>
 
      <td>
@@ -80,7 +80,7 @@
       {% endif %}
 
 
-{% if is_granted('ROLE_ENTREPRISE') %}
+{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
 
 <td><a href="" title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
 </td>
