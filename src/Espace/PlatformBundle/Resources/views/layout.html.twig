@@ -53,7 +53,10 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       
- 
+  <li><a href=""><span class="glyphicon glyphicon-user"></span> Bienvenue {{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }} </a></li>
+      <li>
+    <a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span>  Déconnexion</a>
+</li>
 
 
 
