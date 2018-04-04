@@ -62,8 +62,14 @@
 <td>
    <a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp 
       
-          
-     
+
+
+ {%  if user.valide==0   %}
+<a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp 
+      {% else %}
+<a href="{{ path('EU_devalider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-down" style="color:red"></span> </a> &nbsp 
+
+      {% endif %}
 
      
 </td>
