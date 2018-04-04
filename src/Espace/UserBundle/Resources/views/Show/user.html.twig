@@ -39,7 +39,7 @@
         <th>Profil</th>
 
         {% if is_granted('ROLE_ADMIN') %}
-     <th>Action</th>
+     <th>Valider</th>
       {% endif %}
 
       
@@ -60,7 +60,6 @@
 
 {% if is_granted('ROLE_ADMIN') %}
 <td>
-   <a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp 
       
 
 

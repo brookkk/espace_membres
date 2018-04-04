@@ -125,7 +125,7 @@ class UserController extends Controller
 
     
 
-    if( $user->getValide())         )
+    if( $user->getValide())
       return 1;
     else return 0;
     
