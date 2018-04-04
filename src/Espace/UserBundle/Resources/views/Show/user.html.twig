@@ -66,7 +66,7 @@
  {%  if user.valide==0   %}
 <a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp 
       {% else %}
-<a href="{{ path('EU_devalider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-thumbs-down" style="color:red"></span> </a> &nbsp 
+<a href="{{ path('EU_devalider_user',{'id': user.id}) }}" onclick='return confirm("Etes vous sûr de vouloir dévalider cet utilisateur? cette action l empêchera de se connecter à l espace par la suite")'><span class="glyphicon glyphicon-thumbs-down" style="color:red"></span> </a> &nbsp 
 
       {% endif %}
 
@@ -75,7 +75,7 @@
       {% endif %}
    
   
-        
+       
 
     </tr>
   {% endfor %}

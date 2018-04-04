@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
 
 
 /**
@@ -14,8 +16,14 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\UserRepository")
  */
-class User implements UserInterface
+class User   implements UserInterface
+
 {
+
+
+
+
+
     /**
      * @var int
      *
