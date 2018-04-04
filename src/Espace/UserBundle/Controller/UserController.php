@@ -53,4 +53,34 @@ class UserController extends Controller
 
 
 
+
+     public function valider_userAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  $user= $this->getUser();
+
+
+        $offre->addUser($user);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+     
+
+
+        return $this->redirectToRoute('EP_show_offre');
+ 
+  }
+
+
+
 }

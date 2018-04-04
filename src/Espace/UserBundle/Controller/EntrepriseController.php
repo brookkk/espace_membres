@@ -90,24 +90,6 @@ $passwordEncoder = $this->get('security.password_encoder');
 
 
 
-   /*public function show_userAction(Request $request)
-{
-    $em= $this  ->getDoctrine()  ->getManager();
-
-    $repository = $em  ->getRepository('EspaceUserBundle:User');
-    
-
-    $listUsers = $repository->findAll();
-
-    if (null === $listUsers) {
-      //throw new NotFoundHttpException("Aucun utilisateur na été trouvé");
-  
-echo("toto");
-else
-    return $this->render('EspaceUserBundle:Show:index.html.twig');
-
-    //return $this->render('EspaceUserBundle:Show:user.html.twig', array('listUsers'=>$listUsers) );
-  }*/
 
 
 }

@@ -270,14 +270,7 @@ public function delete_offreAction(Request $request, $id)
 
   $user= $this->getUser();
 
-    
 
-
-    //$form = $this->createForm(OffreType::class, $offre);
-  
-      //$form->handleRequest($request);
-
-        
         $offre->addUser($user);
 
         $em= $this->getDoctrine()->getManager();
@@ -289,10 +282,7 @@ public function delete_offreAction(Request $request, $id)
 
 
         return $this->redirectToRoute('EP_show_offre');
-      
-    
-
-
+ 
   }
 
 
