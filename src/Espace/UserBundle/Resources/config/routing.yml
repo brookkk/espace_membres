@@ -4,6 +4,9 @@ espace_user_homepage:
 espace_show_user:
     path:     /admin/user/show
     defaults: { _controller: EspaceUserBundle:User:show_user }
+EU_valider_user:
+    path:     /alumni/new
+    defaults: { _controller: EspaceUserBundle:Alumni:n_alumni }
 espace_show_register:
     path:     /inscription
     defaults: { _controller: EspaceUserBundle:User:types_profil }
