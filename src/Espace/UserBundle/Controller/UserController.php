@@ -58,26 +58,26 @@ class UserController extends Controller
   {
   $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
 
-  $offre = $repository->find($id);
+  $user = $repository->find($id);
 
-  if (null === $offre) {
-      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+  if (null === $user) {
+      throw new NotFoundHttpException("Utilisateur na pas été trouvée");
     }
 
-  $user= $this->getUser();
+  //$user= $this->getUser();
 
 
-        $offre->addUser($user);
+        $user->setValide(true);
 
         $em= $this->getDoctrine()->getManager();
-        $em->persist($offre);
+        $em->persist($user);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('notice', 'User Validé');
      
 
 
-        return $this->redirectToRoute('EP_show_offre');
+        return $this->redirectToRoute('espace_show_user');
  
   }
 
