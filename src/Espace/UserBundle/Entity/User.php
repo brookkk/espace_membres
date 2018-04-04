@@ -144,6 +144,14 @@ class User implements UserInterface
     private $civilite;
 
 
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="valide", type="boolean", nullable=false)
+     */
+    private $valide;
+
+
         /**
      * @var string
      *
@@ -721,6 +729,16 @@ public function  __construct()
     public function setNewsletter($newsletter)
     {
         $this->newsletter = $newsletter;
+    }
+
+    public function getValide()
+    {
+        return $this->valide;
+    }
+
+    public function setValide($valide)
+    {
+        $this->valide = $valide;
     }
 }
 
