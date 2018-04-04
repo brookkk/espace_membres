@@ -13,7 +13,8 @@
 
 
   <form id='fff' action="{{ path('login_check') }}" method="post" >
- 
+{% form_theme form _self 'bootstrap_3_horizontal_layout.html.twig' %}
+
 <div>
     <label for="username">Login :</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -22,7 +23,7 @@
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="_password" />
     </div>
-    
+    <br />
     <input type="submit" value="Connexion" />
     <br><br>
 
