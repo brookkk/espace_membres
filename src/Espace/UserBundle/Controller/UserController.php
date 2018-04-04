@@ -83,4 +83,23 @@ class UserController extends Controller
 
 
 
+
+  public function isValidatedAction($id)
+  {
+    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
+
+    $user = $repository->find($id);
+
+    
+
+    if( $user->getValide())         )
+      return 1;
+    else return 0;
+    
+
+
+  }
+
+
+
 }
