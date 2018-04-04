@@ -61,7 +61,7 @@ class UserController extends Controller
   $user = $repository->find($id);
 
   if (null === $user) {
-      throw new NotFoundHttpException("Utilisateur na pas été trouvée");
+      throw new NotFoundHttpException("Utilisateur na pas été trouvé");
     }
 
   //$user= $this->getUser();
@@ -81,6 +81,39 @@ class UserController extends Controller
  
   }
 
+
+
+ 
+   //Pour dévalider un user
+     public function devalider_userAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
+
+  $user = $repository->find($id);
+
+  if (null === $user) {
+      throw new NotFoundHttpException("Utilisateur na pas été trouvé");
+    }
+
+  
+
+      $user->setValide(false);
+        
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'User dévalidé');
+     
+
+
+        return $this->redirectToRoute('espace_show_user');
+      
+    
+
+
+  }
 
 
 

@@ -305,14 +305,7 @@ public function delete_offreAction(Request $request, $id)
 
   $user= $this->getUser();
 
-    
-
-
-    //$form = $this->createForm(OffreType::class, $offre);
-  
-      //$form->handleRequest($request);
-
-        
+      
         $offre->removeUser($user);
 
         $em= $this->getDoctrine()->getManager();
