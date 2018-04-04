@@ -7,6 +7,9 @@ espace_show_user:
 EU_valider_user:
     path:     /admin/user/valider/{id}
     defaults: { _controller: EspaceUserBundle:User:valider_user }
+    EU_valider_user:
+    path:     /admin/user/devalider/{id}
+    defaults: { _controller: EspaceUserBundle:User:devalider_user }
 espace_show_register:
     path:     /inscription
     defaults: { _controller: EspaceUserBundle:User:types_profil }
