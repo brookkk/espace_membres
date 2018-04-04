@@ -4,22 +4,45 @@
 
 {% block body %}
 
+
   {# S'il y a une erreur, on l'affiche dans un joli cadre #}
   {% if error %}
     <div class="alert alert-danger">{{ error.message }}</div>
   {% endif %}
 
-  {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-  <form action="{{ path('login_check') }}" method="post">
+
+
+  <form id='fff' action="{{ path('login_check') }}" method="post" >
+ 
+<div>
     <label for="username">Login :</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
+</div>
+<div>
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="_password" />
-    <br />
-    <input type="submit" value="Connexion" />
+    </div>
     
-<a class="btn btn btn-success" href="{{ path('espace_show_register') }}" role="button">Créér un compte</a>
+    <input type="submit" value="Connexion" />
+    <br><br>
+
+    <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Créér un compte
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{ path('EU_new_entreprise') }}">Entreprise</a><br>
+     <a class="dropdown-item" href="{{ path('EU_new_etudiant') }}">Candidat</a>
+
+    
+    
+  </div>
+</div>
+
+<!--<a class="btn btn btn-success" href="{{ path('espace_show_register') }}" role="button">Créér un compte</a>-->
+
+
+
 
   </form>
 
