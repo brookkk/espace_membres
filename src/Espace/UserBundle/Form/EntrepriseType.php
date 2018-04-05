@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 
 class EntrepriseType extends AbstractType
@@ -56,6 +57,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ))
         ->add('votreFonction')
         ->add('newsletter')
+        ->add('captcha', CaptchaType::class)
         ->add('Sauvegarder', SubmitType::class);
     }
 
