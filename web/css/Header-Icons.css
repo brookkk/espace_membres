@@ -72,7 +72,8 @@
 }
 
 #colorful-nav .home {
-    background-color: #f87912;
+    /*background-color: #f87912;*/
+    background-color: #808080;
 }
 
 #colorful-nav .profile {
