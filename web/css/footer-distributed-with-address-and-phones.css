@@ -1,5 +1,6 @@
 .footer-distributed{
-	background-color: #292c2f;
+	/*background-color: #999999;*/
+	background : repeating-linear-gradient(-45deg, #cccccc, #cccccc 10px, transparent 10px, transparent 19px);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -109,14 +110,14 @@
 
 .footer-distributed .footer-center p{
 	display: inline-block;
-	color: #ffffff;
+	color: #003a6c;
 	vertical-align: middle;
 	margin:0;
 }
 
  .footer-left-center p{
 	display: inline-block;
-	color: #ffffff;
+	color: #003a6c;
 	vertical-align: middle;
 	margin:0;
 }
@@ -150,7 +151,7 @@
 
 .footer-distributed .footer-company-about span{
 	display: block;
-	color:  #ffffff;
+	color:  #003a6c;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;

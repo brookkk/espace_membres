@@ -64,7 +64,7 @@
 
     <li class="statistics"><a href="{{ path('espace_show_user') }}"><span class="glyphicon glyphicon-user"></span><h5>{{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }}</h5></a></li>
    
-</li>
+
     <li class="about"><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span><h5>Déconnexion</h5></a></li>
                 </ul>
 
@@ -74,33 +74,7 @@
             </div>
         </div>
     </nav>
-<!--
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ path('espace_platform_homepage') }}" class="home"><span class="glyphicon glyphicon-home"></span><h5>Espace</h5></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="{{ path('espace_platform_homepage') }}" class="glyphicon glyphicon-home">Accueil</a></li>
-      <li ><a href="{{ path('espace_platform_homepage') }}">Offres</a></li>
-      {% if is_granted('ROLE_ENTREPRISE') %}
-        <li ><a href="{{ path('espace_platform_homepage') }}">CVThèque</a></li>
-      {% endif %}
-     
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      
-  <li><a href=""><span ></span> Bienvenue {{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }} </a></li>
-      <li>
-    <a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span>  Déconnexion</a>
-</li>
 
-
-
-    </ul>
-  </div>
-</nav>
--->
 
    <div class="container">
 
@@ -129,44 +103,7 @@
     </div>
 
 
-    <hr>
-<!--
-    <div class="footer navbar-fixed-bottom footer_">
-        <div id="content" class="col-md-3">
-            
-        </div>
-
-        <div id="content" class="col-md-9">
-            <a href="http://campus-redon-industries.com/" target="_blank">Accéder au site du Campus</a>
-        </div>
-
-
-
-
-        <br>
-
-
-             <div class="footer-menu">
-        <ul>
-          <li><a href="http://campus-redon-industries.com/" target="_blank">Accéder au site du Campus</a></li>
-          <li><a href="http://campus-redon-industries.com/contact-informations/mentions-legales-2/" target="_blank">Mentions légales</a></li>
-          <li class="menu-social">
-            <div id="stay-connected">
-                <p>Restez connectés</p>
-            </div>
-            <div id="footer-social-icons">
-              <a href="https://www.facebook.com/campusespritindustries" class="icon-social facebook-icon" target="_blank"><i class="icon icon-facebook"></i></a>
-              <a href="https://twitter.com/campusesprit" class="icon-social twitter-icon" target="_blank"><i class="icon icon-twitter"></i></a>
-              <a href="https://www.linkedin.com/company/campus-esprit-industries" class="icon-social linkedin-icon" target="_blank"><i class="icon icon-linkedin"></i></a>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-
-
-    </div>
--->
+    
 
 
 
