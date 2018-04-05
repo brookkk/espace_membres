@@ -73,37 +73,37 @@
 
 #colorful-nav .home {
     /*background-color: #f87912;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .profile {
     /*background-color: #FFCC00;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .statistics {
     /*background-color: #AADD00;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .lists {
     /*background-color: #00CCCC;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .about {
     /*background-color: #666699;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .contact {
     /*background-color: #FF3333;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 #colorful-nav .search {
     /*background-color: #2253e2;*/
-    background-color: #999999;
+    background-color: #003a6c;
 }
 
 @media screen and (max-width: 767px){
