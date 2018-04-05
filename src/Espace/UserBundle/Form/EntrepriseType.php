@@ -43,6 +43,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Nom de l'entreprise"
             ))
         ->add('descriptionE')
+        ->add('logoE', FileType::class)
         ->add('descriptionE', TextType::class, array(
                 'label'=> "Description de l'entreprise"
             ))
