@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Espace\PlatformBundle\EspacePlatformBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Espace\UserBundle\EspaceUserBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
