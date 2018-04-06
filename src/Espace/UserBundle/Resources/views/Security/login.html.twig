@@ -11,40 +11,6 @@
   {% endif %}
 
 
-<!--
-  <form id='fff' action="{{ path('login_check') }}" method="post" class="form-signin" >
-
-<div>
-    <label for="username">Login :</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
-</div>
-<div>
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="_password" />
-    </div>
-    <br />
-    <input type="submit" value="Connexion" />
-    <br><br>
-
-    <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Créér un compte
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{ path('EU_new_entreprise') }}">Entreprise</a><br>
-     <a class="dropdown-item" href="{{ path('EU_new_etudiant') }}">Candidat</a>
-
-    
-    
-  </div>
-</div>
-
-
-
-
-
-  </form>
--->
 
 
 
@@ -82,15 +48,16 @@
     Créér un compte
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{ path('EU_new_entreprise') }}">Entreprise</a><br>
-     <a class="dropdown-item" href="{{ path('EU_new_etudiant') }}">Candidat</a>
+    <a class="dropdown-item" target="_blanc" href="{{ path('EU_new_entreprise') }}">Entreprise</a><br>
+     <a class="dropdown-item" target="_blanc" href="{{ path('EU_new_etudiant') }}">Candidat</a>
 
     
     
   </div>
 </div>
 
-      
+
+
     </form>
 
 
