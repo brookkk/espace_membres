@@ -63,6 +63,18 @@ $passwordEncoder = $this->get('security.password_encoder');
       $password = $passwordEncoder->encodePassword($entreprise, $entreprise->getPlainPassword());
       $entreprise->setPassword($password);
 
+
+      //file/logo handling
+
+      $file = $entreprise->getLogoE();
+      $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+
+      $file->move(
+                $fileName
+            );
+
+      $entreprise->setLogoE($fileName);
+
       $em= $this->getDoctrine()->getManager();
       $em->persist($entreprise);
       $em->flush();
