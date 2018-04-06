@@ -52,6 +52,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'class'        => 'EspacePlatformBundle:Diplome',
                 'choice_label' => 'nom',
                 'multiple'     => true,
+                'label'        => "Titre du diplome faisant objet de l'inscription"
                 ))
         ->add('newsletter')
         ->add('plainPassword', RepeatedType::class, array(
