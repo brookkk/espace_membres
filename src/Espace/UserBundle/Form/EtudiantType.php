@@ -38,7 +38,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'widget' => 'choice',
             'years' => range(2017,1940),
             'format' => 'dd-MM-yyyy',
-            'label'=> 'Date de naissance',
+            'label'=> 'Date de naissance'
+            ))
+         ->add('numIne', TextType::class, array(
+            'label'=> 'Numéro INE'
             ))
         ->add('niveauFormation', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',

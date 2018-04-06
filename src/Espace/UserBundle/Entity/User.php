@@ -87,6 +87,20 @@ class User   implements UserInterface
     private $codePostalE;
 
 
+    /**
+     * @var string
+     *
+    * @Assert\Length(
+     *      min = 11,
+     *      max = 11,
+     *      exactMessage = "Le numéro INE doit être composé de 11 charactères",
+     *      
+     * )     
+     * @ORM\Column(name="numIne", type="string",  nullable=true)
+     */
+    private $numIne;
+
+
      /**
      * @var string
      *
@@ -98,9 +112,9 @@ class User   implements UserInterface
 
 
      /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable = true)
      *
-     * @Assert\NotBlank(message="Merci de télécharger le logo de l'entreprise (format image)")
+     
      * @Assert\File(mimeTypes={ "image/*" }, mimeTypesMessage="Merci de choisir le logo avec le bon format (image)")
      */
     private $logoE;
@@ -769,6 +783,17 @@ public function  __construct()
     public function setLogoE($logoE)
     {
         $this->logoE = $logoE;
+    }
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
     }
 }
 

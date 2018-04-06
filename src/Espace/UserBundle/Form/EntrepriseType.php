@@ -56,7 +56,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('codePostalE', IntegerType::class, array(
                 'label'=> "Code postal de l'entreprise"
             ))
-        ->add('villeE', IntegerType::class, array(
+        ->add('villeE', TextType::class, array(
                 'label'=> "Ville de l'entreprise"
             ))
         ->add('votreFonction')
