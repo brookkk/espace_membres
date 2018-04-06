@@ -67,13 +67,15 @@ $passwordEncoder = $this->get('security.password_encoder');
       //file/logo handling
 
       $file = $entreprise->getLogoE();
-      $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+      $fileName = $file.'.'.$file->guessExtension();
+
+      $new_dir = "./upload/logo/entreprise/".$entreprise->getEmail()."/";
 
       $file->move(
-                $fileName
+                "./upload/logo/entreprise/".$entreprise->getEmail()."/", $fileName
             );
 
-      $entreprise->setLogoE($fileName);
+      $entreprise->setLogoE($new_dir);
 
       $em= $this->getDoctrine()->getManager();
       $em->persist($entreprise);

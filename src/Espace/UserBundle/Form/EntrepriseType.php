@@ -61,7 +61,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ))
         ->add('votreFonction')
         ->add('newsletter')
-        ->add('captcha', CaptchaType::class)
+        /*->add('captcha', CaptchaType::class)*/
         ->add('Sauvegarder', SubmitType::class);
     }
 
