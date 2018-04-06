@@ -16,6 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 class EntrepriseType extends AbstractType
@@ -43,7 +44,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Nom de l'entreprise"
             ))
         ->add('descriptionE')
-        ->add('logoE', FileType::class)
+        /*->add('logoE', FileType::class)*/
         ->add('descriptionE', TextType::class, array(
                 'label'=> "Description de l'entreprise"
             ))

@@ -96,6 +96,17 @@ class User   implements UserInterface
 
 
 
+
+     /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Merci de télécharger le logo de l'entreprise (format image)")
+     * @Assert\File(mimeTypes={ "image/*" })
+     */
+    private $logoE;
+
+
+
      /**
      * @var string
      *
@@ -747,6 +758,17 @@ public function  __construct()
     public function setValide($valide)
     {
         $this->valide = $valide;
+    }
+
+
+     public function getLogoE()
+    {
+        return $this->logoE;
+    }
+
+    public function setLogoE($logoE)
+    {
+        $this->logoE = $logoE;
     }
 }
 
