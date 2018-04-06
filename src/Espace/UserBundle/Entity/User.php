@@ -101,7 +101,7 @@ class User   implements UserInterface
      * @ORM\Column(type="string")
      *
      * @Assert\NotBlank(message="Merci de télécharger le logo de l'entreprise (format image)")
-     * @Assert\File(mimeTypes={ "image/*" })
+     * @Assert\File(mimeTypes={ "image/*" }, mimeTypesMessage="Merci de choisir le fichier avec le bon format (image)")
      */
     private $logoE;
 
