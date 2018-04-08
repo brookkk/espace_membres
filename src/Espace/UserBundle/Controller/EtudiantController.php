@@ -60,10 +60,8 @@ $passwordEncoder = $this->get('security.password_encoder');
 
       if($etudiant->getDiplome()==null)
       $etudiant->setDiplome('N;');
-      //$user = $entreprise;
       $password = $passwordEncoder->encodePassword($etudiant, $etudiant->getPlainPassword());
       $etudiant->setPassword($password);
-
 
 
       $em= $this->getDoctrine()->getManager();
@@ -95,7 +93,7 @@ public function detailsAction($id)
   $etudiant = $repository->find($id);
 
 
-  if (null === $entreprise) {
+  if (null === $etudiant) {
     throw new NotFoundHttpException("Votre etudiant na pas été trouvé");
   }
 

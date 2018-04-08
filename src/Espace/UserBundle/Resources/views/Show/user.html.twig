@@ -87,7 +87,7 @@
 {%  if user.profil=='ENTREPRISE'   %}
 <a href="{{ path('espace_details_entreprise',{'id': user.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
       {% else %}
-<a href="{{ path('espace_details_entreprise',{'id': user.id}) }}" ><span class="glyphicon glyphicon-zoom-in" ></span> </a> &nbsp 
+<a href="{{ path('espace_details_candidat',{'id': user.id}) }}" ><span class="glyphicon glyphicon-zoom-in" ></span> </a> &nbsp 
 
       {% endif %}
 </td>
