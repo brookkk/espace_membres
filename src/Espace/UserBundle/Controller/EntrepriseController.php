@@ -106,7 +106,34 @@ $passwordEncoder = $this->get('security.password_encoder');
 
 public function detailsAction($id)
 {
-        return $this->render('EspacePlatformBundle:Default:index.html.twig');
+       // return $this->render('EspacePlatformBundle:Default:index.html.twig');
+
+
+
+
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
+
+  $entreprise = $repository->find($id);
+
+ 
+ 
+
+  if (null === $entreprise) {
+    throw new NotFoundHttpException("Votre utilisateur na pas été trouvé");
+  }
+
+
+
+
+ 
+
+  return $this->render('EspaceUserBundle:show:entreprise.html.twig', array(
+   'form'=>$form->createView(),
+   ));
+
+
+
+
   
 }
 
