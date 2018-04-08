@@ -192,6 +192,15 @@ class User   implements UserInterface
     private $newsletter;
 
 
+
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="enquete", type="boolean", nullable=true)
+     */
+    private $enquete;
+
+
         /**
     * * @ORM\Column(name="ddn", type="date", nullable=true)
      *@Assert\Date()
@@ -994,6 +1003,17 @@ public function getPcPrenom()
     public function setPcLien($pcLien)
     {
         $this->pcLien = $pcLien;
+    }
+
+
+      public function getEnquete()
+    {
+        return $this->enquete;
+    }
+
+    public function setEnquete($enquete)
+    {
+        $this->enquete = $enquete;
     }
     
 }

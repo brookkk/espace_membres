@@ -60,7 +60,13 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Ville de l'entreprise"
             ))
         ->add('votreFonction')
-        ->add('newsletter')
+        ->add('enquete', CheckboxType::class, array(
+            'label'=> "J’accepte de participer aux enquêtes liées aux projets des étudiants"
+            )) 
+         ->add('newsletter', CheckboxType::class, array(
+            'label'=> "J’accepte de recevoir la newsletter"
+            ))       
+               
         /*->add('captcha', CaptchaType::class)*/
         ->add('Sauvegarder', SubmitType::class);
     }
