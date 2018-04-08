@@ -905,21 +905,7 @@ public function getPcPrenom()
 
 
 
-
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
-
-
-
-
+/*
 
     public function getNumIne()
     {
@@ -931,18 +917,6 @@ public function getPcPrenom()
         $this->numIne = $numIne;
     }
 
-
-
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
 
 
 
@@ -995,5 +969,32 @@ public function getPcPrenom()
     {
         $this->numIne = $numIne;
     }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+    */
 }
 

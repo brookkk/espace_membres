@@ -54,6 +54,12 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'multiple'     => true,
                 'label'        => "Titre du diplome faisant objet de l'inscription"
                 ))
+        ->add('pcNom', TextType::class, array(
+            'label'=> 'Nom'
+            ))
+        ->add('pcPrenom', TextType::class, array(
+            'label'=> 'Prenom'
+            ))
         ->add('newsletter')
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
