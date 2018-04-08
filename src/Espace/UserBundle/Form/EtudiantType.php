@@ -93,7 +93,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Espace\UserBundle\Entity\Etudiant'
+            'data_class' => 'Espace\UserBundle\Entity\User'
         ));
     }
 

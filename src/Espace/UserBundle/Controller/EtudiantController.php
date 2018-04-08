@@ -32,8 +32,10 @@ class EtudiantController extends Controller
      public function n_etudiantAction(Request $request)
   {
 //nouvelle instance de l'entité Offre
-    $etudiant= new Etudiant();
-    $user= new User();
+    $etudiant= new User();
+    //$user= new User();
+
+$passwordEncoder = $this->get('security.password_encoder');
 
  
 
@@ -51,11 +53,21 @@ class EtudiantController extends Controller
 
       $etudiant->setRoles(array('ROLE_ETUDIANT'));
       $etudiant -> setProfil('ETUDIANT');
+      $etudiant -> setUsername($etudiant->getEmail());
       $etudiant ->setSalt('');
-      $user = $etudiant;
+      $etudiant ->setValide(false);
+
+
+      if($etudiant->getDiplome()==null)
+      $etudiant->setDiplome('N;');
+      //$user = $entreprise;
+      $password = $passwordEncoder->encodePassword($etudiant, $etudiant->getPlainPassword());
+      $etudiant->setPassword($password);
+
+
 
       $em= $this->getDoctrine()->getManager();
-      $em->persist($user);
+      $em->persist($etudiant);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('notice', 'Etudiant Bien enregistrée.');
