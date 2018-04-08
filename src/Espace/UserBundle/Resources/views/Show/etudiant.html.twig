@@ -18,12 +18,13 @@
 Coordonnées
 </h4>
 
-Civilité : {% if entreprise.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
-Prénom : {{entreprise.prenom | capitalize}} <br>
-Nom : {{entreprise.nom | capitalize}} <br>
-Téléphone : {{entreprise.telephone}} <br>
-Adresse : {{entreprise.adresse}} <br>
-Date de naissance : {{entreprise.ddn}} <br>
+Civilité : {% if etudiant.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
+Prénom : {{etudiant.prenom | capitalize}} <br>
+Nom : {{etudiant.nom | capitalize}} <br>
+Téléphone : {{etudiant.telephone}} <br>
+Adresse : {{etudiant.adresse}} <br>
+Date de naissance : {{etudiant.ddn}} <br>
+Numéro INE : {{etudiant.ine}} <br>
 
 
 
@@ -34,15 +35,15 @@ Date de naissance : {{entreprise.ddn}} <br>
 <div class= "block-infos-user">
 
 <h4 class="subtitle">
-Entreprise
+Personne à contacter en cas d'urgence
 </h4>
 
-Nom entreprise :  {{entreprise.nomE | capitalize}} <br>
-Secteur d'activité :  <br>
-Description : {{entreprise.descriptionE | capitalize}} <br>
-Adresse entreprise : {{entreprise.adresseE|capitalize}} <br>
-Newsletter : {% if entreprise.newsletter==1 %} Oui {% else %} Non {%endif%} <br>
-Enquete : {% if entreprise.enquete==1 %} Oui {% else %} Non {%endif%} <br>
+Prénom :  {{etudiant.pcPrenom | capitalize}} <br>
+Nom :  {{etudiant.pcNom | capitalize}} <br>
+Téléphone : {{etudiant.pcTelephone}} <br>
+Mobile : {{etudiant.pcTelephonePortable}} <br>
+Adresse : {{etudiant.pcAdresse|capitalize}}, {{etudiant.ville}} <br>
+Newsletter : {% if etudiant.newsletter==1 %} Oui {% else %} Non {%endif%} <br>
 
 
 </div>
