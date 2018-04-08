@@ -39,7 +39,8 @@ Nom entreprise :  {{entreprise.nomE | capitalize}} <br>
 Secteur d'activité :  <br>
 Description : {{entreprise.descriptionE | capitalize}} <br>
 Adresse entreprise : {{entreprise.adresseE|capitalize}} <br>
-Téléphone : {{entreprise.telephone}} <br>
+Newsletter : {% if entreprise.newsletter==1 %} Oui {% else %} Non {%endif%} <br>
+Enquete : {{entreprise.newsletter}} <br>
 
 
 </div>
