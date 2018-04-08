@@ -7,6 +7,9 @@ espace_show_user:
 espace_details_entreprise:
     path:     /admin/entreprise/details/{id}
     defaults: { _controller: EspaceUserBundle:Entreprise:details }
+espace_details_candidat:
+    path:     /admin/candidat/details/{id}
+    defaults: { _controller: EspaceUserBundle:Etudiant:details }
 EU_valider_user:
     path:     /admin/user/valider/{id}
     defaults: { _controller: EspaceUserBundle:User:valider_user }

@@ -1,0 +1,52 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a href="{{ path('espace_show_user') }}">Candidat</a></li>
+  <li>Details</li>
+ 
+</ul>
+
+<h3>Informations utilisateur</h3>
+
+
+<div class= "block-infos-user">
+
+<h4 class="subtitle">
+Coordonnées
+</h4>
+
+Civilité : {% if entreprise.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
+Prénom : {{entreprise.prenom | capitalize}} <br>
+Nom : {{entreprise.nom | capitalize}} <br>
+Téléphone : {{entreprise.telephone}} <br>
+Adresse : {{entreprise.adresse}} <br>
+Date de naissance : {{entreprise.ddn}} <br>
+
+
+
+</div> 
+
+
+
+<div class= "block-infos-user">
+
+<h4 class="subtitle">
+Entreprise
+</h4>
+
+Nom entreprise :  {{entreprise.nomE | capitalize}} <br>
+Secteur d'activité :  <br>
+Description : {{entreprise.descriptionE | capitalize}} <br>
+Adresse entreprise : {{entreprise.adresseE|capitalize}} <br>
+Newsletter : {% if entreprise.newsletter==1 %} Oui {% else %} Non {%endif%} <br>
+Enquete : {% if entreprise.enquete==1 %} Oui {% else %} Non {%endif%} <br>
+
+
+</div>
+
+
+
+{% endblock %}

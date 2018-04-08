@@ -75,26 +75,25 @@ class EtudiantController extends Controller
   }
 
 
-
-
-   /*public function show_userAction(Request $request)
+public function detailsAction($id)
 {
-    $em= $this  ->getDoctrine()  ->getManager();
 
-    $repository = $em  ->getRepository('EspaceUserBundle:User');
-    
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
 
-    $listUsers = $repository->findAll();
+  $etudiant = $repository->find($id);
 
-    if (null === $listUsers) {
-      //throw new NotFoundHttpException("Aucun utilisateur na été trouvé");
-  
-echo("toto");
-else
-    return $this->render('EspaceUserBundle:Show:index.html.twig');
 
-    //return $this->render('EspaceUserBundle:Show:user.html.twig', array('listUsers'=>$listUsers) );
-  }*/
+  if (null === $entreprise) {
+    throw new NotFoundHttpException("Votre etudiant na pas été trouvé");
+  }
 
+
+
+  return $this->render('EspaceUserBundle:show:etudiant.html.twig', array(
+   'etudiant'=>$etudiant,
+   ));
+
+
+}
 
 }
