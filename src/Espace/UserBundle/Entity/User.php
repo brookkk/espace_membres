@@ -931,21 +931,21 @@ public function getPcPrenom()
         $this->pcCodePostal = $pcCodePostal;
     }
 
+
+
+
+    public function getPcVille()
+    {
+        return $this->pcVille;
+    }
+
+    public function setPcVille($pcVille)
+    {
+        $this->pcVille = $pcVille;
+    }
+
+
 /*
-
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
-
-
-
 
     public function getNumIne()
     {

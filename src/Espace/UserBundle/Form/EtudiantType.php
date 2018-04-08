@@ -64,6 +64,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('pcCodePostal', IntegerType::class, array(
             'label'=> 'Code postal'
             ))
+        ->add('pcVille', TextType::class, array(
+            'label'=> 'Ville'
+            ))
         ->add('newsletter')
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
