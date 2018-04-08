@@ -278,7 +278,7 @@ class User   implements UserInterface
       /**
      * @var string
      *
-     * @ORM\Column(name="pcNom", type="string", length=255, nullable=false)
+     * @ORM\Column(name="pcNom", type="string", length=255, nullable=true)
      */
     private $pcNom;
 
@@ -286,7 +286,7 @@ class User   implements UserInterface
      /**
      * @var string
      *
-     * @ORM\Column(name="pcPrenom", type="string", length=255, nullable=false)
+     * @ORM\Column(name="pcPrenom", type="string", length=255, nullable=true)
      */
     private $pcPrenom;
 
@@ -294,7 +294,7 @@ class User   implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="pcAdresse", type="string", length=255, nullable=false)
+     * @ORM\Column(name="pcAdresse", type="string", length=255, nullable=true)
      */
     private $pcAdresse;
 
@@ -311,6 +311,23 @@ class User   implements UserInterface
      * @ORM\Column(name="pcCodePostal", type="integer", nullable=true)
      */
     private $pcCodePostal;
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcVille", type="string", length=255, nullable=true)
+     */
+    private $pcVille;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcEmail", type="string", length=255, nullable=true)
+     */
+    private $pcEmail;
 
 
       public function eraseCredentials()
