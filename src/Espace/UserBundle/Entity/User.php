@@ -114,7 +114,6 @@ class User   implements UserInterface
      /**
      * @ORM\Column(type="string", nullable = true)
      *
-     
      * @Assert\File(mimeTypes={ "image/*" }, mimeTypesMessage="Merci de choisir le logo avec le bon format (image)")
      */
     private $logoE;
@@ -272,6 +271,46 @@ class User   implements UserInterface
    * @ORM\Column(name="diplome", type="array", nullable=TRUE )   
    */       
     private $diplome;   
+
+
+
+
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="pcNom", type="string", length=255, nullable=false)
+     */
+    private $pcNom;
+
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="pcPrenom", type="string", length=255, nullable=false)
+     */
+    private $pcPrenom;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcAdresse", type="string", length=255, nullable=false)
+     */
+    private $pcAdresse;
+
+
+    /**
+     * @var string
+     *
+     *@Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
+     *      
+     * )     
+     * @ORM\Column(name="pcCodePostal", type="integer", nullable=true)
+     */
+    private $pcCodePostal;
 
 
       public function eraseCredentials()
