@@ -128,7 +128,7 @@ public function detailsAction($id)
  
 
   return $this->render('EspaceUserBundle:show:entreprise.html.twig', array(
-   'form'=>$form->createView(),
+   'entreprise'=>$entreprise,
    ));
 
 

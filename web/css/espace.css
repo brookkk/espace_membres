@@ -118,3 +118,13 @@ audio:not([controls]) {
           .icon-phone {
             font-size: 18px; } } } } } 
 
+
+
+.block-infos-user{
+  margin-bottom: 30px;
+}
+
+.subtitle{
+  color: #5eaf2f;
+}
+
