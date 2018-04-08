@@ -905,33 +905,33 @@ public function getPcPrenom()
 
 
 
+
+
+    public function getPcAdresse()
+    {
+        return $this->pcAdresse;
+    }
+
+    public function setPcAdresse($pcAdresse)
+    {
+        $this->pcAdresse = $pcAdresse;
+    }
+
+
+
+
+
+    public function getPcCodePostal()
+    {
+        return $this->pcCodePostal;
+    }
+
+    public function setPcCodePostal($pcCodePostal)
+    {
+        $this->pcCodePostal = $pcCodePostal;
+    }
+
 /*
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
-
-
-
-
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
-
-
 
 
     public function getNumIne()

@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -59,6 +60,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ))
         ->add('pcPrenom', TextType::class, array(
             'label'=> 'Prenom'
+            ))
+        ->add('pcCodePostal', IntegerType::class, array(
+            'label'=> 'Code postal'
             ))
         ->add('newsletter')
         ->add('plainPassword', RepeatedType::class, array(
