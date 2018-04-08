@@ -945,20 +945,20 @@ public function getPcPrenom()
     }
 
 
+
+
+    public function getPcEmail()
+    {
+        return $this->pcEmail;
+    }
+
+    public function setPcEmail($pcEmail)
+    {
+        $this->pcEmail = $pcEmail;
+    }
+
+
 /*
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
-    }
-
-
-
 
     public function getNumIne()
     {
