@@ -24,7 +24,9 @@
         <th>Profil</th>
 
         {% if is_granted('ROLE_ADMIN') %}
-     <th>Valider</th>
+     <th>Statut</th>
+     <th>Action</th>
+
       {% endif %}
 
          
@@ -39,7 +41,10 @@
         <th>Profil</th>
 
         {% if is_granted('ROLE_ADMIN') %}
-     <th>Valider</th>
+     <th>Statut</th>
+
+     <th>Action</th>
+
       {% endif %}
 
       
@@ -59,6 +64,9 @@
     
 
 {% if is_granted('ROLE_ADMIN') %}
+
+
+<td> {% if  user.valide == 1 %} Valide {%else %} Invalide {%endif%} </td>
 <td>
       
 
