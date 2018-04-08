@@ -330,6 +330,31 @@ class User   implements UserInterface
     private $pcEmail;
 
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcTelephone", type="string", length=255, nullable=true)
+     */
+    private $pcTelephone;
+
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="pcTelephonePortable", type="string", length=255, nullable=true)
+     */
+    private $pcTelephonePortable;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcLien", type="string", length=255, nullable=true)
+     */
+    private $pcLien;
+
+
       public function eraseCredentials()
   {
   }
@@ -840,6 +865,125 @@ public function  __construct()
     {
         $this->logoE = $logoE;
     }
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+
+    public function getPcNom()
+    {
+        return $this->pcNom;
+    }
+
+    public function setPcNom($pcNom)
+    {
+        $this->pcNom = $pcNom;
+    }
+
+
+
+
+
+public function getPcPrenom()
+    {
+        return $this->pcPrenom;
+    }
+
+    public function setPcPrenom($pcPrenom)
+    {
+        $this->pcPrenom = $pcPrenom;
+    }
+
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
+
+
+    public function getNumIne()
+    {
+        return $this->numIne;
+    }
+
+    public function setNumIne($numIne)
+    {
+        $this->numIne = $numIne;
+    }
+
+
 
 
     public function getNumIne()
