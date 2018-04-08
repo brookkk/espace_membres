@@ -82,14 +82,14 @@
 
      
 </td>
+
+<td>
 {%  if user.profil=='ENTREPRISE'   %}
-<a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
+<a href="{{ path('espace_details_entreprise',{'id': user.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
       {% else %}
-<a href="" ><span class="glyphicon glyphicon-zoom-in" ></span> </a> &nbsp 
+<a href="#" ><span class="glyphicon glyphicon-zoom-in" ></span> </a> &nbsp 
 
       {% endif %}
-<td>
-
 </td>
       {% endif %}
    
