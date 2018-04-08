@@ -70,7 +70,18 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('pcEmail', TextType::class, array(
             'label'=> 'Email'
             ))
-        ->add('newsletter')
+        ->add('pcTelephone', TextType::class, array(
+            'label'=> 'Numéro de téléphone'
+            ))
+        ->add('pcTelephonePortable', TextType::class, array(
+            'label'=> 'Numéro de téléphone portable'
+            ))
+        ->add('pcLien', TextType::class, array(
+            'label'=> "Lien avec l'intéressé" 
+            ))
+        ->add('newsletter', CheckboxType::class, array(
+            'label'=> "J’accepte de recevoir la newsletter"
+            ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Mot de Passe'),

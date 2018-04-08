@@ -958,43 +958,43 @@ public function getPcPrenom()
     }
 
 
-/*
 
-    public function getNumIne()
+
+    public function getPcTelephone()
     {
-        return $this->numIne;
+        return $this->pcTelephone;
     }
 
-    public function setNumIne($numIne)
+    public function setPcTelephone($pcTelephone)
     {
-        $this->numIne = $numIne;
-    }
-
-
-
-
-    public function getNumIne()
-    {
-        return $this->numIne;
-    }
-
-    public function setNumIne($numIne)
-    {
-        $this->numIne = $numIne;
+        $this->pcTelephone = $pcTelephone;
     }
 
 
 
 
-    public function getNumIne()
+    public function getPcTelephonePortable()
     {
-        return $this->numIne;
+        return $this->pcTelephonePortable;
     }
 
-    public function setNumIne($numIne)
+    public function setPcTelephonePortable($pcTelephonePortable)
     {
-        $this->numIne = $numIne;
+        $this->pcTelephonePortable = $pcTelephonePortable;
     }
-    */
+
+
+
+
+    public function getPcLien()
+    {
+        return $this->pcLien;
+    }
+
+    public function setPcLien($pcLien)
+    {
+        $this->pcLien = $pcLien;
+    }
+    
 }
 
