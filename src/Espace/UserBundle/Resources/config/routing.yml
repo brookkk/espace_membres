@@ -4,6 +4,9 @@ espace_user_homepage:
 espace_show_user:
     path:     /admin/user/show
     defaults: { _controller: EspaceUserBundle:User:show_user }
+espace_details_entreprise:
+    path:     /admin/entreprise/details/{id}
+    defaults: { _controller: EspaceUserBundle:Entreprise:details }
 EU_valider_user:
     path:     /admin/user/valider/{id}
     defaults: { _controller: EspaceUserBundle:User:valider_user }

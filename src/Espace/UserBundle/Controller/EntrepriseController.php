@@ -104,6 +104,12 @@ $passwordEncoder = $this->get('security.password_encoder');
 
 
 
+public function detailsAction($id)
+{
+        return $this->render('EspacePlatformBundle:Default:index.html.twig');
+  
+}
+
 
 
 }

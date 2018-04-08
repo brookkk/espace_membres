@@ -26,6 +26,7 @@
         {% if is_granted('ROLE_ADMIN') %}
      <th>Statut</th>
      <th>Action</th>
+     <th>Details</th>
 
       {% endif %}
 
@@ -42,8 +43,9 @@
 
         {% if is_granted('ROLE_ADMIN') %}
      <th>Statut</th>
-
      <th>Action</th>
+     <th>Details</th>
+
 
       {% endif %}
 
@@ -79,6 +81,15 @@
       {% endif %}
 
      
+</td>
+{%  if user.profil=='ENTREPRISE'   %}
+<a href="{{ path('EU_valider_user',{'id': user.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
+      {% else %}
+<a href="" ><span class="glyphicon glyphicon-zoom-in" ></span> </a> &nbsp 
+
+      {% endif %}
+<td>
+
 </td>
       {% endif %}
    
