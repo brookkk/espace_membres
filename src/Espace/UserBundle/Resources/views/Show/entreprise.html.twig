@@ -40,7 +40,7 @@ Secteur d'activité :  <br>
 Description : {{entreprise.descriptionE | capitalize}} <br>
 Adresse entreprise : {{entreprise.adresseE|capitalize}} <br>
 Newsletter : {% if entreprise.newsletter==1 %} Oui {% else %} Non {%endif%} <br>
-Enquete : {{entreprise.newsletter}} <br>
+Enquete : {% if entreprise.enquete==1 %} Oui {% else %} Non {%endif%} <br>
 
 
 </div>
