@@ -117,8 +117,8 @@ RAS (Publiée)
 </td>
 
 
-<td>
-{% if is_granted('ROLE_ENTREPRISE') %}
+
+{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
 
 
 
@@ -135,7 +135,7 @@ RAS (Publiée)
 
 {% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
     {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" ><span class="glyphicon glyphicon-check"></span> </a> &nbsp  
-      <td> <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red"><span class="glyphicon glyphicon-check"></span> </a> &nbsp
+       <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red"><span class="glyphicon glyphicon-check"></span> </a> 
     
     {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
     {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
