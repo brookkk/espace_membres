@@ -29,7 +29,8 @@
      <th>Postuler</th>
       {% endif %}
         {% if is_granted('ROLE_ENTREPRISE')  %}
-     <th>Postuleurs</th>
+     <th>Etat</th>
+     <th>Candidats</th>
      <th>Action</th>
 
       {% endif %}
@@ -52,7 +53,8 @@
 {% if is_granted('ROLE_ENTREPRISE')  %}
     
 
-    <th>Postuleurs</th> 
+    <th>Etat</th> 
+    <th>Candidats</th> 
 
      <th>Action</th>
       {% endif %}
@@ -87,7 +89,7 @@
 
 
 {% if is_granted('ROLE_ENTREPRISE') %}
-
+<td>{{offre.etat}}</td>
 <td><a href="{{ path('EP_candidats_offre_show',{'id': offre.id}) }}" target="_blank"  title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
 </td>
 <td>

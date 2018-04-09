@@ -395,7 +395,7 @@ public function delete_offreAction(Request $request, $id)
    * @Security("has_role('ROLE_ENTREPRISE')")
    * 
    */
-     public function applyAction(Request $request, $id)
+     public function soumisAction(Request $request, $id)
   {
   $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
 
@@ -405,10 +405,10 @@ public function delete_offreAction(Request $request, $id)
       throw new NotFoundHttpException("Votre offre na pas été trouvée");
     }
 
-  $user= $this->getUser();
+  
 
 
-        $offre->addUser($user);
+        $offre->setEtat(1);
 
         $em= $this->getDoctrine()->getManager();
         $em->persist($offre);
