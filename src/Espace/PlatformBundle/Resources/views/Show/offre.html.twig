@@ -32,6 +32,7 @@
      <th>Etat</th>
      <th>Candidats</th>
      <th>Action</th>
+     <th>Validation</th>
 
       {% endif %}
 
@@ -55,8 +56,9 @@
 
     <th>Etat</th> 
     <th>Candidats</th> 
+    <th>Action</th>
+    <th>Validation</th>
 
-     <th>Action</th>
       {% endif %}
 
       
@@ -102,13 +104,21 @@
 <td><a href="{{ path('EP_candidats_offre_show',{'id': offre.id}) }}" target="_blank"  title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
 </td>
 <td>
+{% if offre.etat==0 or offre.etat==4 or offre.etat==3 %}
    <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
       
           
         <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
      
 
-     
+{%endif%}     
+</td>
+
+
+<td>
+{% if is_granted('ROLE_ENTREPRISE') and offre.etat==0 %}
+<a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+{%endif%}
 </td>
       {% endif %}
    
