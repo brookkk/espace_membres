@@ -29,11 +29,11 @@ EP_entro_offre_soumis:
     path:     /offre/soumis/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:soumis }
 EP_admin_offre_valider:
-    path:     /offre/soumis/{id}
+    path:     /offre/valider/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:valider }
 EP_admin_offre_refuser:
-    path:     /offre/soumis/{id}
+    path:     /offre/refuser/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:refuser }
 EP_entro_offre_archiver:
-    path:     /offre/soumis/{id}
+    path:     /offre/archiver/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:archiver }
