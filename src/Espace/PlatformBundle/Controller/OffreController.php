@@ -81,13 +81,16 @@ $user= $this->getUser();
     $ss = $user->getId();
 
     
-    if($user->getProfil()=='ENTREPRISE')
-      $listOffres = $repository->findBy([
-      'entreprise' => $user->getId() ,
-    ]);
-
-   else
-    $listOffres = $repository->findAll();
+    if($user->getProfil()=='ENTREPRISE'){
+        $listOffres = $repository->findBy([
+        'entreprise' => $user->getId() ,
+      ]);
+      }else if ($user->getProfil()=='ETUDIANT'){
+        $listOffres = $repository->findBy([
+        'etat' => 2 ,
+      ]);
+      }else // pour les ADMIN
+        $listOffres = $repository->findAll();
 
 
 
