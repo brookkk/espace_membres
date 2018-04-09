@@ -95,7 +95,7 @@
     {%elseif offre.etat==1%}  <td> Soumise
     {%elseif offre.etat==2%}  <td style="color:green"> Publiée
     {%elseif offre.etat==3%}  <td style="color:red"> Refusée
-    {%elseif offre.etat==1%}  <td> Archivée
+    {%elseif offre.etat==1%}  <td style="color:black"> Archivée
     {% endif %}
 
 
@@ -109,20 +109,44 @@
       
           
         <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
-{% elseif offre.etat==1 or offre.etat == 2%}
-RAS
+{% elseif offre.etat==1 %}
+RAS (soumise)
+{% elseif offre.etat == 2  %}
+RAS (Publiée)
 {%endif%}     
 </td>
 
 
 <td>
-{% if is_granted('ROLE_ENTREPRISE') and offre.etat==0 %}
-<a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+{% if is_granted('ROLE_ENTREPRISE') %}
+
+
+
+
+{% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==1%} <td> Soumise
+    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
+    {% endif %}
+
+{% elseif is_granted('ROLE_ADMIN') %}
+
+
+{% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" ><span class="glyphicon glyphicon-check"></span> </a> &nbsp  
+      <td> <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red"><span class="glyphicon glyphicon-check"></span> </a> &nbsp
+    
+    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
+    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
+    {% endif %}
+
 {%endif%}
-</td>
+
       {% endif %}
    
-  
+ </td> 
         
 
     </tr>
