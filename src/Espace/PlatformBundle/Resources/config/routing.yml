@@ -1,6 +1,6 @@
 espace_platform_homepage:
     path:     /
-    defaults: { _controller: EspacePlatformBundle:Default:index }
+    defaults: { _controller: EspacePlatformBundle:Offre:show_offre }
 EP_n_offre:
     path:     /offre/new
     defaults: { _controller: EspacePlatformBundle:Offre:n_offre }
