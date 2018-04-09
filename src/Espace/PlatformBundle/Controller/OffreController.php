@@ -415,7 +415,108 @@ public function delete_offreAction(Request $request, $id)
         $em->persist($offre);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('notice', 'Offre soumise.');
+     
+
+
+        return $this->redirectToRoute('EP_show_offre');
+ 
+  }
+
+
+
+
+    /**
+   * @Security("has_role('ROLE_ADMIN')")
+   * 
+   */
+     public function validerAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  
+
+
+        $offre->setEtat(2);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre validée.');
+     
+
+
+        return $this->redirectToRoute('EP_show_offre');
+ 
+  }
+
+
+
+
+   /**
+   * @Security("has_role('ROLE_ADMIN')")
+   * 
+   */
+     public function refuserAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  
+
+
+        $offre->setEtat(3);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre refusée.');
+     
+
+
+        return $this->redirectToRoute('EP_show_offre');
+ 
+  }
+
+
+
+  /**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
+     public function archiverAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  
+
+
+        $offre->setEtat(4);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre archivée.');
      
 
 
