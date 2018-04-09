@@ -89,7 +89,16 @@
 
 
 {% if is_granted('ROLE_ENTREPRISE') %}
-<td>{{offre.etat}}</td>
+{% if offre.etat==0  %} <td style="color:grey"> Créée 
+    {%elseif offre.etat==1%}  <td> Soumise
+    {%elseif offre.etat==2%}  <td style="color:green"> Publiée
+    {%elseif offre.etat==3%}  <td style="color:red"> Refusée
+    {%elseif offre.etat==1%}  <td> Archivée
+    {% endif %}
+
+
+
+</td>
 <td><a href="{{ path('EP_candidats_offre_show',{'id': offre.id}) }}" target="_blank"  title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
 </td>
 <td>
