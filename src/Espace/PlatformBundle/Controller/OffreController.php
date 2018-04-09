@@ -566,4 +566,27 @@ public function delete_offreAction(Request $request, $id)
   }
 
 
+
+  public function detailsAction($id)
+{
+
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+
+  if (null === $entreprise) {
+    throw new NotFoundHttpException("Votre offre na pas été trouvé");
+  }
+
+
+
+  return $this->render('EspacePlatformBundle:Show:details_offre.html.twig', array(
+   'offre'=>$offre,
+   ));
+
+
+}
+
+
 }
