@@ -556,6 +556,7 @@ public function delete_offreAction(Request $request, $id)
           echo($us->getNom());
           $new_offre->removeUser($us);
         }*/
+        $new_offre->purgeUsers();
 
         $em= $this->getDoctrine()->getManager();
         $em->persist($new_offre);

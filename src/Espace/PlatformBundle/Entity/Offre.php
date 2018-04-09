@@ -199,6 +199,11 @@ class Offre
   {
     return $this->users;
   }
+
+  public function purgeUsers()
+  {
+     $this->users=null;
+  }
         
         
     /**     
