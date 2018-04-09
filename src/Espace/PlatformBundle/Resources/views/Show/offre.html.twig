@@ -72,12 +72,12 @@
   {% for offre in listOffres %}
 
   <tr>
-  <td> {{ offre.refOffre.date('Y-m-d') }} </td>
+  <td> {{ offre.refOffre|date('Y-m-d') }} </td>
   <td> {{ offre.titreOffre |capitalize}} </td>
   <td> {{ offre.villeE |capitalize}} </td>
   <td> {{ offre.entreprise.nom   |capitalize}} </td>
   <td>
-<a href="{{ path('EP_details_offre',{'id': offre.id}) }}"><span class="fa fa-list" ></span> </a> &nbsp 
+<a href="{{ path('EP_details_offre',{'id': offre.id}) }}" target="_blank"><span class="fa fa-list" ></span> </a> &nbsp 
 </td>
     
 
