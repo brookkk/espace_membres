@@ -26,7 +26,8 @@
 
 <p>
 <span class="subtitle">Entreprise : </span>
-{{offre.entreprise.nom}}
+
+<a href="{{ path('espace_details_entreprise',{'id': offre.entreprise.id}) }}"> {{offre.entreprise.nom}} </a> &nbsp
 </p>
 
 
