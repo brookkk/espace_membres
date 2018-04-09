@@ -21,7 +21,6 @@
         
         <th>Nom</th>
         <th>Prenom</th>
-        <th>Domaine de compétence</th>
         
      <th>Profil du candidat</th>
      <th>Action</th>
@@ -35,7 +34,6 @@
       <tr>
         <th>Nom</th>
         <th>Prenom</th>
-        <th>Domaine de compétence</th>
         
      <th>Profil du candidat</th>
      <th>Action</th>
@@ -47,12 +45,11 @@
     </tfoot>  
     <tbody>
 
-  {% for offre in listOffres %}
+  {% for candidat in users %}
 
   <tr>
   <td> {{ candidat.nom |capitalize }} </td>
-  <td> {{ candidat.prenom.nom  |capitalize}} </td>
-  <td> {{ candidat.domaineCompetence.nom |capitalize}} </td>
+  <td> {{ candidat.prenom  |capitalize}} </td>
 
   <td>
 <a href="{{ path('espace_details_candidat',{'id': candidat.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 

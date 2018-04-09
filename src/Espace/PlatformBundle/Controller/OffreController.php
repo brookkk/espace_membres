@@ -370,10 +370,22 @@ public function delete_offreAction(Request $request, $id)
 
     $user = $this->getUser();
 
-    if(  in_array($user, $offre->getUsers()->toArray())         )
-      return 1;
-    else return 0;
-    
+    //print_r($offre->getUsers()->toArray());
+    $ids = array();
+    foreach ($offre->getUsers() as $us){
+      $ids[] = $us->getId();
+    }
+    /*echo("<br> id : " .$user->getId());
+    echo("<br> ids");
+
+    print_r($ids);*/
+
+    if(  in_array($user->getId(), $ids)         )
+      $return=1;
+    else $return= 0;
+
+    echo("return : " .$return);
+    return $return;
 
 
   }
