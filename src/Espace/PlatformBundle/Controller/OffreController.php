@@ -49,6 +49,7 @@ $user= $this->getUser();
       if($form->isValid()   
         ){
         $offre->setEntreprise($user);
+        $offre ->setEtat(0);
         $em= $this->getDoctrine()->getManager();
       $em->persist($offre);
       $em->flush();
