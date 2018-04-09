@@ -525,4 +525,41 @@ public function delete_offreAction(Request $request, $id)
   }
 
 
+  /**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
+     public function dupliquerAction(Request $request, $id)
+  {
+  $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+  $offre = $repository->find($id);
+
+  if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+  
+
+
+        $new_offre = clone $offre;
+        //$new_offre->setId(null);
+
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($new_offre);
+        $em->flush();
+        $id = $new_offre->getId();
+
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre archivée.');
+     
+
+
+        return $this->redirectToRoute('EP_update_offre',array(
+    'id' => $id
+     ) );
+ 
+  }
+
+
 }
