@@ -109,8 +109,8 @@
       
           
         <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a>
-     
-
+{% elseif offre.etat==1 or offre.etat == 2%}
+RAS
 {%endif%}     
 </td>
 
