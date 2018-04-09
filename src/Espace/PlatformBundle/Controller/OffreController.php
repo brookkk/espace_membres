@@ -444,6 +444,8 @@ public function delete_offreAction(Request $request, $id)
 
 
         $offre->setEtat(2);
+        $offre->setDateDePublication(new \Datetime());
+
 
         $em= $this->getDoctrine()->getManager();
         $em->persist($offre);
@@ -544,7 +546,9 @@ public function delete_offreAction(Request $request, $id)
 
         $new_offre = clone $offre;
         //$new_offre->setId(null);
-
+        $new_offre->setDateDeduplication(new \Datetime());
+        $new_offre->setDateDePublication(new \DateTime('0000-00-00 00:00:00') );
+        $new_offre->setEtat(0);
         $em= $this->getDoctrine()->getManager();
         $em->persist($new_offre);
         $em->flush();

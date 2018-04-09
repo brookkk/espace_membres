@@ -110,11 +110,10 @@
           
         <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a> &nbsp 
 
-         <a href="{{ path('EP_offre_dupliquer',{'id': offre.id}) }}"  ><span class="glyphicon glyphicon-copy"></span></a> &nbsp 
-{% elseif offre.etat==1 %}
-RAS (soumise)
-{% elseif offre.etat == 2  %}
-RAS (Publiée)
+<a href="{{ path('EP_offre_dupliquer',{'id': offre.id}) }}"  ><span class="glyphicon glyphicon-copy"></span></a> &nbsp 
+{% else %}
+<a href="{{ path('EP_offre_dupliquer',{'id': offre.id}) }}"  ><span class="glyphicon glyphicon-copy"></span></a> &nbsp 
+
 {%endif%}     
 </td>
 

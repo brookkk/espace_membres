@@ -112,14 +112,14 @@ class Offre
     /**     
      * @var \DateTime       
      *      
-     * @ORM\Column(name="Date_de_publication", type="datetime")     
+     * @ORM\Column(name="Date_de_publication", type="datetime", nullable=true)     
      */     
     private $dateDePublication;     
         
     /**     
      * @var \DateTime       
      *      
-     * @ORM\Column(name="Date_depublication", type="datetime")      
+     * @ORM\Column(name="Date_depublication", type="datetime", nullable=true)      
      */     
     private $dateDeduplication;     
         

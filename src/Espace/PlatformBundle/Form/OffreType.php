@@ -44,17 +44,8 @@ $builder->add('titreOffre', TextType::class, array(
                 'multiple'     => false,
                 'label'=> "Niveau de formation"
                 ))
-         ->add('dateDePublication', DateType::class, array(
-            'widget' => 'choice',
-            'years' => range(2018,2020),
-            'format' => 'dd-MM-yyyy',
-            ))
-         ->add('dateDeduplication', DateType::class, array(
-            'widget' => 'choice',
-            'years' => range(2018,2020),
-            'format' => 'dd-MM-yyyy',
-            'label'=> "Date de déduplication"
-            ))
+         
+         
         ->add('codePostal', IntegerType::class, array(
                 'label'=> "Code postal"
             ))
