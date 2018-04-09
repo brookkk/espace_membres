@@ -24,6 +24,7 @@
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
         <th>Entreprise</th>
+        <th>Details</th>
         {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
      <th>Details de l'offre</th>
      <th>Postuler</th>
@@ -46,6 +47,7 @@
         <th>Type de Contrat</th>
         <th>Domaine de compétence</th>
         <th>Entreprise</th>
+        <th>Details</th>
         {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
      <th>Details de l'offre</th>
      <th>Postuler</th>
@@ -74,6 +76,9 @@
   <td> {{ offre.typeContrat.nom }} </td>
   <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
   <td> {{ offre.entreprise.nom   |capitalize}} </td>
+  <td>
+<a href="{{ path('EP_details_offre',{'id': offre.id}) }}"><span class="fa fa-list" ></span> </a> &nbsp 
+</td>
     
 
 {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
