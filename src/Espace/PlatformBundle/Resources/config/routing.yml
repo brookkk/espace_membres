@@ -25,3 +25,15 @@ EP_in_apply_offre:
 EP_candidats_offre_show:
     path:     /offre/candidats/{id}/show
     defaults: { _controller: EspacePlatformBundle:Offre:show_candidats }
+EP_entro_offre_soumis:
+    path:     /offre/soumis/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:soumis }
+EP_admin_offre_valider:
+    path:     /offre/soumis/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:valider }
+EP_admin_offre_refuser:
+    path:     /offre/soumis/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:refuser }
+EP_entro_offre_archiver:
+    path:     /offre/soumis/{id}
+    defaults: { _controller: EspacePlatformBundle:Offre:archiver }
