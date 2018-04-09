@@ -575,7 +575,7 @@ public function delete_offreAction(Request $request, $id)
   $offre = $repository->find($id);
 
 
-  if (null === $entreprise) {
+  if (null === $offre) {
     throw new NotFoundHttpException("Votre offre na pas été trouvé");
   }
 
