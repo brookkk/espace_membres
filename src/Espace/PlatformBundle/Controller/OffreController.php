@@ -550,11 +550,12 @@ public function delete_offreAction(Request $request, $id)
         $new_offre->setDateDePublication(new \DateTime('0000-00-00 00:00:00') );
         $new_offre->setEtat(0);
 
-        $users = $new_offre->getUsers();
-        foreach($users as $us)
+        $users = $offre->getUsers();
+       /* foreach($users as $us)
         {
+          echo($us->getNom());
           $new_offre->removeUser($us);
-        }
+        }*/
 
         $em= $this->getDoctrine()->getManager();
         $em->persist($new_offre);
