@@ -72,7 +72,7 @@
   {% for offre in listOffres %}
 
   <tr>
-  <td> {{ offre.niveauFormationP.nom }} </td>
+  <td> {{ offre.refOffre.date('Y-m-d') }} </td>
   <td> {{ offre.typeContrat.nom }} </td>
   <td> {{ offre.domaineCompetence.nom |capitalize}} </td>
   <td> {{ offre.entreprise.nom   |capitalize}} </td>
