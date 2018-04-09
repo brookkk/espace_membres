@@ -288,6 +288,30 @@ public function delete_offreAction(Request $request, $id)
 
 
 
+
+
+   /**
+   * @Security("has_role('ROLE_ENTREPRISE')")
+   * 
+   */
+     public function show_candidatsAction(Request $request, $id)
+  {
+
+
+ $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+    $offre = $repository->find($id);
+
+    $users = $offre->getUsers();
+    
+    return $this->render('EspacePlatformBundle:Show:candidats.html.twig', array(
+    'users' => $users
+     ));
+ 
+  }
+
+
+
    /**
    * @Security("has_role('ROLE_ETUDIANT')")
    * 

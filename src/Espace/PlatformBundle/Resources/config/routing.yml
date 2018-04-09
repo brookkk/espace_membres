@@ -22,3 +22,6 @@ EP_apply_offre:
 EP_in_apply_offre:
     path:     /offre/in_apply/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:in_apply }
+EP_candidats_offre_show:
+    path:     /offre/candidats/{id}/show
+    defaults: { _controller: EspacePlatformBundle:Offre:show_candidats }

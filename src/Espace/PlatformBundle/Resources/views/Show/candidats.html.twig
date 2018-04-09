@@ -1,0 +1,77 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a >Candidats</a></li>
+  <li>Liste</li>
+ 
+</ul>
+
+<h3>Liste des Candidats</h3>
+
+
+
+ 
+  
+   <table class="data" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Domaine de compétence</th>
+        
+     <th>Profil du candidat</th>
+     <th>Action</th>
+    
+
+         
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Domaine de compétence</th>
+        
+     <th>Profil du candidat</th>
+     <th>Action</th>
+     
+
+      
+
+      </tr>
+    </tfoot>  
+    <tbody>
+
+  {% for offre in listOffres %}
+
+  <tr>
+  <td> {{ candidat.nom |capitalize }} </td>
+  <td> {{ candidat.prenom.nom  |capitalize}} </td>
+  <td> {{ candidat.domaineCompetence.nom |capitalize}} </td>
+
+  <td>
+<a href="{{ path('espace_details_candidat',{'id': candidat.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
+</td>
+    
+
+
+
+   
+  
+        
+
+    </tr>
+  {% endfor %}
+ 
+ </tbody>
+ </table>
+
+
+
+
+{% endblock %}
