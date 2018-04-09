@@ -77,7 +77,7 @@
 
      <td>
 
-     {%  if nb_users[offre.id]==0   %}
+     {%  if has_applied[offre.id]==0   %}
 <a href="{{ path('EP_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase"></span> </a> &nbsp 
       {% else %}
 <a href="{{ path('EP_in_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase" style="color:red"></span> </a> &nbsp 
