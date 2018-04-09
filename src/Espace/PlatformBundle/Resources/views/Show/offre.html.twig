@@ -28,7 +28,7 @@
      <th>Details de l'offre</th>
      <th>Postuler</th>
       {% endif %}
-        {% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
+        {% if is_granted('ROLE_ENTREPRISE')  %}
      <th>Postuleurs</th>
      <th>Action</th>
 
@@ -49,8 +49,11 @@
      <th>Postuler</th>
       {% endif %}
 
-{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
-     <th>Postuleurs</th>
+{% if is_granted('ROLE_ENTREPRISE')  %}
+    
+
+    <th>Postuleurs</th> 
+
      <th>Action</th>
       {% endif %}
 
@@ -83,7 +86,7 @@
       {% endif %}
 
 
-{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
+{% if is_granted('ROLE_ENTREPRISE') %}
 
 <td><a href="" title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
 </td>
