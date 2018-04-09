@@ -4,20 +4,20 @@
 {% block body %}
 
 <ul class="breadcrumb">
-  <li><a href="{{ path('espace_show_user') }}">Candidat</a></li>
+  <li><a href="{{ path('espace_show_offre') }}">Offre</a></li>
   <li>Details</li>
  
 </ul>
 
-<h3>Informations utilisateur</h3>
+<h3>Détails de l'offre</h3>
 
 
 <div class= "block-infos-user">
 
-<h4 class="subtitle">
+<span class="subtitle">
 Coordonnées
-</h4>
-
+</span>
+<!--
 Civilité : {% if etudiant.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
 Prénom : {{etudiant.prenom | capitalize}} <br>
 Nom : {{etudiant.nom | capitalize}} <br>
@@ -49,7 +49,7 @@ Lien avec l'intéressé : {{etudiant.pcLien}} <br>
 
 
 </div>
-
+-->
 
 
 {% endblock %}

@@ -41,5 +41,5 @@ EP_offre_dupliquer:
     path:     /offre/dupliquer/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:dupliquer }
 EP_details_offre:
-    path:     /offre/dupliquer/{id}
+    path:     /offre/details/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:details }
