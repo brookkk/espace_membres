@@ -128,7 +128,15 @@ class Offre
      *      
      * @ORM\Column(name="Ville_e", type="string", length=255)       
      */     
-    private $villeE;        
+    private $villeE;  
+
+
+    /**     
+     * @var string      
+     *      
+     * @ORM\Column(name="etat", type="integer")       
+     */     
+    private $etat;      
         
    
 
@@ -565,4 +573,19 @@ class Offre
   {
     $this->entreprise[] = $entreprise;
   }
+
+
+
+  public function getEtat()        
+    {       
+        return $this->etat;      
+    }  
+
+
+    public function setEtat($etat)
+  {
+    $this->etat = $etat;
+  }
+
+
 }       
