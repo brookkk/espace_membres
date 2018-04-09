@@ -14,17 +14,9 @@
 
 <div class= "block-infos-user">
 
-<span class="subtitle">
-Référence : 
-</span>{{offre.refOffre|date('Y-m-d')}}
+<span class="subtitle">Référence : </span>
+{{offre.refOffre|date('Y-m-d')}}
 {#
-Civilité : {% if etudiant.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
-Prénom : {{etudiant.prenom | capitalize}} <br>
-Nom : {{etudiant.nom | capitalize}} <br>
-Téléphone : {{etudiant.telephone}} <br>
-Adresse : {{etudiant.adresse}} <br>
-Date de naissance : {{etudiant.ddn|date('d/m/Y')}} <br>
-Numéro INE : {{etudiant.numIne}} <br>
 
 
 
@@ -32,23 +24,6 @@ Numéro INE : {{etudiant.numIne}} <br>
 
 
 
-<div class= "block-infos-user">
-
-<h4 class="subtitle">
-Personne à contacter en cas d'urgence
-</h4>
-
-Prénom :  {{etudiant.pcPrenom | capitalize}} <br>
-Nom :  {{etudiant.pcNom | capitalize}} <br>
-Téléphone : {{etudiant.pcTelephone}} <br>
-Mobile : {{etudiant.pcTelephonePortable}} <br>
-Adresse : {{etudiant.pcAdresse|capitalize}}, {{etudiant.ville}} <br>
-Email : {{etudiant.pcEmail}} <br>
-Lien avec l'intéressé : {{etudiant.pcLien}} <br>
-
-
-
-</div>
 #}
 
 {% endblock %}
