@@ -26,8 +26,20 @@
 
 <p>
 <span class="subtitle">Entreprise : </span>
-
 <a href="{{ path('espace_details_entreprise',{'id': offre.entreprise.id}) }}"> {{offre.entreprise.nom}} </a> &nbsp
+</p>
+
+<p>
+<span class="subtitle">Nature de l'offre : </span>
+{{offre.typeContrat.nom}}
+</p>
+
+<p>
+<span class="subtitle">Domaine de compétences : </span>
+
+ {% for domaine in offre.domaineCompetence %}
+
+{{offre.nom}} &nbsp
 </p>
 
 
