@@ -248,7 +248,7 @@ class User   implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false, unique=true)
      */
     private $email;
 
