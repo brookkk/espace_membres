@@ -43,7 +43,19 @@ class Cv
 
 
 
-  public function getEnquete()
+  public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
+
+      public function getEnquete()
     {
         return $this->enquete;
     }
@@ -51,6 +63,18 @@ class Cv
     public function setEnquete($enquete)
     {
         $this->enquete = $enquete;
+    }
+
+
+
+      public function getMobilite()
+    {
+        return $this->mobilite;
+    }
+
+    public function setMobilite($mobilite)
+    {
+        $this->mobilite = $mobilite;
     }
 
 
