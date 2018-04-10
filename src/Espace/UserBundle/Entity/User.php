@@ -178,7 +178,7 @@ class User   implements UserInterface
        /**
      * @var string
      *
-     * @ORM\Column(name="foundEntro", type="boolean", nullable=false)
+     * @ORM\Column(name="foundEntro", type="boolean", nullable=true)
      */
     private $foundEntro;
 

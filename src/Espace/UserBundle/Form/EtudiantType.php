@@ -79,6 +79,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('pcLien', TextType::class, array(
             'label'=> "Lien avec l'intéressé" 
             ))
+        ->add('foundEntro', CheckboxType::class, array(
+            'label'=> "Avez-vous trouvé une entreprise ?"
+            ))
         ->add('newsletter', CheckboxType::class, array(
             'label'=> "J’accepte de recevoir la newsletter"
             ))
