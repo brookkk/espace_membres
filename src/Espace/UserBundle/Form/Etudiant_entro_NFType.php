@@ -19,7 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class EtudiantType extends AbstractType
+class Etudiant_entro_NFType extends AbstractType
 {
 /**
      * {@inheritdoc}
