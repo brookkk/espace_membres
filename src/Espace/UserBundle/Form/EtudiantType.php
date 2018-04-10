@@ -31,7 +31,17 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     {
         //$builder->add('username')->add('password')->add('email')->add('Sauvegarder',      SubmitType::class);
 
-        $builder->add('civilite')->add('nom')->add('prenom')
+        $builder//->add('civilite')
+        ->add('civilite', ChoiceType::class, array(
+            'label'=> "Civilité",
+            'choices' => array(
+                 'Homme' => true,
+                 'Femme' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
+            ))
+        ->add('nom')->add('prenom')
         
          ->add('adresse')->add('codePostal')->add('ville')->add('email', EmailType::class)
          ->add('telephone')
