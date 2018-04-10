@@ -133,7 +133,7 @@ public function detailsAction($id)
     }
 
 
-    $form = $this->createForm(Etudiant_entro_NFType::class, $etudiant);
+    $form = $this->createForm(Etudiant_entro_NFType::class, $cv);
 
 
 
@@ -147,7 +147,7 @@ public function detailsAction($id)
 
 
         $em= $this->getDoctrine()->getManager();
-        $em->persist($etudiant);
+        $em->persist($cv);
         $em->flush();
 
         $request->getSession()->getFlashBag()->add('notice', 'Cv Bien enregistré.');
