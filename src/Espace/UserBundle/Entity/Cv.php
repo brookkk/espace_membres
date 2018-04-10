@@ -26,6 +26,11 @@ class Cv
     private $id;
 
 
+   /**
+   * @ORM\OneToOne(targetEntity="Espace\UserBundle\Entity\User", cascade={"persist"})
+   */
+  private $user;
+
 
 /**
      * @var string
@@ -33,6 +38,22 @@ class Cv
      * @ORM\Column(name="mobilite", type="integer",  nullable=true)
      */
     private $mobilite;
+    
+
+
+
+
+  public function getEnquete()
+    {
+        return $this->enquete;
+    }
+
+    public function setEnquete($enquete)
+    {
+        $this->enquete = $enquete;
+    }
+
+
     
 }
 

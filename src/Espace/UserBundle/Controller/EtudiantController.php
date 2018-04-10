@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Espace\UserBundle\Entity\Etudiant;
 use Espace\UserBundle\Entity\User;
+use Espace\UserBundle\Entity\Cv;
 use Espace\UserBundle\Form\EtudiantType;
 use Espace\UserBundle\Form\Etudiant_entro_NFType;
 
@@ -121,6 +122,8 @@ public function detailsAction($id)
     $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
 
     $etudiant = $repository->find($id);
+
+    $cv =  new Cv()
 
 
 

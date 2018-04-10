@@ -37,10 +37,7 @@ class User   implements UserInterface
 
 
 
-      /**
-   * @ORM\OneToOne(targetEntity="Espace\UserBundle\Entity\Cv", cascade={"persist"})
-   */
-  private $cv;
+   
 
 
 
