@@ -184,6 +184,14 @@ class User   implements UserInterface
     private $foundEntro;
 
 
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="serviceAccompagnement", type="boolean", nullable=true)
+     */
+    private $serviceAccompagnement;
+
+
        /**
      * @var string
      *
@@ -1033,6 +1041,18 @@ public function getPcPrenom()
     public function setFoundEntro($foundEntro)
     {
         $this->foundEntro = $foundEntro;
+    }
+
+
+
+      public function getServiceAccompagnement()
+    {
+        return $this->serviceAccompagnement;
+    }
+
+    public function setServiceAccompagnement($serviceAccompagnement)
+    {
+        $this->serviceAccompagnement = $serviceAccompagnement;
     }
     
 }
