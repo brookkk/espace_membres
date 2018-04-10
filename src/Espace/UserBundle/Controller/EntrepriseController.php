@@ -33,16 +33,13 @@ class EntrepriseController extends Controller
 
      public function n_entrepriseAction(Request $request)
   {
-//nouvelle instance de l'entité Offre
     $entreprise= new User();
-    //$user= new User();
 $passwordEncoder = $this->get('security.password_encoder');
  
 
     $form = $this->createForm(EntrepriseType::class, $entreprise);
 
 
-//si le formulaire est bien rempli, on l'enregistre dans la BD
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
@@ -59,7 +56,6 @@ $passwordEncoder = $this->get('security.password_encoder');
 
       if($entreprise->getDiplome()==null)
       $entreprise->setDiplome('N;');
-      //$user = $entreprise;
       $password = $passwordEncoder->encodePassword($entreprise, $entreprise->getPlainPassword());
       $entreprise->setPassword($password);
 
@@ -90,13 +86,11 @@ $passwordEncoder = $this->get('security.password_encoder');
       }
     }
 
-//sinon (ou bien premier landing sur le form), on affiche le formulaire
     return $this->render('EspaceUserBundle:New:entreprise.html.twig', array(
      'form'=>$form->createView(),
      ));
 
 
-        //return $this->render('EspacePlatformBundle:Default:index.html.twig');
 
 
   }
