@@ -30,8 +30,7 @@ class Etudiant_entro_NFType extends AbstractType
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder
-        ->add('setServiceAccompagnement', ChoiceType::class, array(
+        $builder->add('ServiceAccompagnement', ChoiceType::class, array(
             'label'=> "Souhaitez-vous profiter du service d’accompagnement à la recherche du poste d'alternant ?",
             'choices' => array(
                  'Oui' => true,
