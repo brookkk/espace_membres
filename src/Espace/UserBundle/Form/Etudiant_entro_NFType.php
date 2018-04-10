@@ -30,11 +30,12 @@ class Etudiant_entro_NFType extends AbstractType
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder->add('ServiceAccompagnement', ChoiceType::class, array(
-            'label'=> "Souhaitez-vous profiter du service d’accompagnement à la recherche du poste d'alternant ?",
+        $builder->add('mobilite', ChoiceType::class, array(
+            'label'=> "Votre mobilité ?",
             'choices' => array(
-                 'Oui' => true,
-                 'Non' => false,
+                 'Régionale' => 1,
+                 'Nationale' => 2,
+                 'Internationale' => 3,
                  ),
             'expanded' => true,
             'multiple' => false,
@@ -46,7 +47,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Espace\UserBundle\Entity\User'
+            'data_class' => 'Espace\UserBundle\Entity\Cv'
         ));
     }
 

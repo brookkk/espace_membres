@@ -123,8 +123,7 @@ public function detailsAction($id)
 
     $etudiant = $repository->find($id);
 
-    $cv =  new Cv()
-
+    $cv =  new Cv();
 
 
  
@@ -143,11 +142,15 @@ public function detailsAction($id)
       $form->handleRequest($request);
 
       if($form->isValid()){
+
+        $cv->setUser($etudiant);
+
+
         $em= $this->getDoctrine()->getManager();
         $em->persist($etudiant);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'etudiant Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('notice', 'Cv Bien enregistré.');
 
        
 
