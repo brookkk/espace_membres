@@ -79,11 +79,17 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('pcLien', TextType::class, array(
             'label'=> "Lien avec l'intéressé" 
             ))
-        ->add('foundEntro', CheckboxType::class, array(
+        /*->add('foundEntro', array(
             'label'=> "Avez-vous trouvé une entreprise ?"
-            ))
-        ->add('newsletter', CheckboxType::class, array(
-            'label'=> "J’accepte de recevoir la newsletter"
+            ))*/
+        ->add('newsletter', ChoiceType::class, array(
+            'label'=> "J’accepte de recevoir la newsletter",
+            'choices' => array(
+                 'Oui' => true,
+                 'Nom' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
             ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
