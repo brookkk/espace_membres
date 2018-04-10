@@ -55,14 +55,14 @@ class Cv
 
 
 
-      public function getEnquete()
+      public function getUser()
     {
-        return $this->enquete;
+        return $this->user;
     }
 
-    public function setEnquete($enquete)
+    public function setUser(User $user)
     {
-        $this->enquete = $enquete;
+        $this->user = $user;
     }
 
 
