@@ -118,7 +118,7 @@ public function detailsAction($id)
 
 
 
-  return $this->render('EspaceUserBundle:show:entreprise.html.twig', array(
+  return $this->render('EspaceUserBundle:Show:entreprise.html.twig', array(
    'entreprise'=>$entreprise,
    ));
 
