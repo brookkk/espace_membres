@@ -106,4 +106,64 @@ public function detailsAction($id)
 
 }
 
+
+
+
+
+/**
+   * @Security("has_role('ROLE_ETUDIANT')")
+   * 
+   */
+  public function create_CVAction(Request $request, $id)
+  {
+
+    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+
+    $offre = $repository->find($id);
+
+
+
+ 
+
+    if (null === $offre) {
+      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    }
+
+
+    $form = $this->createForm(OffreType::class, $offre);
+
+
+
+    if($request->isMethod('POST')){
+
+      $form->handleRequest($request);
+
+      if($form->isValid()){
+        $em= $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+
+       
+
+
+        return $this->redirectToRoute('EP_show_offre');
+      }
+
+
+
+
+    }
+
+    return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
+     'form'=>$form->createView(),
+     ));
+
+
+  }
+
+
+
+
 }
