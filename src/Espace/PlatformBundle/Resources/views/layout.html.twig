@@ -258,6 +258,7 @@
     },
           
         },
+
         initComplete: function () {
             this.api().columns().every( function (idd) {
                 var column = this;
@@ -284,7 +285,7 @@
         },
     
         dom: 'lBfrtip',
-        "columnDefs" : [{
+        /*"columnDefs" : [{
             "targets" : [ 0, 1, 2, 3],
             "visible" : true,
             "searchable" : true
@@ -292,7 +293,19 @@
             "targets" : [ 4 ],
             "visible" : true,
             "searchable" : true
-        }],
+        }],*/
+        "columns": [
+            { 'searchable': true },
+            { 'searchable': true },
+            { 'searchable': true },
+            { 'searchable': true },
+            null,   
+            null,
+            null,   
+            null,   
+            null,   
+            null,
+        ],
          buttons: [
             
             
