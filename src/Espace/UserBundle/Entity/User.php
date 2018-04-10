@@ -175,6 +175,13 @@ class User   implements UserInterface
      */
     private $civilite;
 
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="foundEntro", type="boolean", nullable=false)
+     */
+    private $foundEntro;
+
 
        /**
      * @var string
@@ -1014,6 +1021,17 @@ public function getPcPrenom()
     public function setEnquete($enquete)
     {
         $this->enquete = $enquete;
+    }
+
+
+      public function getFoundEntro()
+    {
+        return $this->foundEntro;
+    }
+
+    public function setFoundEntro($foundEntro)
+    {
+        $this->foundEntro = $foundEntro;
     }
     
 }
