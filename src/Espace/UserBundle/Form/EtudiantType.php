@@ -82,6 +82,15 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         /*->add('foundEntro', array(
             'label'=> "Avez-vous trouvé une entreprise ?"
             ))*/
+        ->add('foundEntro', ChoiceType::class, array(
+            'label'=> "Avez-vous trouvé une entreprise ?",
+            'choices' => array(
+                 'Oui' => true,
+                 'Nom' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
+            ))
         ->add('newsletter', ChoiceType::class, array(
             'label'=> "J’accepte de recevoir la newsletter",
             'choices' => array(
