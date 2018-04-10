@@ -43,6 +43,7 @@ $passwordEncoder = $this->get('security.password_encoder');
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
+      $form->submit($request->get($form->getName()), true);
 
  
       if($form->isValid()   
