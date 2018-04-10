@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Espace\UserBundle\Entity\Etudiant;
 use Espace\UserBundle\Entity\User;
 use Espace\UserBundle\Form\EtudiantType;
+use Espace\UserBundle\Form\Etudiant_entro_NFType;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -117,20 +118,20 @@ public function detailsAction($id)
   public function create_CVAction(Request $request, $id)
   {
 
-    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspacePlatformBundle:Offre');
+    $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
 
-    $offre = $repository->find($id);
+    $etudiant = $repository->find($id);
 
 
 
  
 
-    if (null === $offre) {
-      throw new NotFoundHttpException("Votre offre na pas été trouvée");
+    if (null === $etudiant) {
+      throw new NotFoundHttpException("Votre etudiant na pas été trouvée");
     }
 
 
-    $form = $this->createForm(OffreType::class, $offre);
+    $form = $this->createForm(Etudiant_entro_NFType::class, $etudiant);
 
 
 
@@ -140,15 +141,15 @@ public function detailsAction($id)
 
       if($form->isValid()){
         $em= $this->getDoctrine()->getManager();
-        $em->persist($offre);
+        $em->persist($etudiant);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('notice', 'etudiant Bien enregistré.');
 
        
 
 
-        return $this->redirectToRoute('EP_show_offre');
+        return $this->redirectToRoute('espace_show_user');
       }
 
 
@@ -156,7 +157,7 @@ public function detailsAction($id)
 
     }
 
-    return $this->render('EspacePlatformBundle:New:offre.html.twig', array(
+    return $this->render('EspaceUserBundle:New:etudiantNF.html.twig', array(
      'form'=>$form->createView(),
      ));
 

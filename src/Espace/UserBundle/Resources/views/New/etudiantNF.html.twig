@@ -1,0 +1,20 @@
+ 
+  {% extends "EspaceUserBundle::layout_register.html.twig" %}
+
+{% block body %}
+ 
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+
+ <ul class="breadcrumb">
+  <li><a href="{{ path('espace_user_homepage') }}">Candidat</a></li>
+  <li>MAJ</li>
+ 
+<h3>Candidat</h3>
+
+<div >
+  {{ form(form) }}
+</div>
+
+ {% endblock %} 
