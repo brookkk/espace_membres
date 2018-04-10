@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Espace\UserBundle\Entity\Cv;
 
 
 
@@ -33,6 +34,15 @@ class User   implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+
+
+      /**
+   * @ORM\OneToOne(targetEntity="Espace\UserBundle\Entity\Cv", cascade={"persist"})
+   */
+  private $cv;
+
+
 
     /**
      * @var string
@@ -1053,6 +1063,17 @@ public function getPcPrenom()
     public function setServiceAccompagnement($serviceAccompagnement)
     {
         $this->serviceAccompagnement = $serviceAccompagnement;
+    }
+
+
+      public function getCv()
+    {
+        return $this->cv;
+    }
+
+    public function setCv(Cv $cv)
+    {
+        $this->cv = $cv;
     }
     
 }
