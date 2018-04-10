@@ -15,6 +15,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\UserRepository")
+  * @UniqueEntity(fields="email", message="Un utilisateur existe déjà avec cet email.")
  */
 class User   implements UserInterface
 
