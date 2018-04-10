@@ -4,16 +4,15 @@ namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Espace\UserBundle\Entity\User;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**
- * Etudiant
+ * Cv
  *
  * @ORM\Table(name="etudiant")
- * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\EtudiantRepository")
+ * @ORM\Entity(repositoryClass="Espace\UserBundle\Repository\CvRepository")
  */
-class Etudiant extends User
+class Cv 
 {
     
 }
