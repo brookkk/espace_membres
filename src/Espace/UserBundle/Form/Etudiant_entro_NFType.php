@@ -60,7 +60,15 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'expanded' => true,
             'multiple' => false,
             ))
-       
+       ->add('facebookLink', TextType::class, array(
+            'label'=> 'Facebook'
+            ))
+       ->add('linkedinLink', TextType::class, array(
+            'label'=> 'Linkedin'
+            ))
+       ->add('viadeoLink', TextType::class, array(
+            'label'=> 'Viadeo'
+            ))
         ->add('Sauvegarder', SubmitType::class);
     }
 
