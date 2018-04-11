@@ -40,6 +40,32 @@ class Cv
     private $mobilite;
 
 
+    /**
+     * @var string
+     *     
+     * @ORM\Column(name="facebookLink", type="string",  nullable=true)
+     */
+    private $facebookLink;
+
+
+
+    /**
+     * @var string
+     *     
+     * @ORM\Column(name="linkedinLink", type="string",  nullable=true)
+     */
+    private $linkedinLink;
+
+
+
+    /**
+     * @var string
+     *     
+     * @ORM\Column(name="viadeoLink", type="string",  nullable=true)
+     */
+    private $viadeoLink;
+
+
 
 /**
      * @var string
@@ -139,6 +165,42 @@ class Cv
     public function setExperience($experience)
     {
         $this->experience = $experience;
+    }
+
+
+
+     public function getFacebookLink()
+    {
+        return $this->facebookLink;
+    }
+
+    public function getFacebookLink($experience)
+    {
+        $this->facebookLink = $facebookLink;
+    }
+
+
+
+     public function getLinkedinLink()
+    {
+        return $this->linkedinLink;
+    }
+
+    public function getLinkedinLink($linkedinLink)
+    {
+        $this->linkedinLink = $linkedinLink;
+    }
+
+
+
+     public function getViadeoLink()
+    {
+        return $this->viadeoLink;
+    }
+
+    public function getViadeoLink($viadeoLink)
+    {
+        $this->viadeoLink = $viadeoLink;
     }
 
 
