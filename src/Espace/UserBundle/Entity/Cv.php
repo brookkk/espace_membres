@@ -174,7 +174,7 @@ class Cv
         return $this->facebookLink;
     }
 
-    public function getFacebookLink($experience)
+    public function setFacebookLink($experience)
     {
         $this->facebookLink = $facebookLink;
     }
@@ -186,7 +186,7 @@ class Cv
         return $this->linkedinLink;
     }
 
-    public function getLinkedinLink($linkedinLink)
+    public function setLinkedinLink($linkedinLink)
     {
         $this->linkedinLink = $linkedinLink;
     }
@@ -198,7 +198,7 @@ class Cv
         return $this->viadeoLink;
     }
 
-    public function getViadeoLink($viadeoLink)
+    public function setViadeoLink($viadeoLink)
     {
         $this->viadeoLink = $viadeoLink;
     }
