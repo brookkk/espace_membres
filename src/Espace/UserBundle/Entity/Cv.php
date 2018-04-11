@@ -89,6 +89,15 @@ class Cv
    * @ORM\JoinColumn(nullable=true)        
    */       
     private $typeContratRecherche;  
+
+
+
+
+    /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
+   * @ORM\JoinColumn(nullable=false)        
+   */       
+    private $domaineCompetence;   
     
 
 
@@ -204,6 +213,31 @@ class Cv
     }
 
 
+
+
+ /**     
+     * Set domaineCompetence        
+     *      
+     * @param string $domaineCompetence     
+     *      
+     * @return Cv        
+     */     
+    public function setDomaineCompetence($domaineCompetence)        
+    {       
+        $this->domaineCompetence = $domaineCompetence;      
+        
+        return $this;       
+    }       
+        
+    /**     
+     * Get domaineCompetence        
+     *      
+     * @return string       
+     */     
+    public function getDomaineCompetence()      
+    {       
+        return $this->domaineCompetence;        
+    }
     
 }
 

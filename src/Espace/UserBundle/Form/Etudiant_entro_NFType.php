@@ -72,6 +72,16 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> 'Viadeo',
             'required'   => false,
             ))
+       ->add('domaineCompetence', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Domaine_de_competence',
+                'choice_label' => 'nom',
+                'multiple'     => true,
+                'expanded'     => true,
+                'label'=> "Domaine de compétence",
+                'label_attr' => array(
+                    'class' => 'checkbox-inline'
+                )
+                ))
         ->add('Sauvegarder', SubmitType::class);
     }
 
