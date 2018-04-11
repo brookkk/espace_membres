@@ -38,6 +38,15 @@ class Cv
      * @ORM\Column(name="mobilite", type="integer",  nullable=true)
      */
     private $mobilite;
+
+
+
+    /**
+     * @var string
+     *     
+     * @ORM\Column(name="profilTitre", type="string",  nullable=true)
+     */
+    private $profilTitre;
     
 
 
@@ -73,6 +82,17 @@ class Cv
     }
 
     public function setMobilite($mobilite)
+    {
+        $this->mobilite = $mobilite;
+    }
+
+
+     public function getProfilTitre()
+    {
+        return $this->mobilite;
+    }
+
+    public function setProfilTitre($mobilite)
     {
         $this->mobilite = $mobilite;
     }

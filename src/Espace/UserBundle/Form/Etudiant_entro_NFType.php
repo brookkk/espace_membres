@@ -33,9 +33,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         $builder->add('mobilite', ChoiceType::class, array(
             'label'=> "Votre mobilité ?",
             'choices' => array(
-                 'Régionale' => 1,
-                 'Nationale' => 2,
-                 'Internationale' => 3,
+                 'Nationale' => 1,
+                 'Régionale' => 2,
+                 'Départementale' => 3,
                  ),
             'expanded' => true,
             'multiple' => false,
