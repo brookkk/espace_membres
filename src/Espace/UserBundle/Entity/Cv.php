@@ -41,6 +41,14 @@ class Cv
 
 
 
+/**
+     * @var string
+     *     
+     * @ORM\Column(name="experience", type="integer",  nullable=true)
+     */
+    private $experience;
+
+
     /**
      * @var string
      *     
@@ -121,6 +129,17 @@ class Cv
     {       
         return $this->typeContratRecherche;      
     } 
+
+
+     public function getExperience()
+    {
+        return $this->experience;
+    }
+
+    public function setExperience($experience)
+    {
+        $this->experience = $experience;
+    }
 
 
     

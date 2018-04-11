@@ -39,6 +39,17 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'multiple'     => false,
                 'label'=> "Type de contrat recherché"
                 ))
+        ->add('experience', ChoiceType::class, array(
+            'label'=> "Expérience",
+            'choices' => array(
+                 "Pas d'expérience" => 1,
+                 "1 - 3 ans" => 2,
+                 "3 - 5 ans" => 3,
+                 "5 ans et plus" => 4,
+                 ),
+            'expanded' => false,
+            'multiple' => false,
+            ))
         ->add('mobilite', ChoiceType::class, array(
             'label'=> "Votre mobilité ?",
             'choices' => array(
