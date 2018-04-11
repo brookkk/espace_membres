@@ -30,7 +30,10 @@ class Etudiant_entro_NFType extends AbstractType
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder->add('mobilite', ChoiceType::class, array(
+        $builder->add('profilTitre', TextType::class, array(
+            'label'=> 'Titre de votre profil'
+            ))
+        ->add('mobilite', ChoiceType::class, array(
             'label'=> "Votre mobilité ?",
             'choices' => array(
                  'Nationale' => 1,

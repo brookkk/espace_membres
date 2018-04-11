@@ -89,12 +89,12 @@ class Cv
 
      public function getProfilTitre()
     {
-        return $this->mobilite;
+        return $this->profilTitre;
     }
 
-    public function setProfilTitre($mobilite)
+    public function setProfilTitre($profilTitre)
     {
-        $this->mobilite = $mobilite;
+        $this->profilTitre = $profilTitre;
     }
 
 
