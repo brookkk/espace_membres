@@ -57,6 +57,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                  'Régionale' => 2,
                  'Départementale' => 3,
                  ),
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                ),
             'expanded' => true,
             'multiple' => false,
             ))
