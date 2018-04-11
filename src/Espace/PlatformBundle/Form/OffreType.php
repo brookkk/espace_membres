@@ -56,7 +56,11 @@ $builder->add('titreOffre', TextType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => false,
-                'label'=> "Domaine de compétence"
+                'expanded'     => true,
+                'label'=> "Domaine de compétence",
+                'label_attr' => array(
+                    'class' => 'radio-inline'
+                ),
                 ))
         ->add('pieceJointeOffre', TextType::class, array(
                 'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) "
