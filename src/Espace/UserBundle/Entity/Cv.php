@@ -47,6 +47,14 @@ class Cv
      * @ORM\Column(name="profilTitre", type="string",  nullable=true)
      */
     private $profilTitre;
+
+
+
+    /**     
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Type_de_contrat")        
+   * @ORM\JoinColumn(nullable=true)        
+   */       
+    private $typeContratRecherche;  
     
 
 
@@ -96,6 +104,23 @@ class Cv
     {
         $this->profilTitre = $profilTitre;
     }
+
+
+
+
+   
+    public function setTypeContratRecherche($typeContratRecherche)        
+    {       
+        $this->typeContratRecherche = $typeContratRecherche;      
+        
+        return $this;       
+    }       
+        
+ 
+    public function getTypeContratRecherche()        
+    {       
+        return $this->typeContratRecherche;      
+    } 
 
 
     

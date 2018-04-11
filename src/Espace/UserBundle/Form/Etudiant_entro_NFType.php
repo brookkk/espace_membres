@@ -33,6 +33,12 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         $builder->add('profilTitre', TextType::class, array(
             'label'=> 'Titre de votre profil'
             ))
+        ->add('typeContratRecherche', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Type_de_contrat',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                'label'=> "Type de contrat recherché"
+                ))
         ->add('mobilite', ChoiceType::class, array(
             'label'=> "Votre mobilité ?",
             'choices' => array(
