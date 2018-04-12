@@ -26,6 +26,16 @@ class Cv
     private $id;
 
 
+
+    /**        
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Experience", cascade={"persist"})
+
+    
+   */
+
+    private $experiences;
+
+
    /**
    * @ORM\OneToOne(targetEntity="Espace\UserBundle\Entity\User", cascade={"persist"})
    */
@@ -238,6 +248,25 @@ class Cv
     {       
         return $this->domaineCompetence;        
     }
+
+
+
+
+     public function getExperiences()
+    {
+        return $this->experiences;
+    }
+
+
+    public function addExperience(Experience $experiences)
+{
+    $this->experiences[] = $experience;
+}
+
+public function removeExperience(Experience $experiences)
+{
+    $this->experiences->removeElement($experience);
+}
     
 }
 
