@@ -10,6 +10,7 @@ use Espace\UserBundle\Entity\User;
 use Espace\UserBundle\Entity\Cv;
 use Espace\UserBundle\Form\EtudiantType;
 use Espace\UserBundle\Form\Etudiant_entro_NFType;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -169,6 +170,75 @@ public function detailsAction($id)
 
 
   }
+
+
+
+
+
+   public function edit_CVAction($id, Request $request)
+{
+    /*$entityManager = $this->getDoctrine()->getManager();
+    $cv = $entityManager->getRepository(Cv::class)->find($id);*/
+
+
+
+
+    $cv = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:Cv')->find($id);
+
+
+    //$cv = $etudiant->getCv();
+    /*$this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:Cv')->findBy(
+    [
+        'user' => $etudiant->getId() ,
+      ]);*/
+
+
+
+   
+
+
+    if (!$cv) {
+        throw $this->createNotFoundException('No cv found for id '.$id);
+    }
+
+    $originalExps = new ArrayCollection();
+
+    // Create an ArrayCollection of the current Tag objects in the database
+    /*foreach ($cv->getExperiences() as $exp) {
+        $originalExps->add($exp);
+    }*/
+
+    $editForm = $this->createForm(Etudiant_entro_NFType::class, $cv);
+
+    $editForm->handleRequest($request);
+
+    if ($editForm->isValid()) {
+
+        // remove the relationship between the tag and the Task
+        foreach ($originalExps as $exp) {
+            if (false === $cv->getExperiences()->contains($exp)) {
+                // remove the Task from the Tag
+                $cv->getExperiences()->removeElement($exp);
+
+           
+                $entityManager->persist($exp);
+
+                // if you wanted to delete the Tag entirely, you can also do that
+                // $entityManager->remove($tag);
+            }
+        }
+
+        $entityManager->persist($cv);
+        $entityManager->flush();
+
+        // redirect back to some edit page
+        return $this->redirectToRoute('espace_show_user');
+    }
+
+    return $this->render('EspaceUserBundle:New:etudiantNF.html.twig', array(
+            'form' => $editForm->createView(),
+        ));
+}
 
 
 

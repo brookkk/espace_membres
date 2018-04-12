@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Espace\PlatformBundle\Entity\Experience;
 
-class TagType extends AbstractType
+class ExperienceType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class TagType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'espace_platformbundle_tag';
+        return 'espace_platformbundle_experience';
     }
 
 

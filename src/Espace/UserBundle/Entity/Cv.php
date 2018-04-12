@@ -225,30 +225,20 @@ class Cv
 
 
 
- /**     
-     * Set domaineCompetence        
-     *      
-     * @param string $domaineCompetence     
-     *      
-     * @return Cv        
-     */     
-    public function setDomaineCompetence($domaineCompetence)        
+   
+  /*  public function setDomaineCompetence($domaineCompetence)        
     {       
         $this->domaineCompetence = $domaineCompetence;      
         
         return $this;       
     }       
         
-    /**     
-     * Get domaineCompetence        
-     *      
-     * @return string       
-     */     
+    
     public function getDomaineCompetence()      
     {       
         return $this->domaineCompetence;        
     }
-
+*/
 
 
 

@@ -17,7 +17,11 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Espace\PlatformBundle\Form\ExperienceType;
+
 
 class Etudiant_entro_NFType extends AbstractType
 {
@@ -75,7 +79,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> 'Viadeo',
             'required'   => false,
             ))
-       ->add('domaineCompetence', EntityType::class, array(
+       /*->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => true,
@@ -84,7 +88,14 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label_attr' => array(
                     'class' => 'checkbox-inline'
                 )
-                ))
+                ))*/
+       ->add('experiences', CollectionType::class, array(
+            'entry_type' => ExperienceType::class,
+            'entry_options' => array('label' => false),
+            'allow_add' => true,
+            'by_reference' => false,
+            'allow_delete' => true,
+        ))
         ->add('Sauvegarder', SubmitType::class);
     }
 
@@ -100,7 +111,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
      */
     public function getBlockPrefix()
     {
-        return 'espace_userbundle_etudiant';
+        return 'espace_userbundle_Etudiant_entro_NF';
     }
 
 

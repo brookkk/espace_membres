@@ -1,5 +1,5 @@
  
-  {% extends "EspaceUserBundle::layout_register.html.twig" %}
+  {% extends "EspacePlatformBundle::layout.html.twig" %}
 
 {% block body %}
  
@@ -13,8 +13,37 @@
  
 <h3>CV</h3>
 
+
+
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.experiences) }}
+
+
+
+
+    <div class="tags" data-prototype="{{ form_widget(form.experiences.vars.prototype)|e('html_attr') }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for exp in form.experiences %}
+            <div class="tag">{{ form_row(exp.anneeDebut) }}</div>
+        {% endfor %}
+    </div>
+
+{{ form_end(form) }}
+
+
+
+
+
+
+
+
+
+{#
 <div >
   {{ form(form) }}
 </div>
-
+#}
  {% endblock %} 

@@ -30,4 +30,4 @@ EU_new_alumni:
     defaults: { _controller: EspaceUserBundle:Alumni:n_alumni }
 EU_new_etudiantCV:
     path:     /candidat/{id}/new/CV
-    defaults: { _controller: EspaceUserBundle:Etudiant:create_CV }
+    defaults: { _controller: EspaceUserBundle:Etudiant:edit_CV }
