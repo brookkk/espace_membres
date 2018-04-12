@@ -49,3 +49,6 @@ EP_n_task:
 EP_show_task:
     path:     /task/show
     defaults: { _controller: EspacePlatformBundle:Task:show }
+EP_task_edit:
+    path:     /task/edit/{id}
+    defaults: { _controller: EspacePlatformBundle:Task:edit }
