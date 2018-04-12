@@ -27,7 +27,7 @@
     <div class="tags" data-prototype="{{ form_widget(form.experiences.vars.prototype)|e('html_attr') }}">
         {# iterate over each existing tag and render its only field: name #}
         {% for exp in form.experiences %}
-            <div class="tag">{{ form_row(exp.anneeDebut) }}</div>
+            <div class="tag">{{ form_row(form.mobilite) }}</div>
         {% endfor %}
     </div>
 
