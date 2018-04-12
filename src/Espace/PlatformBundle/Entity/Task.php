@@ -2,65 +2,44 @@
 
 namespace Espace\PlatformBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Niveau_de_formation
  *
- * @ORM\Table(name="Domaine_de_competence")
- * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\Domaine_de_competenceRepository")
+ * @ORM\Table(name="task")
+ * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\TaskRepository")
  */
 class Task
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+   
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=true, unique=true)
-     */
-    private $nom;
+    protected $description;
 
+    protected $tags;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->tags = new ArrayCollection();
     }
 
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Niveau_de_formation
-     */
-    public function setNom($nom)
+    public function getDescription()
     {
-        $this->nom = $nom;
-
-        return $this;
+        return $this->description;
     }
 
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
+    public function setDescription($description)
     {
-        return $this->nom;
+        $this->description = $description;
     }
+
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+
+
 }
 
