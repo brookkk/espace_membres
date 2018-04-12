@@ -46,3 +46,6 @@ EP_details_offre:
 EP_n_task:
     path:     /task/new
     defaults: { _controller: EspacePlatformBundle:Task:new }
+EP_show_task:
+    path:     /task/show
+    defaults: { _controller: EspacePlatformBundle:Task:show }

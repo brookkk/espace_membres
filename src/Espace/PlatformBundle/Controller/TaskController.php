@@ -60,5 +60,24 @@ class TaskController extends Controller
     }
 
 
+     public function showAction(Request $request)
+  {
+    $em= $this  ->getDoctrine()  ->getManager();
+
+    $repository = $em  ->getRepository('EspacePlatformBundle:Task');
+    
+
+    $listTask = $repository->findAll();
+
+    if (null === $listTask) {
+      throw new NotFoundHttpException("Aucun Task na été trouvé");
+    }
+
+    return $this->render('EspacePlatformBundle:Show:task.html.twig', array(      'listTask' => $listTask   ));
+   // return $this->render('EspaceUserBundle:Show:index.html.twig');
+
+  }
+
+
 
 }

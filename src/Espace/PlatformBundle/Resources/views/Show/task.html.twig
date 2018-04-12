@@ -1,0 +1,75 @@
+ 
+ {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+<ul class="breadcrumb">
+  <li><a >Tasks</a></li>
+  <li>Liste</li>
+ 
+</ul>
+
+<h3>Liste des Tasks</h3>
+
+
+
+ 
+  
+   <table class="data" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        
+        <th>description</th>
+        <th>tags</th>
+        
+     
+    
+
+         
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+       
+        <th>description</th>
+        <th>tags</th>
+      
+     
+
+      
+
+      </tr>
+    </tfoot>  
+    <tbody>
+
+  {% for task in listTask %}
+
+  <tr>
+  <td> {{ task.description |capitalize }} </td>
+  <td> 
+
+ 
+ 
+  {% for tag in task.tags %}
+
+  {{ tag.name  |capitalize}} 
+  {% endfor %}
+ 
+  </td>
+
+ 
+   
+  
+        
+
+    </tr>
+  {% endfor %}
+ 
+ </tbody>
+ </table>
+
+
+
+
+{% endblock %}

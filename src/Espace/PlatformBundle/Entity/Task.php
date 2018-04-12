@@ -35,11 +35,12 @@ class Task
 
 
  /**        
-        * @ORM\Column(name="tags", type="string",  nullable=true)
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Tag", cascade={"persist"})
+
     
    */
 
-    protected $tags;
+    private $tags;
 
     public function __construct()
     {

@@ -20,6 +20,7 @@ class TaskType extends AbstractType
         ->add('tags', CollectionType::class, array(
             'entry_type' => TagType::class,
             'entry_options' => array('label' => false),
+            'allow_add' => true,
         ))
         ->add('Sauvegarder',      SubmitType::class);
     }
