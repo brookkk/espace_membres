@@ -2,6 +2,7 @@
 
 namespace Espace\PlatformBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
