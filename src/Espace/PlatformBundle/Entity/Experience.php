@@ -105,7 +105,7 @@ class Experience
         return $this->anneeDebut;
     }
 
-    public function setAnneeDebut($name)
+    public function setAnneeDebut($anneeDebut)
     {
         $this->anneeDebut = $anneeDebut;
     }
@@ -119,20 +119,20 @@ class Experience
         return $this->anneeFin;
     }
 
-    public function setAnneeFin($name)
+    public function setAnneeFin($anneeFin)
     {
         $this->anneeFin = $anneeFin;
     }
 //////////////////
 
-     public function getName()
+     public function getEntreprise()
     {
-        return $this->name;
+        return $this->entreprise;
     }
 
-    public function setName($name)
+    public function setEntreprise($entreprise)
     {
-        $this->name = $name;
+        $this->entreprise = $entreprise;
     }
 
 
