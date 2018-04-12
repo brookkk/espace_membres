@@ -123,7 +123,6 @@ class Experience
     {
         $this->anneeFin = $anneeFin;
     }
-//////////////////
 
      public function getEntreprise()
     {
@@ -136,27 +135,28 @@ class Experience
     }
 
 
-     public function getName()
+     public function getVille()
     {
-        return $this->name;
+        return $this->ville;
     }
 
-    public function setName($name)
+    public function setVille($ville)
     {
-        $this->name = $name;
+        $this->ville = $ville;
     }
 
 
-     public function getName()
+     public function getCodePostal()
     {
-        return $this->name;
+        return $this->codePostal;
     }
 
-    public function setName($name)
+    public function setCodePostal($codePostal)
     {
-        $this->name = $name;
+        $this->codePostal = $codePostal;
     }
 
+//////////////////
 
      public function getName()
     {
