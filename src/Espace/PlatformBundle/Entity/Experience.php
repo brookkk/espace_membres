@@ -158,25 +158,25 @@ class Experience
 
 //////////////////
 
-     public function getName()
+     public function getPosteOccupe()
     {
-        return $this->name;
+        return $this->posteOccupe;
     }
 
-    public function setName($name)
+    public function setPosteOccupe($posteOccupe)
     {
-        $this->name = $name;
+        $this->posteOccupe = $posteOccupe;
     }
 
 
-     public function getName()
+     public function getMissions()
     {
-        return $this->name;
+        return $this->missions;
     }
 
-    public function setName($name)
+    public function setMissions($missions)
     {
-        $this->name = $name;
+        $this->missions = $missions;
     }
 
 
