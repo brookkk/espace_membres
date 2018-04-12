@@ -97,7 +97,7 @@ class Cv
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
    * @ORM\JoinColumn(nullable=false)        
    */       
-    private $domaineCompetence;   
+   /* private $domaineCompetence;   */
     
 
 

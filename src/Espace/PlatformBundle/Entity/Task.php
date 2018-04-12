@@ -13,9 +13,31 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Task
 {
-   
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
+
+
+
+    /**
+     * @var string
+     *     
+     * @ORM\Column(name="description", type="string",  nullable=true)
+     */
     protected $description;
+
+
+
+ /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Tag")        
+   * @ORM\JoinColumn(nullable=false)        
+   */
 
     protected $tags;
 
