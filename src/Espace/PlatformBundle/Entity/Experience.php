@@ -23,12 +23,7 @@ class Experience
 
 
 
-/**
-     * @var string
-     *     
-     * @ORM\Column(name="name", type="string",  nullable=true)
-     */
-    private $name;
+
 
 
 
@@ -48,6 +43,61 @@ class Experience
      * @ORM\Column(name="anneeFin", type="integer")       
      */     
     private $anneeFin; 
+
+
+
+
+    /**     
+     * @var string      
+     *      
+     * @ORM\Column(name="entreprise", type="string", length=255)       
+     */     
+    private $entreprise;  
+
+
+
+    /**     
+     * @var string      
+     *      
+     * @ORM\Column(name="ville", type="string", length=255)       
+     */     
+    private $ville;  
+
+
+
+         /**
+     * @var string
+     *
+    * @Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
+     *      
+     * )     
+     * @ORM\Column(name="codePostal", type="integer",  nullable=true)
+     */
+    private $codePostal;    
+
+
+
+     /**     
+     * @var string      
+     *      
+     * @ORM\Column(name="posteOccupe", type="string", length=255)       
+     */     
+    private $posteOccupe; 
+
+
+    /**     
+     * @var string      
+     *      
+     * @ORM\Column(name="missions", type="text")       
+     */     
+    private $missions;   
+
+
+
+
 
     public function getName()
     {
