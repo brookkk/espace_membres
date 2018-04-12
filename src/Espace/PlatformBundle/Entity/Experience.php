@@ -100,19 +100,30 @@ class Experience
 
 
 
-    public function getName()
+    public function getAnneeDebut()
     {
-        return $this->name;
+        return $this->anneeDebut;
     }
 
-    public function setName($name)
+    public function setAnneeDebut($name)
     {
-        $this->name = $name;
+        $this->anneeDebut = $anneeDebut;
     }
 
 
-    //////////////////
+    
 
+
+     public function getAnneeFin()
+    {
+        return $this->anneeFin;
+    }
+
+    public function setAnneeFin($name)
+    {
+        $this->anneeFin = $anneeFin;
+    }
+//////////////////
 
      public function getName()
     {
@@ -169,26 +180,7 @@ class Experience
     }
 
 
-     public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-
-     public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
+   
 
 
 }
