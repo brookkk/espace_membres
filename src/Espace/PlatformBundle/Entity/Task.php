@@ -35,8 +35,8 @@ class Task
 
 
  /**        
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Tag")        
-   * @ORM\JoinColumn(nullable=false)        
+        * @ORM\Column(name="tags", type="string",  nullable=true)
+    
    */
 
     protected $tags;
@@ -60,6 +60,17 @@ class Task
     {
         return $this->tags;
     }
+
+
+    public function addTag(Tag $tag)
+{
+    $this->tags[] = $tag;
+}
+
+public function removeTag(Tag $tag)
+{
+    $this->tags->removeElement($tag);
+}
 
 
 

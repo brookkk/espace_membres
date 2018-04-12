@@ -5,6 +5,7 @@ namespace Espace\PlatformBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Espace\PlatformBundle\Entity\Task;
 
@@ -19,7 +20,8 @@ class TaskType extends AbstractType
         ->add('tags', CollectionType::class, array(
             'entry_type' => TagType::class,
             'entry_options' => array('label' => false),
-        ));
+        ))
+        ->add('Sauvegarder',      SubmitType::class);
     }
     
     /**

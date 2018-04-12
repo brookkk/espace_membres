@@ -43,3 +43,6 @@ EP_offre_dupliquer:
 EP_details_offre:
     path:     /offre/details/{id}
     defaults: { _controller: EspacePlatformBundle:Offre:details }
+EP_n_task:
+    path:     /task/new
+    defaults: { _controller: EspacePlatformBundle:Task:new }

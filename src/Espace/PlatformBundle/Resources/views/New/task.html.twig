@@ -1,0 +1,27 @@
+ 
+  {% extends "EspacePlatformBundle::layout.html.twig" %}
+
+{% block body %}
+ 
+
+ <ul class="breadcrumb">
+  <li><a href="{{ path('espace_platform_homepage') }}">Task</a></li>
+  <li>MAJ</li>
+ 
+<h3>Task</h3>
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{{ form_start(form) }}
+    {# render the task's only field: description #}
+    {{ form_row(form.description) }}
+
+    <h3>Tags</h3>
+    <ul class="tags">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for tag in form.tags %}
+            <li>{{ form_row(tag.name) }}</li>
+        {% endfor %}
+    </ul>
+{{ form_end(form) }}
+
+ {% endblock %}
