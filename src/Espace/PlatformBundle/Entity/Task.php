@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Niveau_de_formation
+ * Task
  *
  * @ORM\Table(name="task")
  * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\TaskRepository")
