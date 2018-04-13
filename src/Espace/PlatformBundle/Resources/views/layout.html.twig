@@ -211,7 +211,7 @@ jQuery(document).ready(function() {
     // Get the ul that holds the collection of tags
     $collectionHolder = $('div.experiences');
 
-    $collectionHolder.find('tag').each(function() {
+    $collectionHolder.find('.experience').each(function() {
         addTagFormDeleteLink($(this));
     });
 
@@ -261,7 +261,7 @@ function addTagForm($collectionHolder, $newLinkLi) {
 
 
 function addTagFormDeleteLink($tagFormLi) {
-    var $removeFormA = $('<a href="#">delete this tag</a>');
+    var $removeFormA = $('<a href="#">Supprimer cette expérience</a>');
     $tagFormLi.append($removeFormA);
 
     $removeFormA.on('click', function(e) {
