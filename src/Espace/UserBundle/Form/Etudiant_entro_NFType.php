@@ -111,7 +111,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
      */
     public function getBlockPrefix()
     {
-        return 'espace_userbundle_Etudiant_entro_NF';
+        return 'espace_userbundle_etud';
     }
 
 

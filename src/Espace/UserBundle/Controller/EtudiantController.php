@@ -204,9 +204,9 @@ public function detailsAction($id)
     $originalExps = new ArrayCollection();
 
     // Create an ArrayCollection of the current Tag objects in the database
-    /*foreach ($cv->getExperiences() as $exp) {
+    foreach ($cv->getExperiences() as $exp) {
         $originalExps->add($exp);
-    }*/
+    }
 
     $editForm = $this->createForm(Etudiant_entro_NFType::class, $cv);
 
@@ -220,7 +220,7 @@ public function detailsAction($id)
                 // remove the Task from the Tag
                 $cv->getExperiences()->removeElement($exp);
 
-           
+                
                 $entityManager->persist($exp);
 
                 // if you wanted to delete the Tag entirely, you can also do that
@@ -234,7 +234,7 @@ public function detailsAction($id)
         // redirect back to some edit page
         return $this->redirectToRoute('espace_show_user');
     }
-
+    //print_r($editForm>createView());
     return $this->render('EspaceUserBundle:New:etudiantNF.html.twig', array(
             'form' => $editForm->createView(),
         ));

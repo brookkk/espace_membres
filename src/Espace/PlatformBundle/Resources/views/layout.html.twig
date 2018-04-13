@@ -204,14 +204,14 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagLink = $('<a href="#" class="add_tag_link">Add a tag</a>');
+var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une expérience</a>');
 var $newLinkLi = $('<div></div>').append($addTagLink);
 
 jQuery(document).ready(function() {
     // Get the ul that holds the collection of tags
-    $collectionHolder = $('div.tags');
+    $collectionHolder = $('div.experiences');
 
-    $collectionHolder.find('div.tag').each(function() {
+    $collectionHolder.find('tag').each(function() {
         addTagFormDeleteLink($(this));
     });
 
