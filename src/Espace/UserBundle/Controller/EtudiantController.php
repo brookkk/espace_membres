@@ -177,8 +177,8 @@ public function detailsAction($id)
 
    public function edit_CVAction($id, Request $request)
 {
-    /*$entityManager = $this->getDoctrine()->getManager();
-    $cv = $entityManager->getRepository(Cv::class)->find($id);*/
+    $entityManager = $this->getDoctrine()->getManager();
+    /*$cv = $entityManager->getRepository(Cv::class)->find($id);*/
 
 
 

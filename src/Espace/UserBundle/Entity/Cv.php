@@ -4,6 +4,7 @@ namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Espace\UserBundle\Entity\User;
+use Espace\PlatformBundle\Entity\Experience;
 
 
 /**
@@ -103,7 +104,7 @@ class Cv
 
 
 
-    /**        
+    /*      
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
    * @ORM\JoinColumn(nullable=false)        
    */       
@@ -193,7 +194,7 @@ class Cv
         return $this->facebookLink;
     }
 
-    public function setFacebookLink($experience)
+    public function setFacebookLink($facebookLink)
     {
         $this->facebookLink = $facebookLink;
     }
@@ -248,7 +249,7 @@ class Cv
     }
 
 
-    public function addExperience(Experience $experiences)
+    public function addExperience(Experience $experience)
 {
     $this->experiences[] = $experience;
 }

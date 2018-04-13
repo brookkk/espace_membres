@@ -93,6 +93,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'entry_type' => ExperienceType::class,
             'entry_options' => array('label' => false),
             'allow_add' => true,
+            'label' => false,
             'by_reference' => false,
             'allow_delete' => true,
         ))
