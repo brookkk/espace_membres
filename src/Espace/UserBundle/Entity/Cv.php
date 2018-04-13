@@ -254,7 +254,7 @@ class Cv
     $this->experiences[] = $experience;
 }
 
-public function removeExperience(Experience $experiences)
+public function removeExperience(Experience $experience)
 {
     $this->experiences->removeElement($experience);
 }
