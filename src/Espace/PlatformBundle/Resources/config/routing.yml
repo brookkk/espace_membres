@@ -52,3 +52,6 @@ EP_show_task:
 EP_task_edit:
     path:     /task/edit/{id}
     defaults: { _controller: EspacePlatformBundle:Task:edit }
+EP_cvtheque_search:
+    path:     /cv-theque
+    defaults: { _controller: EspacePlatformBundle:Cvtheque:search }
