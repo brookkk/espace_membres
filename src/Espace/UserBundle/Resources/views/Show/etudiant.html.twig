@@ -21,13 +21,13 @@
 Coordonnées
 </h4>
 
-Civilité : {% if etudiant.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
-Prénom : {{etudiant.prenom | capitalize}} <br>
-Nom : {{etudiant.nom | capitalize}} <br>
-Téléphone : {{etudiant.telephone}} <br>
-Adresse : {{etudiant.adresse}} <br>
-Date de naissance : {{etudiant.ddn|date('d/m/Y')}} <br>
-Numéro INE : {{etudiant.numIne}} <br>
+<b>Civilité :</b> {% if etudiant.civilite==1 %} Monsieur {% else %} Madame {%endif%} <br>
+<b>Prénom :</b> {{etudiant.prenom | capitalize}} <br>
+<b>Nom :</b> {{etudiant.nom | capitalize}} <br>
+<b>Téléphone :</b> {{etudiant.telephone}} <br>
+<b>Adresse :</b> {{etudiant.adresse}} <br>
+<b>Date de naissance :</b> {{etudiant.ddn|date('d/m/Y')}} <br>
+<b>Numéro INE :</b> {{etudiant.numIne}} <br>
 
 
 
@@ -41,13 +41,13 @@ Numéro INE : {{etudiant.numIne}} <br>
 Personne à contacter en cas d'urgence
 </h4>
 
-Prénom :  {{etudiant.pcPrenom | capitalize}} <br>
-Nom :  {{etudiant.pcNom | capitalize}} <br>
-Téléphone : {{etudiant.pcTelephone}} <br>
-Mobile : {{etudiant.pcTelephonePortable}} <br>
-Adresse : {{etudiant.pcAdresse|capitalize}}, {{etudiant.pcVille}} <br>
-Email : {{etudiant.pcEmail}} <br>
-Lien avec l'intéressé : {{etudiant.pcLien}} <br>
+<b>Prénom :</b>  {{etudiant.pcPrenom | capitalize}} <br>
+<b>Nom :</b>  {{etudiant.pcNom | capitalize}} <br>
+<b>Téléphone :</b> {{etudiant.pcTelephone}} <br>
+<b>Mobile :</b> {{etudiant.pcTelephonePortable}} <br>
+<b>Adresse :</b> {{etudiant.pcAdresse|capitalize}}, {{etudiant.pcVille}} <br>
+<b>Email :</b> {{etudiant.pcEmail}} <br>
+<b>Lien avec l'intéressé :</b> {{etudiant.pcLien}} <br>
 
 
 
@@ -57,10 +57,14 @@ Lien avec l'intéressé : {{etudiant.pcLien}} <br>
 
 <div class="col-md-6"> 
 
+
+
+{% if etudiant.cv %}
+
 <div class= "block-infos-user">
 
 <h4 class="subtitle">
-Cv
+CV
 </h4>
 
 Filière professionelle :  <br>
@@ -104,6 +108,21 @@ Mobilité :
 
 </div> 
 
+{% else %}
+
+
+<div class= "block-infos-user">
+
+<h4 class="subtitle">
+Le CV n'est pas encore rempli
+</h4>
+</div>
+
+{% endif %}
+
+  {% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('espace_delete_user',{'id': etudiant.id}) }}" onclick='return confirm("Etes vous sûr de vouloir supprimer cet utilisateur?")'><span class="glyphicon glyphicon-trash" ></span> </a> &nbsp 
+      {% endif %}
 
 </div>
 
