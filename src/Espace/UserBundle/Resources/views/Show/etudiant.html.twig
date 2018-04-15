@@ -77,6 +77,7 @@ Diplome d'inscription : <br>
  
  Entreprise trouvée : {% if etudiant.foundEntro == 0 %} Nom {% else %} Oui  {%endif%} <br>
 Aide recherche alternance : {% if etudiant.serviceAccompagnement == 0 %} Nom {% else %} Oui  {%endif%} <br>
+Centre d'intérêt : <br>
 Contrat recherché : {{etudiant.cv.typeContratRecherche.nom }} <br>
 Expérience : 
 
@@ -93,6 +94,12 @@ Réseaux sociaux : <br>
 &nbsp &nbsp LinkedIn : {{etudiant.cv.linkedInLink }}<br>
 &nbsp &nbsp Viadeo : {{etudiant.cv.viadeoLink }}<br>
 
+Mobilité : 
+{% if etudiant.cv.mobilite == 1 %} Nationale
+{% elseif  etudiant.cv.mobilite == 2 %} Régionale
+{% elseif  etudiant.cv.mobilite == 3 %} Départementale
+{% endif %}
+ <br>
 
 
 </div> 
