@@ -206,4 +206,37 @@ else
   }
 
 
+
+  /**
+   * @Security("has_role('ROLE_ADMIN')")
+   * 
+   */
+public function delete_userAction(Request $request, $id)
+  {
+    $em= $this->getDoctrine()->getManager();
+
+    $repository = $em  ->getRepository('EspaceUserBundle:User');
+
+    $user = $repository->find($id);
+
+    if (null === $user) {
+      throw new NotFoundHttpException("Votre Utilisateur na pas été trouvée");
+    }
+
+
+    $em->remove($user);
+    $em->flush();
+
+    $request->getSession()->getFlashBag()->add('notice', 'user a été supprimée');
+
+    return $this->redirectToRoute('espace_show_user');
+
+  
+
+
+
+
+  }
+
+
 }

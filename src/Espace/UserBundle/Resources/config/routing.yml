@@ -34,3 +34,6 @@ EU_new_etudiantCV:
 espace_update_user:
     path:     /user/update/{id}
     defaults: { _controller: EspaceUserBundle:User:update_user }
+espace_delete_user:
+    path:     admin/user/delete/{id}
+    defaults: { _controller: EspaceUserBundle:User:delete_user }
