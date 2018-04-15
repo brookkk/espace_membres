@@ -82,7 +82,7 @@ CV
  <b>Entreprise trouvée :</b> {% if etudiant.foundEntro == 0 %} Nom {% else %} Oui  {%endif%} <br>
 <b>Aide recherche alternance :</b> {% if etudiant.serviceAccompagnement == 0 %} Nom {% else %} Oui  {%endif%} <br>
 <b>Centre d'intérêt :</b> <br>
-<b>Contrat recherché :</b> {{etudiant.cv.typeContratRecherche.nom }} <br>
+<b>Contrat recherché :</b> {% if etudiant.cv.typeContratRecherche %} {{etudiant.cv.typeContratRecherche.nom }}{% endif %} <br>
 <b>Expérience :</b> 
 
 {% if etudiant.cv.experience == 1 %} Pas d'expérience

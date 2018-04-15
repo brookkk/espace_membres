@@ -79,9 +79,9 @@
 <a href="{{ path('EU_devalider_user',{'id': user.id}) }}" onclick='return confirm("Etes vous sûr de vouloir dévalider cet utilisateur? cette action l empêchera de se connecter à l espace par la suite")'><span class="glyphicon glyphicon-thumbs-down" style="color:red"></span> </a> &nbsp 
 
       {% endif %} 
-
+{% if user.cv %}
 <a href="{{ path('EU_new_etudiantCV',{'id': user.id}) }}"><span class="fa fa-file"></span> </a> &nbsp 
-
+{%endif%}
 
      
 </td>
