@@ -5,7 +5,7 @@ espace_show_user:
     path:     /admin/user/show
     defaults: { _controller: EspaceUserBundle:User:show_user }
 espace_details_entreprise:
-    path:     /admin/entreprise/details/{id}
+    path:     /entreprise/details/{id}
     defaults: { _controller: EspaceUserBundle:Entreprise:details }
 espace_details_candidat:
     path:     /candidat/details/{id}
@@ -31,3 +31,6 @@ EU_new_alumni:
 EU_new_etudiantCV:
     path:     /candidat/{id}/new/CV
     defaults: { _controller: EspaceUserBundle:Etudiant:edit_CV }
+espace_update_user:
+    path:     /user/update/{id}
+    defaults: { _controller: EspaceUserBundle:User:update_user }
