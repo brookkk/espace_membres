@@ -62,6 +62,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'class'        => 'EspacePlatformBundle:Diplome',
                 'choice_label' => 'nom',
                 'multiple'     => true,
+                'expanded'     => true,
                 'label'        => "Titre du diplome faisant objet de l'inscription"
                 ))
         ->add('pcNom', TextType::class, array(
