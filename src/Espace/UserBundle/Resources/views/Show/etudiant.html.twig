@@ -81,11 +81,17 @@ Contrat recherché : {{etudiant.cv.typeContratRecherche.nom }} <br>
 Expérience : 
 
 {% if etudiant.cv.experience == 1 %} Pas d'expérience
-{% elseif  etudiant.cv.experience == 1 %} 1-3 ans
-{% elseif  etudiant.cv.experience == 2 %} 3-5 ans
+{% elseif  etudiant.cv.experience == 2 %} 1-3 ans
+{% elseif  etudiant.cv.experience == 3 %} 3-5 ans
 {% else %} 5 ans et plus
 {% endif %}
  <br>
+
+Formation actuelle : <br>
+Réseaux sociaux : <br>
+&nbsp &nbsp Facebook : {{etudiant.cv.facebookLink }} <br>
+&nbsp &nbsp LinkedIn : {{etudiant.cv.linkedInLink }}<br>
+&nbsp &nbsp Viadeo : {{etudiant.cv.viadeoLink }}<br>
 
 
 
