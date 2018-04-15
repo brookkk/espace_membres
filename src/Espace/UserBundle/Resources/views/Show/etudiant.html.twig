@@ -9,7 +9,7 @@
  
 </ul>
 
-<h3>Informations utilisateur</h3>
+<h3><b>Informations utilisateur</b></h3>
 
 
 
@@ -67,23 +67,23 @@ Personne à contacter en cas d'urgence
 CV
 </h4>
 
-Filière professionelle :  <br>
-Date emploi :  <br>
-Poste actuel :  <br>
-Niveaux d'étude : {{etudiant.niveauFormation.nom}} <br>
+<b>Filière professionelle :</b>  <br>
+<b>Date emploi :</b>  <br>
+<b>Poste actuel :</b>  <br>
+<b>Niveaux d'étude :</b> {{etudiant.niveauFormation.nom}} <br>
 
 
-Diplome d'inscription : <br>
+<b>Diplome d'inscription :</b> <br>
  
 {% for diplome in diplomes%}
  &nbsp &nbsp &nbsp{{diplome.nom}} <br>
 {% endfor %}
  
- Entreprise trouvée : {% if etudiant.foundEntro == 0 %} Nom {% else %} Oui  {%endif%} <br>
-Aide recherche alternance : {% if etudiant.serviceAccompagnement == 0 %} Nom {% else %} Oui  {%endif%} <br>
-Centre d'intérêt : <br>
-Contrat recherché : {{etudiant.cv.typeContratRecherche.nom }} <br>
-Expérience : 
+ <b>Entreprise trouvée :</b> {% if etudiant.foundEntro == 0 %} Nom {% else %} Oui  {%endif%} <br>
+<b>Aide recherche alternance :</b> {% if etudiant.serviceAccompagnement == 0 %} Nom {% else %} Oui  {%endif%} <br>
+<b>Centre d'intérêt :</b> <br>
+<b>Contrat recherché :</b> {{etudiant.cv.typeContratRecherche.nom }} <br>
+<b>Expérience :</b> 
 
 {% if etudiant.cv.experience == 1 %} Pas d'expérience
 {% elseif  etudiant.cv.experience == 2 %} 1-3 ans
@@ -92,11 +92,11 @@ Expérience :
 {% endif %}
  <br>
 
-Formation actuelle : <br>
-Réseaux sociaux : <br>
-&nbsp &nbsp Facebook : {{etudiant.cv.facebookLink }} <br>
-&nbsp &nbsp LinkedIn : {{etudiant.cv.linkedInLink }}<br>
-&nbsp &nbsp Viadeo : {{etudiant.cv.viadeoLink }}<br>
+<b>Formation actuelle :</b> <br>
+<b>Réseaux sociaux :</b> <br>
+&nbsp &nbsp <i>Facebook</i> : {{etudiant.cv.facebookLink }} <br>
+&nbsp &nbsp <i>LinkedIn</i> : {{etudiant.cv.linkedInLink }}<br>
+&nbsp &nbsp <i>Viadeo</i> : {{etudiant.cv.viadeoLink }}<br>
 
 Mobilité : 
 {% if etudiant.cv.mobilite == 1 %} Nationale
