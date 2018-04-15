@@ -91,7 +91,7 @@ class Cv
 
 
     /**     
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Type_de_contrat")        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Type_de_contrat" , cascade={"persist"})        
    * @ORM\JoinColumn(nullable=true)        
    */       
     private $typeContratRecherche;  
@@ -100,7 +100,7 @@ class Cv
 
 
     /*      
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
    * @ORM\JoinColumn(nullable=false)        
    */       
    /* private $domaineCompetence;   */

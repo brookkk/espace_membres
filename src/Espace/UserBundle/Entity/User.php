@@ -294,16 +294,16 @@ class User   implements UserInterface
 
 
     /**        
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation")        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Niveau_de_formation", cascade={"persist"})        
    * @ORM\JoinColumn(nullable=true)
    */       
     private $niveauFormation;   
 
 
      /**        
-   * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Diplome")        
+   * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Diplome", cascade={"persist"})        
    * @ORM\JoinColumn(nullable=true) 
-   * @ORM\Column(name="diplome", type="array", nullable=TRUE )   
+   * @ORM\Column(name="diplome", type="array" )   
    */       
     private $diplome;   
 

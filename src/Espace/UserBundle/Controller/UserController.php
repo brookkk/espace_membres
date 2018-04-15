@@ -19,6 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Espace\UserBundle\Entity\Entreprise;
 
 use Espace\UserBundle\Form\EntrepriseType;
+use Espace\UserBundle\Form\Etudiant_updateType;
 
 
 
@@ -150,20 +151,19 @@ class UserController extends Controller
     $repository = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User');
 
     $user = $repository->find($id);
+ 
 
-
-/*
+ 
  
 
     if (null === $user) {
       throw new NotFoundHttpException("Votre user na pas été trouvée");
     }
 
-if($user->getProfile()=='ETUDIANT')
-    $form = $this->createForm(EtudiantType::class, $user);
+if($user->getProfil()=='ETUDIANT')
+    $form = $this->createForm(Etudiant_updateType::class, $user);
 
-elseif($user->getProfile()=='ENTREPRISE')
-    $form = $this->createForm(EntrepriseType::class, $user);
+else    $form = $this->createForm(EntrepriseType::class, $user);
 
 
     if($request->isMethod('POST')){
@@ -187,16 +187,20 @@ elseif($user->getProfile()=='ENTREPRISE')
 
 
     }
-*/
 
-if($user->getProfile()=='ETUDIANT')
+
+if($user->getProfil()=='ETUDIANT')
       return $this->render('EspaceUserBundle:New:etudiant.html.twig', array(
            'form'=>$form->createView(),
            ));
-elseif($user->getProfile()=='ENTREPRISE')
+else
      return $this->render('EspaceUserBundle:New:entreprise.html.twig', array(
      'form'=>$form->createView(),
      ));
+
+
+
+ //   return $this->render('EspaceUserBundle:Show:index.html.twig');
 
 
   }
