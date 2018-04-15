@@ -191,15 +191,7 @@ public function detailsAction($id)
     $cv = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id)->getCv();
 
 
-    //$cv = $etudiant->getCv();
-    /*$this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:Cv')->findBy(
-    [
-        'user' => $etudiant->getId() ,
-      ]);*/
-
-
-
-   
+  
 
 
     if (!$cv) {
@@ -237,7 +229,9 @@ public function detailsAction($id)
         $entityManager->flush();
 
         // redirect back to some edit page
-        return $this->redirectToRoute('espace_show_user');
+        return $this->redirectToRoute('espace_details_candidat', array(
+            'id' => $id,
+        ));
     }
     //print_r($editForm>createView());
     return $this->render('EspaceUserBundle:New:etudiantNF.html.twig', array(
