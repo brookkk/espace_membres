@@ -97,6 +97,9 @@ public function detailsAction($id)
 
   $etudiant = $repository->find($id);
 
+  $diplomes = $etudiant->getDiplome();
+  //print_r($diplomes[0]['nom']);
+
 
   if (null === $etudiant) {
     throw new NotFoundHttpException("Votre etudiant na pas été trouvé");
@@ -105,7 +108,7 @@ public function detailsAction($id)
 
 
   return $this->render('EspaceUserBundle:Show:etudiant.html.twig', array(
-   'etudiant'=>$etudiant,
+   'etudiant'=>$etudiant,'diplomes'=>$diplomes
    ));
 
 

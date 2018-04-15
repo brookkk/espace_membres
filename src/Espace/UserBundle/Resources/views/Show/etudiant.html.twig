@@ -67,8 +67,15 @@ Filière professionelle :  <br>
 Date emploi :  <br>
 Poste actuel :  <br>
 Niveaux d'étude : {{etudiant.niveauFormation.nom}} <br>
-Diplome d'inscription : {{etudiant.telephone}} <br>
-Adresse : {{etudiant.adresse}} <br>
+
+
+Diplome d'inscription : <br>
+ 
+{% for diplome in diplomes%}
+ &nbsp &nbsp &nbsp{{diplome.nom}} <br>
+{% endfor %}
+ 
+ Entreprise trouvée : {% if etudiant.foundEntro == 0 %} Nom {% else %} Oui  {%endif%} <br>
 Date de naissance : {{etudiant.ddn|date('d/m/Y')}} <br>
 Numéro INE : {{etudiant.numIne}} <br>
 
