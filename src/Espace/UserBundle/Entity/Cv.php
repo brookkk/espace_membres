@@ -30,17 +30,12 @@ class Cv
 
     /**        
   * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Experience", cascade={"persist"})
-
-    
    */
 
     private $experiences;
 
 
-   /**
-   * @ORM\OneToOne(targetEntity="Espace\UserBundle\Entity\User", cascade={"persist"})
-   */
-  private $user;
+  
 
 
 /**
@@ -125,7 +120,7 @@ class Cv
     }
 
 
-
+/*
       public function getUser()
     {
         return $this->user;
@@ -135,7 +130,7 @@ class Cv
     {
         $this->user = $user;
     }
-
+*/
 
 
       public function getMobilite()

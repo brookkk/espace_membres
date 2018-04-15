@@ -36,6 +36,7 @@ class EtudiantController extends Controller
   {
 //nouvelle instance de l'entité Offre
     $etudiant= new User();
+    $cv =  new Cv();
     //$user= new User();
 
 $passwordEncoder = $this->get('security.password_encoder');
@@ -63,6 +64,7 @@ $passwordEncoder = $this->get('security.password_encoder');
 
       if($etudiant->getDiplome()==null)
       $etudiant->setDiplome('N;');
+    $etudiant->setCv($cv);
       $password = $passwordEncoder->encodePassword($etudiant, $etudiant->getPlainPassword());
       $etudiant->setPassword($password);
 
@@ -183,7 +185,7 @@ public function detailsAction($id)
 
 
 
-    $cv = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:Cv')->find($id);
+    $cv = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id)->getCv();
 
 
     //$cv = $etudiant->getCv();
