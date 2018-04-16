@@ -148,7 +148,7 @@ public function detailsAction($id)
       $form->handleRequest($request);
 
       if($form->isValid()){
-        $cv->addDomaineCompetence($cv->getDomaineCompetences());
+        //$cv->addDomaineCompetence($cv->getDomaineCompetences());
         $etudiant->setCv($cv);
 
 

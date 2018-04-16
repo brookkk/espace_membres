@@ -103,11 +103,16 @@ class Cv
  
 
 
-    /**        
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
-   * @ORM\JoinColumn(nullable=true)        
+
+
+
+
+     /**        
+   * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence", cascade={"persist"})        
+   * @ORM\JoinColumn(nullable=true) 
+   * @ORM\Column(name="domaineCompetences", type="array" )   
    */       
-    private $domaineCompetences;   
+    private $domaineCompetences;    
     
 public function __construct()       
     {       
