@@ -57,11 +57,12 @@ class CvthequeController extends Controller
 
     $listUsers = array();
     foreach ($listCandidats as $key => $val){
+      echo $listCandidats[$key]->getId() . "<br>";
       $listUsers[$key] = $user_repository->findBy([
       'cv' => $listCandidats[$key]->getId() ,
     ]);
     }
-    print_r($listUsers);
+    //print_r($listUsers);
 
       
     return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $listUsers   ));
