@@ -45,7 +45,13 @@
     </tfoot>  
     <tbody>
 
-  {% for candidat in users %}
+
+
+
+
+
+
+  {% for candidat in listUsers %}
 
   <tr>
   <td> {{ candidat.nom |capitalize }} </td>
@@ -54,16 +60,12 @@
   <td>
 <a href="{{ path('espace_details_candidat',{'id': candidat.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
 </td>
-    
-
-
-
-   
-  
-        
-
+ 
     </tr>
   {% endfor %}
+ 
+
+
  
  </tbody>
  </table>

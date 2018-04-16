@@ -47,13 +47,21 @@ class CvthequeController extends Controller
 
     $em= $this  ->getDoctrine()  ->getManager();
     $repository = $em  ->getRepository('EspaceUserBundle:Cv');
+    $user_repository = $em  ->getRepository('EspaceUserBundle:User');
 
     $listCandidats = $repository->findBy([
       'experience' => $cv->getExperience() ,
     ]);
 
+    $listUsers = array();
+    foreach ($listCandidats as $key => $val){
+      $listUsers[$key] = $user_repository->findBy([
+      'cv' => $val->getId() ,
+    ]);
+    }
+
       
-    return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listCandidats' => $listCandidats   ));
+    return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $listUsers   ));
       }
     }
 
