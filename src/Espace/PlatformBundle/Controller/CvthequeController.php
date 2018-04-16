@@ -60,8 +60,22 @@ class CvthequeController extends Controller
       { 
        if($val->getCv()->getExperience()==$cv->getExperience())
        {
+        $found = false;
+        $dc_cv = array();
+        $dc = array();
         foreach($cv->getDomaineCompetence() as $DC)
-        print_r($DC->getNom());
+        $dc_cv[] = $DC->getId());
+
+        foreach($val->getCv()->getDomaineCompetence() as $DC)
+        $dc[] = $DC->getId());
+
+
+        foreach($dc_cv as $to_find){
+          if(in_array($dc_cv, $dc))
+            {$found = true; break;}
+        }
+
+        if($found)
         $listUsers[$key] = $listCandidats[$key] ;
       }
      }
