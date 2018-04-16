@@ -64,14 +64,14 @@ class CvthequeController extends Controller
         $dc_cv = array();
         $dc = array();
         foreach($cv->getDomaineCompetence() as $DC)
-        $dc_cv[] = $DC->getId());
+        {$dc_cv[] = $DC->getId();}
 
-        foreach($val->getCv()->getDomaineCompetence() as $DC)
-        $dc[] = $DC->getId());
+        foreach($val->getCv()->getDomaineCompetence() as $DC2)
+        {$dc[] = $DC2->getId();}
 
 
         foreach($dc_cv as $to_find){
-          if(in_array($dc_cv, $dc))
+          if(in_array($to_find, $dc))
             {$found = true; break;}
         }
 
