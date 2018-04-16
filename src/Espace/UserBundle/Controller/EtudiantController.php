@@ -149,7 +149,7 @@ public function detailsAction($id)
 
       if($form->isValid()){
 
-        //$cv->setUser($etudiant);
+        $etudiant->setCv($cv);
 
 
         $em= $this->getDoctrine()->getManager();

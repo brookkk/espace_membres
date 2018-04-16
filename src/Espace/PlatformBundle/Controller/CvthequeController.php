@@ -54,20 +54,22 @@ class CvthequeController extends Controller
     ]);
 
 
-    $list_users= array();
+    $listUsers= array();
  
      foreach ($listCandidats as $key => $val){
-       if($val->getCv()!==null)
-      {
+       if($val->getCv()!=null)
+      { //echo($val->getCv()->getExperience());
        if($val->getCv()->getExperience()==$cv->getExperience())
        $listUsers[$key] = $listCandidats[$key] ;
-      //print_r($listCandidats[$key]->getNom() );
-   }
+     //else $listUsers[$key]='';
+    }
 
     }
     /*$users = array();
     foreach ($listUsers as $user){
            $users[] = $user[0];}*/
+
+          //if(empty($list_users))
 
  
       
