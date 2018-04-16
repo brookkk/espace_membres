@@ -53,25 +53,15 @@ class CvthequeController extends Controller
       'profil' => 'ETUDIANT' ,
     ]);
 
-
     $listUsers= array();
  
      foreach ($listCandidats as $key => $val){
        if($val->getCv()!=null)
-      { //echo($val->getCv()->getExperience());
+      { 
        if($val->getCv()->getExperience()==$cv->getExperience())
        $listUsers[$key] = $listCandidats[$key] ;
-     //else $listUsers[$key]='';
+     }
     }
-
-    }
-    /*$users = array();
-    foreach ($listUsers as $user){
-           $users[] = $user[0];}*/
-
-          //if(empty($list_users))
-
- 
       
     return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $listUsers   ));
       }
@@ -81,19 +71,11 @@ class CvthequeController extends Controller
 
     $repository = $em  ->getRepository('EspaceUserBundle:Cv');
     $listUsers = $repository->findAll();
-
     
     return $this->render('EspacePlatformBundle:New:cv-theque.html.twig', array(
      'form'=>$form->createView(), 
      ));
 
-     
-
-
   }
-
-
-
-
 
 }
