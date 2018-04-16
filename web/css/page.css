@@ -35,7 +35,8 @@
     display: inline-block;
     height: 138px;
     padding: 5px;
-    width: 340px;}
+    width: 340px;
+    margin-left: 40px;}
 
     #logo img{
     	    height: auto;
