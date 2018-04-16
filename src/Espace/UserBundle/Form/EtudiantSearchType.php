@@ -42,7 +42,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'expanded' => false,
             'multiple' => false,
             ))
-        ->add('domaineCompetence', EntityType::class, array(
+        /*->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => true,
@@ -51,7 +51,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label_attr' => array(
                     'class' => 'checkbox-inline'
                 )
-                ))
+                ))*/
         ->add('Sauvegarder', SubmitType::class);
     }
 
