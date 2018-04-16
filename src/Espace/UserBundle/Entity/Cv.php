@@ -4,6 +4,7 @@ namespace Espace\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Espace\UserBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
 use Espace\PlatformBundle\Entity\Experience;
 
 
@@ -103,9 +104,14 @@ class Cv
    * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
    * @ORM\JoinColumn(nullable=false)        
    */       
-    private $domaineCompetence;   
+    private $domaineCompetences;   
     
+public function __construct()       
+    {       
+            
 
+        $this->domaineCompetences = new ArrayCollection();
+    }   
 
 
 
@@ -222,18 +228,23 @@ class Cv
 
 
    
-    public function setDomaineCompetence($domaineCompetence)        
+    public function setDomaineCompetences($domaineCompetence)        
     {       
-        $this->domaineCompetence = $domaineCompetence;      
+        $this->domaineCompetences = $domaineCompetence;      
         
         return $this;       
     }       
         
     
-    public function getDomaineCompetence()      
+    public function getDomaineCompetences()      
     {       
-        return $this->domaineCompetence;        
+        return $this->domaineCompetences;        
     }
+
+       public function addDomaineCompetence(Experience $domaineCompetence)
+{
+    $this->domaineCompetences[] = $domaineCompetence;
+}
 
 
 
