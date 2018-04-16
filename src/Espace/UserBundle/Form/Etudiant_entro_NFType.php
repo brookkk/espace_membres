@@ -79,7 +79,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> 'Viadeo',
             'required'   => false,
             ))
-       ->add('domaineCompetences', EntityType::class, array(
+       ->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => true,

@@ -112,7 +112,7 @@ class Cv
    * @ORM\JoinColumn(nullable=true) 
    *   
    */       
-    private $domaineCompetences;    
+    private $domaineCompetence;    
     
 public function __construct()       
     {       
@@ -236,17 +236,17 @@ public function __construct()
 
 
    
-    public function setDomaineCompetences($domaineCompetence)        
+    public function setDomaineCompetence($domaineCompetence)        
     {       
-        $this->domaineCompetences = $domaineCompetence;      
+        $this->domaineCompetence = $domaineCompetence;      
         
         return $this;       
     }       
         
     
-    public function getDomaineCompetences()      
+    public function getDomaineCompetence()      
     {       
-        return $this->domaineCompetences;        
+        return $this->domaineCompetence;        
     }
 
  /*      public function addDomaineCompetence(Experience $domaineCompetence)

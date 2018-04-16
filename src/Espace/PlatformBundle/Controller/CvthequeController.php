@@ -66,17 +66,17 @@ class CvthequeController extends Controller
         foreach($cv->getDomaineCompetence() as $DC)
         {$dc_cv[] = $DC->getId();}
 
-        /*foreach($val->getCv()->getDomaineCompetence() as $DC2)
-        {$dc[] = $DC2->getId();}*/
+        foreach($val->getCv()->getDomaineCompetence() as $DC2)
+        {$dc[] = $DC2->getId();}
 
-        $dc = $val->getCv()->getDomaineCompetence();
-        print_r($dc);
+        //$dc = $val->getCv()->getDomaineCompetence();
+        //print_r($dc);
 
 
-        /*foreach($dc_cv as $to_find){
+        foreach($dc_cv as $to_find){
           if(in_array($to_find, $dc))
             {$found = true; break;}
-        }*/
+        }
 
         if($found)
         $listUsers[$key] = $listCandidats[$key] ;
