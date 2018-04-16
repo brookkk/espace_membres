@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Espace\UserBundle\Entity\User;
 use Espace\UserBundle\Form\EtudiqntSearchType;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
 
 
 class CvthequeController extends Controller
@@ -28,55 +31,39 @@ class CvthequeController extends Controller
 
      public function searchAction(Request $request)
   {
-//nouvelle instance de l'entité Offre
-    $user= new User();
-
+  	/*
+     $user= new User();
  
-
     $form = $this->createForm(UserSearchType::class, $user);
 
-
-//si le formulaire est bien rempli, on l'enregistre dans la BD
     if($request->isMethod('POST')){
-
       $form->handleRequest($request);
-
- 
       if($form->isValid()   
         ){
-        
-
-      //print_r($offre);
-
 
     $em= $this  ->getDoctrine()  ->getManager();
-
-    $repository = $em  ->getRepository('EspacePlatformBundle:Offre');
-    
-
-    $listOffres = $repository->findAll();
-
-    $listOffres = $repository->findBy([
-      'niveauFormationP' => $offre->getNiveauFormationP() ,
+    $repository = $em  ->getRepository('EspaceUserBundle:User');
+ 
+    $listCandidats = $repository->findBy([
+      'experience' => $user->getExperience() ,
     ]);
 
-
-
-
-    return $this->render('EspacePlatformBundle:Show:offre.html.twig', array(      'listOffres' => $listOffres   ));
+    return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listCandidats' => $listCandidats   ));
       }
     }
 
-//sinon (ou bien premier landing sur le form), on affiche le formulaire
-     $em= $this  ->getDoctrine()  ->getManager();
+   
+    $listOffres = $repository->findAll();
 
-    $repository = $em  ->getRepository('EspacePlatformBundle:Offre');
+    */
+
+    
+    return $this->render('EspacePlatformBundle:New:cv-theque.html.twig', array(
+     'form'=>$form->createView(), 
+     ));
+
     
 
-    $listOffres = $repository->findAll();
-    return $this->render('EspacePlatformBundle:New:offre_search.html.twig', array(
-     'form'=>$form->createView(), 'listOffres' => $listOffres
-     ));
 
   }
 
