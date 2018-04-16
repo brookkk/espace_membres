@@ -20,6 +20,7 @@
 .marg_container_register{
 
 	margin-top : 100px;
+	margin-bottom : 100px;
  
 }
 
@@ -29,3 +30,14 @@
 	margin-top : 50px;
 
 }
+
+     #logo{background-color: #003a6c;
+    display: inline-block;
+    height: 138px;
+    padding: 5px;
+    width: 340px;}
+
+    #logo img{
+    	    height: auto;
+    width: 300px;
+    }

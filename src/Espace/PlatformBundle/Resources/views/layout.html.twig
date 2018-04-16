@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/espace.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/page.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/demo.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/footer-distributed-with-address-and-phones.css') }}" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
@@ -22,8 +23,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-2.2.4/dt-1.10.15/datatables.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/css/dataTables.bootstrap.css"/>
-     <!--   <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerjqueryui/css/smoothness/jquery-ui.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerjqueryui/css/smoothness/jquery.ui.theme.css') }}" /> -->
+     
 
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Header-Icons.css') }}">
@@ -40,6 +40,15 @@
 </head>
 <body style="font-family: Oswald; font-size: 16px; color: #003a6c;">
     <main class= "brook_main">
+
+   <div  class="col-md-3">     
+
+ <a id="logo" href="#" title="Accueil" rel="home">
+      <img src="{{ asset('img/logo.png') }}" alt="Logo Campus Redon Industries" class="header-logo" >
+    </a>
+
+</div>
+<div class="col-md-9">
  <nav class="navbar navbar-default" id="colorful-nav">
         <div class="container">
             <div class="navbar-header">
@@ -58,7 +67,6 @@
                     <!--<li class="statistics"><a href="#"><span class="glyphicon glyphicon-stats"></span><h5>STATISTICS</h5></a></li>-->
                     <li class="search"><a href="{{ path('EP_show_offre') }}"><span class="glyphicon glyphicon-briefcase"></span><h5>Offres</h5></a></li>
                     <li class="lists"><a href="#"><span class="glyphicon glyphicon-list-alt"></span><h5>Cv-thèque</h5></a></li>
-                    <!---->
                     <li class="contact"><a href="#"><span class="glyphicon glyphicon-calendar"></span><h5>Calendrier</h5></a></li>
                     <li class="profile"><a href="{{ path('espace_show_user') }}"><span class="glyphicon glyphicon-lock"></span><h5>Admin</h5></a></li>
       
@@ -75,7 +83,7 @@
             </div>
         </div>
     </nav>
-
+</div>
 
    <div class="container">
 
@@ -175,8 +183,7 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-2.2.4/dt-1.10.15/datatables.min.js"></script>
 
-    <!---<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
@@ -192,12 +199,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
 
-
-<!--<script type="text/javascript" src="{{ asset('bundles/bmatznerjqueryui/js/minified/jquery-ui.min.js') }}"></script>-->
-
-
-
-
+ 
 <script type="text/javascript">
     
 
@@ -281,35 +283,7 @@ function addTagFormDeleteLink($tagFormLi) {
 
    <script >
 
-   /*     $(document).ready(function() {
-            $('.data').DataTable({
-                  "language": {
-            "sProcessing":     "Traitement en cours...",
-    "sSearch":         "Rechercher&nbsp;:",
-    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
-    "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-    "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
-    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-    "sInfoPostFix":    "",
-    "sLoadingRecords": "Chargement en cours...",
-    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
-    "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
-    "oPaginate": {
-        "sFirst":      "Premier",
-        "sPrevious":   "Pr&eacute;c&eacute;dent",
-        "sNext":       "Suivant",
-        "sLast":       "Dernier"
-    },
-    "oAria": {
-        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
-        "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
-    },
-          
-        },
-            });
-        } );*/
-
-
+  
 
  $(document).ready(function() {
 
