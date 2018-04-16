@@ -59,7 +59,11 @@ class CvthequeController extends Controller
        if($val->getCv()!=null)
       { 
        if($val->getCv()->getExperience()==$cv->getExperience())
-       $listUsers[$key] = $listCandidats[$key] ;
+       {
+        foreach($cv->getDomaineCompetence() as $DC)
+        print_r($DC->getNom());
+        $listUsers[$key] = $listCandidats[$key] ;
+      }
      }
     }
       
