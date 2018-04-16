@@ -31,7 +31,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
         $builder
-        /*->add('experience', ChoiceType::class, array(
+        ->add('experience', ChoiceType::class, array(
             'label'=> "Expérience",
             'choices' => array(
                  "Pas d'expérience" => 1,
@@ -41,7 +41,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                  ),
             'expanded' => false,
             'multiple' => false,
-            ))*/
+            ))
         /*->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
@@ -58,7 +58,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Espace\UserBundle\Entity\User'
+            'data_class' => 'Espace\UserBundle\Entity\Cv'
         ));
     }
 

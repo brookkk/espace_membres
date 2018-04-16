@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Espace\UserBundle\Entity\User;
+use Espace\UserBundle\Entity\Cv;
 use Espace\UserBundle\Form\EtudiantSearchType;
 use Espace\PlatformBundle\Form\OffreSearchType;
 
@@ -33,8 +34,8 @@ class CvthequeController extends Controller
      public function searchAction(Request $request)
   {
   	
-     $user= new User();
- 	$form =$this->createForm(EtudiantSearchType::class, $user);
+     $cv= new Cv();
+ 	$form =$this->createForm(EtudiantSearchType::class, $cv);
 
 
     if($request->isMethod('POST')){
@@ -48,7 +49,7 @@ class CvthequeController extends Controller
     $repository = $em  ->getRepository('EspaceUserBundle:User');
 
     $listCandidats = $repository->findBy([
-      'experience' => $user->getExperience() ,
+      'experience' => $cv->getExperience() ,
     ]);
 
       
@@ -56,9 +57,11 @@ class CvthequeController extends Controller
       }
     }
 
-   
-    $listOffres = $repository->findAll();
-*/
+   $em= $this  ->getDoctrine()  ->getManager();
+
+    $repository = $em  ->getRepository('EspaceUserBundle:Cv');
+    $listUsers = $repository->findAll();
+
     
     return $this->render('EspacePlatformBundle:New:cv-theque.html.twig', array(
      'form'=>$form->createView(), 
