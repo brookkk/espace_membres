@@ -46,7 +46,7 @@ class CvthequeController extends Controller
         ){
 
     $em= $this  ->getDoctrine()  ->getManager();
-    $repository = $em  ->getRepository('EspaceUserBundle:User');
+    $repository = $em  ->getRepository('EspaceUserBundle:Cv');
 
     $listCandidats = $repository->findBy([
       'experience' => $cv->getExperience() ,

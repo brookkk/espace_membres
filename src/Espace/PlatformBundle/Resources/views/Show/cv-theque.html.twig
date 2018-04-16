@@ -4,15 +4,14 @@
 {% block body %}
 
 <ul class="breadcrumb">
-  <li><a href="{{ path('EP_show_offre') }}">Offres</a></li>
+  <li><a >Candidats</a></li>
   <li>Liste</li>
  
 </ul>
 
-<h3>Liste des Offres</h3>
+<h3>CV-thèque</h3>
 
- {% block search_body %}
- {% endblock %}
+
 
  
   
@@ -20,22 +19,12 @@
     <thead>
       <tr>
         
-        <th>Réf</th>
-        <th>Titre de l'offre</th>
-        <th>Ville</th>
-        <th>Entreprise</th>
-        <th>Details</th>
-        {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
-     <th>Details de l'offre</th>
-     <th>Postuler</th>
-      {% endif %}
-        {% if is_granted('ROLE_ENTREPRISE')  %}
-     <th>Etat</th>
-     <th>Candidats</th>
-     <th>Action</th>
-     <th>Validation</th>
-
-      {% endif %}
+        <th>Nom</th>
+        <th>Prenom</th>
+        
+     <th>Profil du candidat</th>
+     
+    
 
          
       </tr>
@@ -43,25 +32,12 @@
 
     <tfoot>
       <tr>
-        <th>Réf</th>
-        <th>Titre de l'offre</th>
-        <th>Ville</th>
-        <th>Entreprise</th>
-        <th>Details</th>
-        {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
-     <th>Details de l'offre</th>
-     <th>Postuler</th>
-      {% endif %}
-
-{% if is_granted('ROLE_ENTREPRISE')  %}
-    
-
-    <th>Etat</th> 
-    <th>Candidats</th> 
-    <th>Action</th>
-    <th>Validation</th>
-
-      {% endif %}
+        <th>Nom</th>
+        <th>Prenom</th>
+        
+     <th>Profil du candidat</th>
+     
+     
 
       
 
@@ -69,90 +45,21 @@
     </tfoot>  
     <tbody>
 
-  {% for offre in listOffres %}
+  {% for candidat in users %}
 
   <tr>
-  <td> {{ offre.refOffre|date('Y-m-d') }} </td>
-  <td> {{ offre.titreOffre |capitalize}} </td>
-  <td> {{ offre.villeE |capitalize}} </td>
-  <td> {{ offre.entreprise.nom   |capitalize}} </td>
+  <td> {{ candidat.nom |capitalize }} </td>
+  <td> {{ candidat.prenom  |capitalize}} </td>
+
   <td>
-<a href="{{ path('EP_details_offre',{'id': offre.id}) }}" target="_blank"><span class="fa fa-list" ></span> </a> &nbsp 
+<a href="{{ path('espace_details_candidat',{'id': candidat.id}) }}"><span class="glyphicon glyphicon-zoom-in"></span> </a> &nbsp 
 </td>
     
 
-{% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
-  <td> {{ offre.typeContrat.nom }} </td>
-
-     <td>
-
-     {%  if has_applied[offre.id]==0   %}
-<a href="{{ path('EP_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase"></span> </a> &nbsp 
-      {% else %}
-<a href="{{ path('EP_in_apply_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-briefcase" style="color:red"></span> </a> &nbsp 
-      {% endif %}
-     </td>
-      {% endif %}
 
 
-{% if is_granted('ROLE_ENTREPRISE') %}
-{% if offre.etat==0  %} <td style="color:grey"> Créée 
-    {%elseif offre.etat==1%}  <td> Soumise
-    {%elseif offre.etat==2%}  <td style="color:green"> Publiée
-    {%elseif offre.etat==3%}  <td style="color:red"> Refusée
-    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
-    {% endif %}
-
-
-
-</td>
-<td><a href="{{ path('EP_candidats_offre_show',{'id': offre.id}) }}" target="_blank"  title="postuleurs">{{ nb_users[offre.id] }} </a>  </td>
-</td>
-<td>
-{% if offre.etat==0 or offre.etat==4 or offre.etat==3 %}
-   <a href="{{ path('EP_update_offre',{'id': offre.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
-      
-          
-        <a href="{{ path('EP_delete_offre',{'id': offre.id}) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer l offre?')" ><span class="glyphicon glyphicon-trash"></span></a> &nbsp 
-
-<a href="{{ path('EP_offre_dupliquer',{'id': offre.id}) }}"  ><span class="glyphicon glyphicon-copy"></span></a> &nbsp 
-{% else %}
-<a href="{{ path('EP_offre_dupliquer',{'id': offre.id}) }}"  ><span class="glyphicon glyphicon-copy"></span></a> &nbsp 
-
-{%endif%}     
-</td>
-
-
-
-{% if is_granted('ROLE_ENTREPRISE') and not is_granted('ROLE_ADMIN') %}
-
-
-
-
-{% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a> &nbsp 
-    {%elseif offre.etat==1%} <td> Soumise
-    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}">Archiver </a> &nbsp 
-    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a> &nbsp 
-    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
-    {% endif %}
-
-{% elseif is_granted('ROLE_ADMIN') %}
-
-
-{% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a>  
-    {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" >Valider </a> &nbsp  
-       <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red">Refuser </a> 
-    
-    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"> Archiver </a> 
-    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a>  
-    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
-    {% endif %}
-
-{%endif%}
-
-      {% endif %}
    
- </td> 
+  
         
 
     </tr>
@@ -162,11 +69,6 @@
  </table>
 
 
-      {% if is_granted('ROLE_ENTREPRISE') %}
-  <a class="btn btn btn-success" href="{{ path('EP_n_offre') }}" role="button">Ajouter une Offre</a>
-      {% endif %}
-
- 
 
 
 {% endblock %}
