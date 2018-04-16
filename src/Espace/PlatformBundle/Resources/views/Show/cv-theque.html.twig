@@ -12,6 +12,7 @@
 <h3>CV-thèque</h3>
 
 
+{% if listUsers is  empty %}
 
  
   
@@ -48,9 +49,6 @@
 
 
 
-
-
-
   {% for candidat in listUsers %}
 
   <tr>
@@ -66,11 +64,16 @@
  
 
 
- 
  </tbody>
  </table>
 
 
+
+{% else %}
+
+Aucun profil ne correspond aux critères de votre recherche.
+
+{% endif %}
 
 
 {% endblock %}
