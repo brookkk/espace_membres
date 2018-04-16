@@ -53,23 +53,19 @@ class CvthequeController extends Controller
       'experience' => $cv->getExperience() ,
     ]);
 
-    //print_r($listCandidats);
-
+ 
     $listUsers = array();
     foreach ($listCandidats as $key => $val){
-      echo $listCandidats[$key]->getId() . "<br>";
-      $listUsers[] = $user_repository->findBy([
+       $listUsers[] = $user_repository->findBy([
       'cv' => $listCandidats[$key]->getId() ,
     ]);
 
     }
     $users = array();
     foreach ($listUsers as $user){
-          print_r($user[0]->getEmail());
-          $users[] = $user[0];}
+           $users[] = $user[0];}
 
-    //print_r($users);
-
+ 
       
     return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $users   ));
       }

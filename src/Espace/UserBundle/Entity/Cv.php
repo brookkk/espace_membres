@@ -103,7 +103,7 @@ class Cv
    * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
    * @ORM\JoinColumn(nullable=false)        
    */       
-   /* private $domaineCompetence;   */
+    private $domaineCompetence;   
     
 
 
@@ -222,7 +222,7 @@ class Cv
 
 
    
-  /*  public function setDomaineCompetence($domaineCompetence)        
+    public function setDomaineCompetence($domaineCompetence)        
     {       
         $this->domaineCompetence = $domaineCompetence;      
         
@@ -234,7 +234,7 @@ class Cv
     {       
         return $this->domaineCompetence;        
     }
-*/
+
 
 
 
