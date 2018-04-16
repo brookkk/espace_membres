@@ -53,21 +53,25 @@ class CvthequeController extends Controller
       'profil' => 'ETUDIANT' ,
     ]);
 
- 
-    /*$listUsers = array();
-    foreach ($listCandidats as $key => $val){
-       $listUsers[] = $user_repository->findBy([
-      'cv' => $listCandidats[$key]->getId() ,
-    ]);
 
-    }*/
+    $list_users= array();
+ 
+     foreach ($listCandidats as $key => $val){
+       if($val->getCv()!==null)
+      {
+       if($val->getCv()->getExperience()==$cv->getExperience())
+       $listUsers[$key] = $listCandidats[$key] ;
+      //print_r($listCandidats[$key]->getNom() );
+   }
+
+    }
     /*$users = array();
     foreach ($listUsers as $user){
            $users[] = $user[0];}*/
 
  
       
-    return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $listCandidats   ));
+    return $this->render('EspacePlatformBundle:Show:cv-theque.html.twig', array(      'listUsers' => $listUsers   ));
       }
     }
 

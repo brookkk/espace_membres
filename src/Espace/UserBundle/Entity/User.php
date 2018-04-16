@@ -1065,7 +1065,11 @@ public function getPcPrenom()
         $this->serviceAccompagnement = $serviceAccompagnement;
     }
 
-
+/**
+     * Get Cv
+     *
+     * @return Cv
+     */
       public function getCv()
     {
         return $this->cv;
