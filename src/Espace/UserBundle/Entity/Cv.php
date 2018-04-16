@@ -100,9 +100,12 @@ class Cv
 
 
 
-    /*      
-   * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
-   * @ORM\JoinColumn(nullable=false)        
+ 
+
+
+    /**        
+   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence")        
+   * @ORM\JoinColumn(nullable=true)        
    */       
     private $domaineCompetences;   
     
@@ -110,7 +113,7 @@ public function __construct()
     {       
             
 
-        $this->domaineCompetences = new ArrayCollection();
+        //$this->domaineCompetences = new ArrayCollection();
     }   
 
 
@@ -241,10 +244,10 @@ public function __construct()
         return $this->domaineCompetences;        
     }
 
-       public function addDomaineCompetence(Experience $domaineCompetence)
+ /*      public function addDomaineCompetence(Experience $domaineCompetence)
 {
     $this->domaineCompetences[] = $domaineCompetence;
-}
+}*/
 
 
 
