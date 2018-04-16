@@ -37,3 +37,6 @@ espace_update_user:
 espace_delete_user:
     path:     admin/user/delete/{id}
     defaults: { _controller: EspaceUserBundle:User:delete_user }
+EU_create_CV:
+    path:     /candidat/{id}/create/CV
+    defaults: { _controller: EspaceUserBundle:Etudiant:create_CV }

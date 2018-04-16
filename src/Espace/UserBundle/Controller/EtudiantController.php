@@ -195,7 +195,8 @@ public function detailsAction($id)
 
 
     if (!$cv) {
-        throw $this->createNotFoundException('No cv found for id '.$id);
+        //throw $this->createNotFoundException('No cv found for id '.$id);
+        return $this->redirectToRoute('EU_create_CV', array('id' => $id));
     }
 
     $originalExps = new ArrayCollection();

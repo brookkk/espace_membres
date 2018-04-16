@@ -79,7 +79,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> 'Viadeo',
             'required'   => false,
             ))
-       /*->add('domaineCompetence', EntityType::class, array(
+       ->add('domaineCompetence', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Domaine_de_competence',
                 'choice_label' => 'nom',
                 'multiple'     => true,
@@ -88,7 +88,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label_attr' => array(
                     'class' => 'checkbox-inline'
                 )
-                ))*/
+                ))
        ->add('experiences', CollectionType::class, array(
             'entry_type' => ExperienceType::class,
             'entry_options' => array('label' => false),
