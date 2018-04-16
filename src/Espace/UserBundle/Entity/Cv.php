@@ -100,7 +100,7 @@ class Cv
 
 
     /*      
-   * @ORM\ManyToOne(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
+   * @ORM\OneToMany(targetEntity="Espace\PlatformBundle\Entity\Domaine_de_competence" , cascade={"persist"})        
    * @ORM\JoinColumn(nullable=false)        
    */       
     private $domaineCompetence;   
