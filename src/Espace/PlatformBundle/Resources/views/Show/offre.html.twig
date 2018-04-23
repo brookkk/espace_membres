@@ -131,7 +131,7 @@
 
 {% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}" title="Soumettre l'offre"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
     {%elseif offre.etat==1%} <td> 
-    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}">Archiver </a> 
+    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
     {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}" title="Soumettre l'offre"><span class="glyphicon glyphicon-check"></span> </a> 
     {%elseif offre.etat==4%}  <td style="color:black"> 
     {% endif %}
@@ -140,12 +140,12 @@
 
 
 {% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}" title="Soumettre l'offre"><span class="glyphicon glyphicon-check"></span></a>  
-    {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" >Valider </a> &nbsp  
-       <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red">Refuser </a> 
+    {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" title="Valider l'offre" ><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp  
+       <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red"><span class="glyphicon glyphicon-thumbs-down"></span> </a> 
     
     {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"> Archiver </a> 
     {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a>  
-    {%elseif offre.etat==4%}  <td style="color:black"> Archivée
+    {%elseif offre.etat==4%}  <td style="color:black">
     {% endif %}
 
 {%endif%}
