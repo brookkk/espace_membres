@@ -73,9 +73,11 @@
                     {% if is_granted('ROLE_ADMIN')  %}
                     <li class="profile"><a href="{{ path('espace_show_user') }}"><span class="glyphicon glyphicon-lock"></span><h5>Admin</h5></a></li>
                     {% endif %}
-                    <li class="statistics"><a href="{{ path('espace_show_user') }}"><span class="glyphicon glyphicon-user"></span><h5>{{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }}</h5></a></li>
-   
-
+                    {% if is_granted('ROLE_ETUDIANT')  %}
+                    <li class="statistics"><a href="{{ path('espace_details_candidat',{'id': app.user.id}) }}"><span class="glyphicon glyphicon-user"></span><h5>{{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }}</h5></a></li>
+                    {% else %}
+                    <li class="statistics"><a href="{{ path('espace_details_entreprise',{'id': app.user.id}) }}"><span class="glyphicon glyphicon-user"></span><h5>{{ app.user.prenom|capitalize }} {{ app.user.nom|capitalize }}</h5></a></li>
+                    {% endif %}
                     <li class="about"><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span><h5>Déconnexion</h5></a></li>
 
                 </ul>
