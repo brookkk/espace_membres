@@ -47,7 +47,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('nom')->add('prenom')
         
          ->add('adresse')->add('codePostal')->add('ville')->add('email', EmailType::class)
-         ->add('telephone')
+         ->add('telephone', IntegerType::class)
          ->add('ddn', DateType::class, array(
             'widget' => 'choice',
             'years' => range(2017,1940),
@@ -87,10 +87,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('pcEmail', TextType::class, array(
             'label'=> 'Email'
             ))
-        ->add('pcTelephone', TextType::class, array(
+        ->add('pcTelephone', IntegerType::class, array(
             'label'=> 'Numéro de téléphone'
             ))
-        ->add('pcTelephonePortable', TextType::class, array(
+        ->add('pcTelephonePortable', IntegerType::class, array(
             'label'=> 'Numéro de téléphone portable'
             ))
         ->add('pcLien', TextType::class, array(
@@ -105,6 +105,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                  ),
             'expanded' => true,
             'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
             ))
         ->add('newsletter', ChoiceType::class, array(
             'label'=> "J’accepte de recevoir la newsletter",
@@ -114,6 +117,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                  ),
             'expanded' => true,
             'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
             ))
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,

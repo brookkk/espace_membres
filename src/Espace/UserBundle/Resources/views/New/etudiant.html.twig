@@ -145,6 +145,26 @@
  </div>
 
 
+
+<div>
+{{ form_label(form.pcEmail) }}  
+    {{ form_errors(form.pcEmail) }}
+    {{ form_widget(form.pcEmail) }}
+
+{{ form_label(form.pcTelephone) }}  
+    {{ form_errors(form.pcTelephone) }}
+    {{ form_widget(form.pcTelephone) }}
+
+
+</div>
+<div class = "margin12">
+  {{ form_row(form.pcTelephonePortable) }}
+ </div>
+
+ <div class = "margin12">
+  {{ form_row(form.pcLien) }}
+ </div>
+
 {{ form_end(form) }}
 
 </div>
