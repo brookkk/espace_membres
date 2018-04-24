@@ -58,9 +58,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ))
         ->add('email', EmailType::class)->add('telephone')
         ->add('nomE', TextType::class, array(
-                'label'=> "Nom de l'entreprise"
+                'label'=> "Nom de votre entreprise"
             ))
-        ->add('descriptionE')
+        
         ->add('logoE', FileType::class, array(
                 'label'=> "Logo de l'entreprise"
             ))
