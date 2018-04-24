@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
@@ -89,6 +90,16 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                     'class' => 'radio-inline'
                 )
             )) 
+        ->add('secteurActivite', EntityType::class, array(
+                'class'        => 'EspacePlatformBundle:Secteur_d_activite',
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                'expanded'     => true,
+                'label'=> "Secteur d'activité",
+                'label_attr' => array(
+                    'class' => 'radio-inline'
+                ),
+                ))
          ->add('newsletter', ChoiceType::class, array(
             'label'=> "J’accepte de recevoir la newsletter",
             'choices' => array(
