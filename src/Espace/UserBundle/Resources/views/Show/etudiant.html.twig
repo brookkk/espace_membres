@@ -70,7 +70,7 @@ CV
 <b>Filière professionelle :</b>  <br>
 <b>Date emploi :</b>  <br>
 <b>Poste actuel :</b>  <br>
-<b>Niveaux d'étude :</b> {{etudiant.niveauFormation.nom}} <br>
+<b>Niveaux d'étude :</b> {% if etudiant.niveauFormation is not null %}{{etudiant.niveauFormation.nom}} {% endif %} <br>
 
 
 <b>Diplome d'inscription :</b> <br>
