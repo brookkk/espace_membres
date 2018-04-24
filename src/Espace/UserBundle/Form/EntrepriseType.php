@@ -29,10 +29,13 @@ class EntrepriseType extends AbstractType
 
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('civilite')->add('nom')->add('prenom')
-        /*->add('password', TextType::class, array(
-                'label'=> "Mot de Passe"
-            ) )*/
+        $builder->add('civilite')
+
+
+
+
+        ->add('nom')->add('prenom')
+        
 
         ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
