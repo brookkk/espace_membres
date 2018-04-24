@@ -77,11 +77,29 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'label'=> "Ville de l'entreprise"
             ))
         ->add('votreFonction')
-        ->add('enquete', CheckboxType::class, array(
-            'label'=> "J’accepte de participer aux enquêtes liées aux projets des étudiants"
+        ->add('enquete', ChoiceType::class, array(
+            'label'=> "J’accepte de participer aux enquêtes liées aux projets des étudiants",
+            'choices' => array(
+                 'Oui' => true,
+                 'Non' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
             )) 
-         ->add('newsletter', CheckboxType::class, array(
-            'label'=> "J’accepte de recevoir la newsletter"
+         ->add('newsletter', ChoiceType::class, array(
+            'label'=> "J’accepte de recevoir la newsletter",
+            'choices' => array(
+                 'Oui' => true,
+                 'Non' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
             ))       
                
         /*->add('captcha', CaptchaType::class)*/
