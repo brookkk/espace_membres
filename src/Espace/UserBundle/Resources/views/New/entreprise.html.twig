@@ -20,7 +20,7 @@
     {{ form_errors(form) }}
 <br>
 
-<div>
+<div class="margin32">
     {{ form_label(form.civilite) }}
     {{ form_errors(form.civilite) }}
     {{ form_widget(form.civilite) }} 
@@ -35,6 +35,19 @@
      {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp 
     {{ form_errors(form.prenom) }} 
     {{ form_widget(form.prenom) }}
+</div>
+
+
+
+<div>
+  &nbsp  &nbsp    {{ form_label(form.email) }}  
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp 
+
+
+     {{ form_label(form.telephone) }}  &nbsp &nbsp 
+    {{ form_errors(form.telephone) }} 
+    {{ form_widget(form.telephone) }}
 </div>
 
 
