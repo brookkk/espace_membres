@@ -17,6 +17,8 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 
 class EntrepriseType extends AbstractType
@@ -29,9 +31,21 @@ class EntrepriseType extends AbstractType
 
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('civilite')
+        $builder
 
+        ->add('civilite', ChoiceType::class, array(
+            'label'=> "Civilité",
+            'choices' => array(
+                 'Homme' => true,
+                 'Femme' => false,
+                 ),
+            'expanded' => true,
+            'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
 
+            ))
 
 
         ->add('nom')->add('prenom')

@@ -18,9 +18,13 @@
 <div class="margin10">
 {{ form_start(form) }}
     {{ form_errors(form) }}
+<br>
 
-
-
+<div>
+    {{ form_label(form.civilite) }}
+    {{ form_errors(form.civilite) }}
+    {{ form_widget(form.civilite) }} 
+</div>
 
 <div>
   &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
