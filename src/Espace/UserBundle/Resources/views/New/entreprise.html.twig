@@ -59,11 +59,18 @@
 </h4>
 
   <div >
-  {{ form_row(form.nomE) }}
+
+   {{ form_label(form.nomE) }}  &nbsp &nbsp 
+    {{ form_errors(form.nomE) }} 
+    {{ form_widget(form.nomE) }}
  </div>
 
    <div >
-  {{ form_row(form.descriptionE) }}
+
+
+   {{ form_label(form.descriptionE) }}  
+    {{ form_errors(form.descriptionE) }} 
+    {{ form_widget(form.descriptionE) }}
  </div>
 
     <div >
@@ -73,7 +80,7 @@
    <div >
 
 
-   {{ form_label(form.adresseE) }}  &nbsp &nbsp &nbsp 
+   {{ form_label(form.adresseE) }}  &nbsp &nbsp &nbsp  
     {{ form_errors(form.adresseE) }} 
     {{ form_widget(form.adresseE) }}
  </div>
