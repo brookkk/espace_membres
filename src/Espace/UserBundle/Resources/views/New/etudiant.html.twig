@@ -61,10 +61,88 @@
 
 
  </div>
- <div>
+ <div class = "margin32">
   {{ form_row(form.ville) }}
  </div>
 
+
+<br>
+
+
+ <div>
+  &nbsp  &nbsp  {{ form_label(form.email) }}  
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.telephone) }}  &nbsp &nbsp 
+    {{ form_errors(form.telephone) }} 
+    {{ form_widget(form.telephone) }}
+</div>
+
+ <br>
+ <div class="margin32">
+ 
+    {{ form_label(form.ddn) }}  
+    {{ form_errors(form.ddn) }}
+    {{ form_widget(form.ddn) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+</div>
+<div>
+     {{ form_label(form.numIne) }}  
+    {{ form_errors(form.numIne) }}
+    {{ form_widget(form.numIne) }} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+
+
+ </div>
+ <br>
+ <div >
+  {{ form_row(form.niveauFormation) }}
+ </div>
+<br>
+  <div >
+  {{ form_row(form.diplome) }}
+ </div>
+
+
+
+<h4 class="subtitle">
+ <b>Personne à contacter en cas d'urgence</b>
+
+</h4>
+
+
+
+<div>
+  &nbsp  &nbsp &nbsp   {{ form_label(form.pcNom) }}  
+    {{ form_errors(form.pcNom) }}
+    {{ form_widget(form.pcNom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.pcPrenom) }}  &nbsp &nbsp &nbsp &nbsp
+    {{ form_errors(form.pcPrenom) }} 
+    {{ form_widget(form.pcPrenom) }}
+</div>
+
+ 
+ <div>
+ 
+    {{ form_label(form.adresse) }}  
+    {{ form_errors(form.adresse) }}
+    {{ form_widget(form.adresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.codePostal) }}  
+    {{ form_errors(form.codePostal) }}
+    {{ form_widget(form.codePostal) }}
+
+
+
+ </div>
+ <div class = "margin32">
+  {{ form_row(form.ville) }}
+ </div>
 
 
 {{ form_end(form) }}
