@@ -94,7 +94,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'class'        => 'EspacePlatformBundle:Secteur_d_activite',
                 'choice_label' => 'nom',
                 'multiple'     => false,
-                'expanded'     => true,
+                'expanded'     => false,
                 'label'=> "Secteur d'activité",
                 'label_attr' => array(
                     'class' => 'radio-inline'
