@@ -39,6 +39,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                  ),
             'expanded' => true,
             'multiple' => false,
+            'label_attr' => array(
+                    'class' => 'radio-inline'
+                )
+
             ))
         ->add('nom')->add('prenom')
         

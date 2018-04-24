@@ -4,7 +4,6 @@
 {% block body %}
  
 
-{% form_theme form 'form_table_layout.html.twig' %}
 
 
  <ul class="breadcrumb">
@@ -13,8 +12,65 @@
  
 <h3>Candidat</h3>
 
+{#
 <div >
   {{ form(form) }}
 </div>
+#}
+
+
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+
+
+ 
+
+
+
+<div>
+    {{ form_label(form.civilite) }}
+    {{ form_errors(form.civilite) }}
+    {{ form_widget(form.civilite) }} 
+</div>
+
+
+<div>
+  &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.nom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp &nbsp
+    {{ form_errors(form.prenom) }} 
+    {{ form_widget(form.prenom) }}
+</div>
+
+ 
+ <div>
+ 
+    {{ form_label(form.adresse) }}  
+    {{ form_errors(form.adresse) }}
+    {{ form_widget(form.adresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.codePostal) }}  
+    {{ form_errors(form.codePostal) }}
+    {{ form_widget(form.codePostal) }}
+
+
+
+ </div>
+ <div>
+  {{ form_row(form.ville) }}
+ </div>
+
+
+
+{{ form_end(form) }}
+
+
+
+
 
  {% endblock %} 
