@@ -99,6 +99,27 @@
  </div>
 
 
+    <div >
+
+   {{ form_label(form.votreFonction) }}  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp  &nbsp &nbsp &nbsp   
+    {{ form_errors(form.votreFonction) }} 
+    {{ form_widget(form.votreFonction) }}
+ </div>
+
+
+  <div >
+  {{ form_row(form.enquete) }}
+ </div>
+
+ <div >
+  {{ form_row(form.newsletter) }}
+ </div>
+
+ <div >
+  {{ form_row(form.plainPassword) }}
+ </div>
+
+
     {{ form_end(form) }}
 
 
