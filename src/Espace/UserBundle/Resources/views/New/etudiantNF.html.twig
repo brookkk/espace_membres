@@ -43,7 +43,7 @@
 
 
 
-<div><br>
+<div>
   &nbsp    {{ form_label(form.facebookLink) }}  
     {{ form_errors(form.facebookLink) }}
     {{ form_widget(form.facebookLink) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -59,13 +59,7 @@
 </div>
 
 
-
-
-
-
-{{ form_row(form.facebookLink) }}
-{{ form_row(form.linkedinLink) }}
-{{ form_row(form.viadeoLink) }}
+<br>
 {{ form_row(form.domaineCompetence) }}
  
 
@@ -76,9 +70,38 @@
         {# iterate over each existing tag and render its only field: name #}
         {% for exp in form.experiences %}
            <div class="expp" >
-            {{ form_row(exp.anneeDebut)    }}
-            {{ form_row(exp.anneeFin)    }}
-            {{ form_row(exp.entreprise)    }}
+
+
+<div >
+  &nbsp    {{ form_label(exp.anneeDebut) }}  
+    {{ form_errors(exp.anneeDebut) }}
+    {{ form_widget(exp.anneeDebut) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(exp.anneeFin) }}  &nbsp 
+    {{ form_errors(exp.anneeFin) }} 
+    {{ form_widget(exp.anneeFin) }}
+
+<br>
+   &nbsp &nbsp   {{ form_label(exp.entreprise) }}  &nbsp 
+    {{ form_errors(exp.entreprise) }} 
+    {{ form_widget(exp.entreprise) }}
+</div>
+
+<br>
+<div >
+  &nbsp   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  {{ form_label(exp.ville) }}  
+    {{ form_errors(exp.ville) }}
+    {{ form_widget(exp.ville) }}&nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(exp.posteOccupe) }}  &nbsp 
+    {{ form_errors(exp.posteOccupe) }} 
+    {{ form_widget(exp.posteOccupe) }}
+
+
+</div>
+
+
+           
             {{ form_row(exp.ville)    }}
             {{ form_row(exp.codePostal)    }}
             {{ form_row(exp.posteOccupe)    }}
