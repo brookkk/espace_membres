@@ -84,7 +84,11 @@
 <br>
    &nbsp &nbsp   {{ form_label(exp.entreprise) }}  &nbsp 
     {{ form_errors(exp.entreprise) }} 
-    {{ form_widget(exp.entreprise) }}
+    {{ form_widget(exp.entreprise) }}&nbsp &nbsp &nbsp
+
+       {{ form_label(exp.posteOccupe) }}  &nbsp 
+    {{ form_errors(exp.posteOccupe) }} 
+    {{ form_widget(exp.posteOccupe) }}
 </div>
 
 <br>
@@ -93,19 +97,24 @@
     {{ form_errors(exp.ville) }}
     {{ form_widget(exp.ville) }}&nbsp &nbsp &nbsp &nbsp
 
-     {{ form_label(exp.posteOccupe) }}  &nbsp 
-    {{ form_errors(exp.posteOccupe) }} 
-    {{ form_widget(exp.posteOccupe) }}
+     {{ form_label(exp.codePostal) }}  &nbsp 
+    {{ form_errors(exp.codePostal) }} 
+    {{ form_widget(exp.codePostal) }}
 
+
+<br><br>
+  
+
+    
+    &nbsp &nbsp &nbsp  {{ form_label(exp.missions) }}  &nbsp 
+    {{ form_errors(exp.missions) }} 
+    {{ form_widget(exp.missions) }}
 
 </div>
 
 
            
-            {{ form_row(exp.ville)    }}
-            {{ form_row(exp.codePostal)    }}
-            {{ form_row(exp.posteOccupe)    }}
-            {{ form_row(exp.missions)    }}
+       
 
 
             </div>
