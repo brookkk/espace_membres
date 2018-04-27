@@ -1,10 +1,10 @@
  
   {% extends "EspacePlatformBundle::layout.html.twig" %}
 
+
 {% block body %}
  
 
-{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
 
 
  <ul class="breadcrumb">
@@ -18,10 +18,51 @@
     {{ form_errors(form) }}
 
 
-{{ form_row(form.profilTitre) }}
-{{ form_row(form.typeContratRecherche) }}
-{{ form_row(form.experience) }}
+
+
+<div><br>
+  &nbsp    {{ form_label(form.profilTitre) }}  
+    {{ form_errors(form.profilTitre) }}
+    {{ form_widget(form.profilTitre) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(form.typeContratRecherche) }}  &nbsp 
+    {{ form_errors(form.typeContratRecherche) }} 
+    {{ form_widget(form.typeContratRecherche) }}
+
+    <br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   {{ form_label(form.experience) }}  &nbsp 
+    {{ form_errors(form.experience) }} 
+    {{ form_widget(form.experience) }}
+</div>
+
+
+
+
+
 {{ form_row(form.mobilite) }}
+
+
+
+<div><br>
+  &nbsp    {{ form_label(form.facebookLink) }}  
+    {{ form_errors(form.facebookLink) }}
+    {{ form_widget(form.facebookLink) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(form.linkedinLink) }}  &nbsp 
+    {{ form_errors(form.linkedinLink) }} 
+    {{ form_widget(form.linkedinLink) }}
+
+<br>
+   &nbsp &nbsp   {{ form_label(form.viadeoLink) }}  &nbsp 
+    {{ form_errors(form.viadeoLink) }} 
+    {{ form_widget(form.viadeoLink) }}
+</div>
+
+
+
+
+
+
 {{ form_row(form.facebookLink) }}
 {{ form_row(form.linkedinLink) }}
 {{ form_row(form.viadeoLink) }}

@@ -111,11 +111,11 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'expanded' => true,
             'multiple' => false,
             ))
-        /*->add('plainPassword', RepeatedType::class, array(
+        ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Mot de Passe'),
                 'second_options' => array('label' => 'Confirmer votre mot de passe'),
-            ))*/
+            ))
         ->add('Sauvegarder', SubmitType::class);
     }
 

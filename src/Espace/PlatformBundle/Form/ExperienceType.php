@@ -7,6 +7,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Espace\PlatformBundle\Entity\Experience;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 class ExperienceType extends AbstractType
 {
@@ -17,6 +19,7 @@ class ExperienceType extends AbstractType
     {
         $builder->add('anneeDebut')
                 ->add('anneeFin')
+                
                 ->add('entreprise')
                 ->add('ville')
                 ->add('codePostal')
