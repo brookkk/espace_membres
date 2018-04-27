@@ -164,14 +164,17 @@ class UserController extends Controller
 if($user->getProfil()=='ETUDIANT')
     $form = $this->createForm(Etudiant_updateType::class, $user);
 
-else    $form = $this->createForm(Entreprise_updateType::class, $user);
+else    {$form = $this->createForm(Entreprise_updateType::class, $user);
+  $user->setLogoE($user->getLogoE());
+}
+
 
 
     if($request->isMethod('POST')){
 
       $form->handleRequest($request);
 
-      if($form->isValid()){
+    //  if($form->isValid()){
         $em= $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();
@@ -180,9 +183,12 @@ else    $form = $this->createForm(Entreprise_updateType::class, $user);
 
        
 
-
-        return $this->redirectToRoute('espace_platform_homepage');
-      }
+if($user->getProfil()=='ETUDIANT')
+        return $this->redirectToRoute('espace_details_candidat', array('id'=>$user->getId()));
+else 
+        return $this->redirectToRoute('espace_details_entreprise', array('id'=>$user->getId()));
+  
+     // }
 
 
 
