@@ -1,0 +1,176 @@
+ 
+  {% extends "EspaceUserBundle::layout_register.html.twig" %}
+
+{% block body %}
+ 
+
+
+
+ <ul class="breadcrumb">
+  <li><a href="{{ path('espace_user_homepage') }}">Candidat</a></li>
+  <li>MAJ</li>
+ 
+<h3>Candidat</h3>
+
+{#
+<div >
+  {{ form(form) }}
+</div>
+#}
+
+<div class="margin10">
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+
+
+ 
+
+
+
+<div>
+    {{ form_label(form.civilite) }}
+    {{ form_errors(form.civilite) }}
+    {{ form_widget(form.civilite) }} 
+</div>
+
+
+<div>
+  &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.nom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp 
+    {{ form_errors(form.prenom) }} 
+    {{ form_widget(form.prenom) }}
+</div>
+
+ 
+ <div>
+ 
+    {{ form_label(form.adresse) }}  
+    {{ form_errors(form.adresse) }}
+    {{ form_widget(form.adresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.codePostal) }}  
+    {{ form_errors(form.codePostal) }}
+    {{ form_widget(form.codePostal) }}
+
+
+
+ </div>
+ <div class = "margin32">
+  {{ form_row(form.ville) }}
+ </div>
+
+
+<br>
+
+
+ <div>
+  &nbsp  &nbsp  {{ form_label(form.email) }}  
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.telephone) }}  &nbsp &nbsp 
+    {{ form_errors(form.telephone) }} 
+    {{ form_widget(form.telephone) }}
+</div>
+
+ <br>
+ <div class="margin32">
+ 
+    {{ form_label(form.ddn) }}  
+    {{ form_errors(form.ddn) }}
+    {{ form_widget(form.ddn) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+</div>
+<div>
+     {{ form_label(form.numIne) }}  
+    {{ form_errors(form.numIne) }}
+    {{ form_widget(form.numIne) }} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+
+
+ </div>
+ <br>
+ <div >
+  {{ form_row(form.niveauFormation) }}
+ </div>
+<br>
+{#
+  <div >
+  {{ form_row(form.diplome) }}
+ </div>
+ #}
+
+
+
+<h4 class="subtitle">
+ <b>Personne à contacter en cas d'urgence</b>
+
+</h4>
+
+
+
+<div>
+  &nbsp  &nbsp &nbsp   {{ form_label(form.pcNom) }}  
+    {{ form_errors(form.pcNom) }}
+    {{ form_widget(form.pcNom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.pcPrenom) }}  &nbsp &nbsp &nbsp 
+    {{ form_errors(form.pcPrenom) }} 
+    {{ form_widget(form.pcPrenom) }}
+</div>
+
+ 
+ <div>
+ 
+    {{ form_label(form.pcAdresse) }}  
+    {{ form_errors(form.pcAdresse) }}
+    {{ form_widget(form.pcAdresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp 
+
+
+     {{ form_label(form.pcCodePostal) }}  
+    {{ form_errors(form.pcCodePostal) }}
+    {{ form_widget(form.pcCodePostal) }}
+
+
+
+ </div>
+ <div class = "margin32">
+  {{ form_row(form.pcVille) }}
+ </div>
+
+
+
+<div>
+{{ form_label(form.pcEmail) }}  
+    {{ form_errors(form.pcEmail) }}
+    {{ form_widget(form.pcEmail) }}
+
+{{ form_label(form.pcTelephone) }}  
+    {{ form_errors(form.pcTelephone) }}
+    {{ form_widget(form.pcTelephone) }}
+
+
+</div>
+<div class = "margin12">
+  {{ form_row(form.pcTelephonePortable) }}
+ </div>
+
+ <div class = "margin12">
+  {{ form_row(form.pcLien) }}
+ </div>
+
+{{ form_end(form) }}
+
+</div>
+
+
+
+ {% endblock %} 

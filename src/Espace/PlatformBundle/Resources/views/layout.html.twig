@@ -69,7 +69,7 @@
                     {% if is_granted('ROLE_ENTREPRISE')  %}
                     <li class="lists"><a href="{{ path('EP_cvtheque_search') }}"><span class="glyphicon glyphicon-list-alt"></span><h5>Cv-thèque</h5></a></li>
                     {% endif %}
-                    <li class="contact"><a href="#"><span class="glyphicon glyphicon-calendar"></span><h5>Calendrier</h5></a></li>
+                    <!--<li class="contact"><a href="#"><span class="glyphicon glyphicon-calendar"></span><h5>Calendrier</h5></a></li>-->
                     {% if is_granted('ROLE_ADMIN')  %}
                     <li class="profile"><a href="{{ path('espace_show_user') }}"><span class="glyphicon glyphicon-lock"></span><h5>Admin</h5></a></li>
                     {% endif %}

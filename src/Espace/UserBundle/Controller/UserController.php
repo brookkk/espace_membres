@@ -190,7 +190,7 @@ else    $form = $this->createForm(EntrepriseType::class, $user);
 
 
 if($user->getProfil()=='ETUDIANT')
-      return $this->render('EspaceUserBundle:New:etudiant.html.twig', array(
+      return $this->render('EspaceUserBundle:New:etudiant_update.html.twig', array(
            'form'=>$form->createView(),
            ));
 else
