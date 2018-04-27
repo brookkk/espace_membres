@@ -20,6 +20,7 @@ use Espace\UserBundle\Entity\Entreprise;
 
 use Espace\UserBundle\Form\EntrepriseType;
 use Espace\UserBundle\Form\Etudiant_updateType;
+use Espace\UserBundle\Form\Entreprise_updateType;
 
 
 
@@ -163,7 +164,7 @@ class UserController extends Controller
 if($user->getProfil()=='ETUDIANT')
     $form = $this->createForm(Etudiant_updateType::class, $user);
 
-else    $form = $this->createForm(EntrepriseType::class, $user);
+else    $form = $this->createForm(Entreprise_updateType::class, $user);
 
 
     if($request->isMethod('POST')){
@@ -194,7 +195,7 @@ if($user->getProfil()=='ETUDIANT')
            'form'=>$form->createView(),
            ));
 else
-     return $this->render('EspaceUserBundle:New:entreprise.html.twig', array(
+     return $this->render('EspaceUserBundle:New:entreprise_update.html.twig', array(
      'form'=>$form->createView(),
      ));
 

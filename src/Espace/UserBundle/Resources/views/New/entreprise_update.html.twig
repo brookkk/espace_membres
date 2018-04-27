@@ -1,0 +1,134 @@
+ 
+  {% extends "EspaceUserBundle::layout_register.html.twig" %}
+
+
+
+{% block body %}
+ 
+ 
+
+ <ul class="breadcrumb">
+  <li><a href="{{ path('espace_user_homepage') }}">Entreprise</a></li>
+  <li>MAJ</li>
+ 
+<h3>Entreprise</h3>
+	
+
+
+<div class="margin10">
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+<br>
+
+<div class="margin32">
+    {{ form_label(form.civilite) }}
+    {{ form_errors(form.civilite) }}
+    {{ form_widget(form.civilite) }} 
+</div>
+
+<div>
+  &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.nom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+     {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp 
+    {{ form_errors(form.prenom) }} 
+    {{ form_widget(form.prenom) }}
+</div>
+
+
+
+<div>
+  &nbsp  &nbsp    {{ form_label(form.email) }}  
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp 
+
+
+     {{ form_label(form.telephone) }}  &nbsp &nbsp 
+    {{ form_errors(form.telephone) }} 
+    {{ form_widget(form.telephone) }}
+</div>
+
+
+
+
+<h4 class="subtitle">
+ <b>Entreprise</b>
+
+</h4>
+
+  <div >
+
+   {{ form_label(form.nomE) }}  &nbsp &nbsp 
+    {{ form_errors(form.nomE) }} 
+    {{ form_widget(form.nomE) }}
+ </div>
+
+   <div >
+
+
+   {{ form_label(form.descriptionE) }}  
+    {{ form_errors(form.descriptionE) }} 
+    {{ form_widget(form.descriptionE) }}
+ </div>
+
+    <div >
+  {{ form_row(form.logoE) }}
+ </div>
+
+   <div >
+
+
+   {{ form_label(form.adresseE) }}  &nbsp &nbsp &nbsp  
+    {{ form_errors(form.adresseE) }} 
+    {{ form_widget(form.adresseE) }}
+ </div>
+
+   <div >
+
+  {{ form_label(form.codePostalE) }}  
+    {{ form_errors(form.codePostalE) }} 
+    {{ form_widget(form.codePostalE) }}
+ </div>
+   <div >
+
+   {{ form_label(form.villeE) }}  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp   &nbsp 
+    {{ form_errors(form.villeE) }} 
+    {{ form_widget(form.villeE) }}
+ </div>
+
+
+    <div >
+
+   {{ form_label(form.votreFonction) }}  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp  &nbsp &nbsp &nbsp   
+    {{ form_errors(form.votreFonction) }} 
+    {{ form_widget(form.votreFonction) }}
+ </div>
+
+
+  <div >
+  {{ form_row(form.secteurActivite) }}
+ </div>
+
+<br>
+  <div >
+  {{ form_row(form.enquete) }}
+ </div>
+
+ <div >
+  {{ form_row(form.newsletter) }}
+ </div>
+
+ <div >
+  {{ form_row(form.plainPassword) }}
+ </div>
+
+
+    {{ form_end(form) }}
+
+
+
+</div>
+
+ {% endblock %} 
