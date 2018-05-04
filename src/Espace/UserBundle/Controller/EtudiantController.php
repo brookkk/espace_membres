@@ -200,10 +200,15 @@ public function detailsAction($id)
     }
 
     $originalExps = new ArrayCollection();
+    $originalLans = new ArrayCollection();
 
     // Create an ArrayCollection of the current Tag objects in the database
     foreach ($cv->getExperiences() as $exp) {
         $originalExps->add($exp);
+    }
+
+    foreach ($cv->getLangues() as $lan) {
+        $originalLans->add($lan);
     }
 
     $editForm = $this->createForm(Etudiant_entro_NFType::class, $cv);
@@ -220,6 +225,19 @@ public function detailsAction($id)
 
                 
                 $entityManager->persist($exp);
+
+                // if you wanted to delete the Tag entirely, you can also do that
+                // $entityManager->remove($tag);
+            }
+        }
+
+        foreach ($originalLans as $lan) {
+            if (false === $cv->getLangues()->contains($lan)) {
+                // remove the Task from the Tag
+                $cv->getLangues()->removeElement($lan);
+
+                
+                $entityManager->persist($lan);
 
                 // if you wanted to delete the Tag entirely, you can also do that
                 // $entityManager->remove($tag);
