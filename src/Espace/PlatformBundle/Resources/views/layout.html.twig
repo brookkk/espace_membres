@@ -250,6 +250,13 @@ var $collectionHolder;
 var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter une expérience</a>');
 var $newLinkLi = $('<div></div>').append($addTagLink);
 
+
+var $collectionHolder2;
+
+// setup an "add a tag" link
+var $addLangLink = $('<a href="#" class="add_lang_link">Ajouter une Langue</a>');
+var $newLinkLi2 = $('<div></div>').append($addLangLink);
+
 jQuery(document).ready(function() {
     // Get the ul that holds the collection of tags
     $collectionHolder = $('div.experiences');
@@ -272,6 +279,38 @@ jQuery(document).ready(function() {
         // add a new tag form (see next code block)
         addTagForm($collectionHolder, $newLinkLi);
     });
+
+
+
+
+
+
+
+        // Get the ul that holds the collection of tags
+    $collectionHolder2 = $('div.langues');
+
+    $collectionHolder2.find('div.langg').each(function() {
+        addLangFormDeleteLink($(this));
+    });
+
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolder2.append($newLinkLi2);k
+
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolder2.data('index', $collectionHolder2.find(':input').length);
+
+    $addLangLink.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // add a new tag form (see next code block)
+        addLangForm($collectionHolder2, $newLinkLi2);
+    });
+
+
+
+
 });
 
 
@@ -318,45 +357,20 @@ function addTagFormDeleteLink($tagFormLi) {
 
 
 
-</script>
 
-
-
-
-
-
-<script type="text/javascript">
     
 
-var $collectionHolder2;
 
-// setup an "add a tag" link
-var $addLangLink = $('<a href="#" class="add_lang_link">Ajouter une Langue</a>');
-var $newLinkLi = $('<div></div>').append($addLangLink);
 
-jQuery(document).ready(function() {
-    // Get the ul that holds the collection of tags
-    $collectionHolder2 = $('div.langues');
+/*jQuery(document).ready(function() {
 
-    $collectionHolder2.find('div.langg').each(function() {
-        addLangFormDeleteLink($(this));
-    });
 
-    // add the "add a tag" anchor and li to the tags ul
-    $collectionHolder2.append($newLinkLi);
 
-    // count the current form inputs we have (e.g. 2), use that as the new
-    // index when inserting a new item (e.g. 2)
-    $collectionHolder2.data('index', $collectionHolder2.find(':input').length);
 
-    $addLangLink.on('click', function(e) {
-        // prevent the link from creating a "#" on the URL
-        e.preventDefault();
 
-        // add a new tag form (see next code block)
-        addLangForm($collectionHolder2, $newLinkLi);
-    });
-});
+
+
+});*/
 
 
 
