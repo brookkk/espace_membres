@@ -19,16 +19,16 @@ class LangueType extends AbstractType
     {
         $builder->add('langue')
                 ->add('niveau', ChoiceType::class, array(
-            'label'=> "Expérience",
-            'choices' => array(
-                 "Pas d'expérience" => 1,
-                 "1 - 3 ans" => 2,
-                 "3 - 5 ans" => 3,
-                 "5 ans et plus" => 4,
-                 ),
-            'expanded' => false,
-            'multiple' => false,
-            ))
+                    'label'=> "Niveau",
+                    'choices' => array(
+                         "Débutant" => 1,
+                         "Intermédiaire" => 2,
+                         "Avancé" => 3,
+                         "Langue maternelle" => 4,
+                         ),
+                    'expanded' => false,
+                    'multiple' => false,
+                    ));
                 
                
     }
