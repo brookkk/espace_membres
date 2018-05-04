@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Espace\UserBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Espace\PlatformBundle\Entity\Experience;
+use Espace\PlatformBundle\Entity\Langue;
 
 
 /**
@@ -289,15 +290,20 @@ public function removeExperience(Experience $experience)
     }
 
 
-    public function addLangue(Experience $langue)
-{
-    $this->langues[] = $langue;
-}
+    public function addLangue(Langue $langue)
+        {
+            $this->langues[] = $langue;
+        }
 
-public function removeLangue(Experience $langue)
-{
-    $this->langues->removeElement($langue);
-}
+      /*  public function setLangue($langue)
+    {
+        $this->langues = $langue;
+    }*/
+
+public function removeLangue(Langue $langue)
+        {
+            $this->langues->removeElement($langue);
+        }
     
 }
 
