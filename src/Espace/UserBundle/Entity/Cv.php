@@ -289,12 +289,12 @@ public function removeExperience(Experience $experience)
     }
 
 
-    public function addLangues(Experience $langue)
+    public function addLangue(Experience $langue)
 {
     $this->langues[] = $langue;
 }
 
-public function removeLangues(Experience $langue)
+public function removeLangue(Experience $langue)
 {
     $this->langues->removeElement($langue);
 }
