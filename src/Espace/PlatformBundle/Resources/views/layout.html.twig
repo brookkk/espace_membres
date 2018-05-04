@@ -328,7 +328,7 @@ function addTagFormDeleteLink($tagFormLi) {
 <script type="text/javascript">
     
 
-var $collectionHolder;
+var $collectionHolder2;
 
 // setup an "add a tag" link
 var $addLangLink = $('<a href="#" class="add_lang_link">Ajouter une Langue</a>');
@@ -336,25 +336,25 @@ var $newLinkLi = $('<div></div>').append($addLangLink);
 
 jQuery(document).ready(function() {
     // Get the ul that holds the collection of tags
-    $collectionHolder = $('div.langues');
+    $collectionHolder2 = $('div.langues');
 
-    $collectionHolder.find('div.langg').each(function() {
+    $collectionHolder2.find('div.langg').each(function() {
         addLangFormDeleteLink($(this));
     });
 
     // add the "add a tag" anchor and li to the tags ul
-    $collectionHolder.append($newLinkLi);
+    $collectionHolder2.append($newLinkLi);
 
     // count the current form inputs we have (e.g. 2), use that as the new
     // index when inserting a new item (e.g. 2)
-    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+    $collectionHolder2.data('index', $collectionHolder2.find(':input').length);
 
     $addLangLink.on('click', function(e) {
         // prevent the link from creating a "#" on the URL
         e.preventDefault();
 
         // add a new tag form (see next code block)
-        addLangForm($collectionHolder, $newLinkLi);
+        addLangForm($collectionHolder2, $newLinkLi);
     });
 });
 
@@ -381,7 +381,7 @@ function addLangForm($collectionHolder, $newLinkLi) {
     $collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="expp2"></div>').append(newForm);
+    var $newFormLi = $('<div class="langg2"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
 }
 

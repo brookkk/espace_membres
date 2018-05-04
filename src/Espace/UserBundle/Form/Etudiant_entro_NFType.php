@@ -99,7 +99,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'allow_delete' => true,
         ))
        ->add('langues', CollectionType::class, array(
-            'entry_type' => ExperienceType::class,
+            'entry_type' => LangueType::class,
             'entry_options' => array('label' => false),
             'allow_add' => true,
             'label' => false,
