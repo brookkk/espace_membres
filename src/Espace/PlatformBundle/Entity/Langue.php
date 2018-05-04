@@ -75,14 +75,14 @@ class Langue
     }
 
 
-   public function getLangue()
+   public function getNiveau()
     {
-        return $this->langue;
+        return $this->niveau;
     }
 
-    public function setLangue($langue)
+    public function setNiveau($niveau)
     {
-        $this->langue = $langue;
+        $this->niveau = $niveau;
     }
 
   
