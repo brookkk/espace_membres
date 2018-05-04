@@ -29,157 +29,63 @@ class Langue
 
 
 
-     /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="anneeDebut", type="integer")       
-     */     
-    private $anneeDebut;   
 
 
 
     /**     
      * @var string      
      *      
-     * @ORM\Column(name="anneeFin", type="integer")       
+     * @ORM\Column(name="langue", type="string", length=255)       
      */     
-    private $anneeFin; 
+    private $langue;  
 
 
 
-
-    /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="entreprise", type="string", length=255)       
-     */     
-    private $entreprise;  
-
-
-
-    /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="ville", type="string", length=255)       
-     */     
-    private $ville;  
-
+ 
 
 
          /**
      * @var string
      *
-    * @Assert\Length(
-     *      min = 5,
-     *      max = 5,
-     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
-     *      
-     * )     
-     * @ORM\Column(name="codePostal", type="integer",  nullable=true)
+     * @ORM\Column(name="niveau", type="integer",  nullable=true)
      */
-    private $codePostal;    
+    private $niveau;    
 
 
 
-     /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="posteOccupe", type="string", length=255)       
-     */     
-    private $posteOccupe; 
-
-
-    /**     
-     * @var string      
-     *      
-     * @ORM\Column(name="missions", type="text")       
-     */     
-    private $missions;   
-
-
-
-
-
-    public function getAnneeDebut()
+  
+       public function getId()
     {
-        return $this->anneeDebut;
-    }
-
-    public function setAnneeDebut($anneeDebut)
-    {
-        $this->anneeDebut = $anneeDebut;
+        return $this->id;
     }
 
 
-    
+
+ 
 
 
-     public function getAnneeFin()
+     public function getLangue()
     {
-        return $this->anneeFin;
+        return $this->langue;
     }
 
-    public function setAnneeFin($anneeFin)
+    public function setLangue($langue)
     {
-        $this->anneeFin = $anneeFin;
-    }
-
-     public function getEntreprise()
-    {
-        return $this->entreprise;
-    }
-
-    public function setEntreprise($entreprise)
-    {
-        $this->entreprise = $entreprise;
+        $this->langue = $langue;
     }
 
 
-     public function getVille()
+   public function getLangue()
     {
-        return $this->ville;
+        return $this->langue;
     }
 
-    public function setVille($ville)
+    public function setLangue($langue)
     {
-        $this->ville = $ville;
+        $this->langue = $langue;
     }
 
-
-     public function getCodePostal()
-    {
-        return $this->codePostal;
-    }
-
-    public function setCodePostal($codePostal)
-    {
-        $this->codePostal = $codePostal;
-    }
-
-//////////////////
-
-     public function getPosteOccupe()
-    {
-        return $this->posteOccupe;
-    }
-
-    public function setPosteOccupe($posteOccupe)
-    {
-        $this->posteOccupe = $posteOccupe;
-    }
-
-
-     public function getMissions()
-    {
-        return $this->missions;
-    }
-
-    public function setMissions($missions)
-    {
-        $this->missions = $missions;
-    }
-
-
+  
    
 
 
