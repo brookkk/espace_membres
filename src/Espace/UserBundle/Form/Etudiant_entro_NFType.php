@@ -21,6 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Espace\PlatformBundle\Form\ExperienceType;
+use Espace\PlatformBundle\Form\LangueType;
 
 
 class Etudiant_entro_NFType extends AbstractType
@@ -90,6 +91,14 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 )
                 ))
        ->add('experiences', CollectionType::class, array(
+            'entry_type' => ExperienceType::class,
+            'entry_options' => array('label' => false),
+            'allow_add' => true,
+            'label' => false,
+            'by_reference' => false,
+            'allow_delete' => true,
+        ))
+       ->add('langues', CollectionType::class, array(
             'entry_type' => ExperienceType::class,
             'entry_options' => array('label' => false),
             'allow_add' => true,

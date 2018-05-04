@@ -36,6 +36,14 @@ class Cv
     private $experiences;
 
 
+
+     /**        
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Langue", cascade={"persist"})
+   */
+
+    private $langues;
+
+
   
 
 
@@ -271,6 +279,24 @@ public function __construct()
 public function removeExperience(Experience $experience)
 {
     $this->experiences->removeElement($experience);
+}
+
+
+
+  public function getLangues()
+    {
+        return $this->langues;
+    }
+
+
+    public function addLangues(Experience $langue)
+{
+    $this->langues[] = $langue;
+}
+
+public function removeLangues(Experience $langue)
+{
+    $this->langues->removeElement($langue);
 }
     
 }
