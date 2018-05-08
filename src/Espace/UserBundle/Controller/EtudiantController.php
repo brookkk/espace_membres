@@ -244,6 +244,27 @@ public function detailsAction($id)
             }
         }
 
+
+
+         //file/logo handling
+
+      $cvFile = $cv->getCvFile();
+      $cvFileName = $cvFile.'.'.$cvFile->guessExtension();
+
+      $new_dir = "./upload/cvs/candidat/".$cv->getEmail()."/";
+
+      $file->move(
+                "./upload/logo/entreprise/".$entreprise->getEmail()."/", $fileName
+            );
+
+      $entreprise->setLogoE($new_dir);
+
+
+
+
+
+
+
         $entityManager->persist($cv);
         $entityManager->flush();
 
