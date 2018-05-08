@@ -188,7 +188,8 @@ public function detailsAction($id)
 
 
 
-    $cv = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id)->getCv();
+    $user = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id);
+    $cv = $user->getCv();
 
 
   
@@ -251,7 +252,9 @@ public function detailsAction($id)
       $cvFile = $cv->getCvFile();
       $cvFileName = $cvFile.'.'.$cvFile->guessExtension();
 
-      $new_dir = "./upload/cvs/candidat/".$cv->getEmail()."/";
+     
+
+      $new_dir = "./upload/cvs/candidat/".$user->getEmail()."/";
 
       $file->move(
                 "./upload/logo/entreprise/".$entreprise->getEmail()."/", $fileName
