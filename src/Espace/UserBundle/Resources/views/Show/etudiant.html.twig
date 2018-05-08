@@ -122,11 +122,16 @@ Le CV n'est pas encore rempli
 
 {% endif %}
 
+  {% if is_granted('ROLE_ETUDIANT') %}
+
+
 <a href="{{ path('EU_new_etudiantCV',{'id': etudiant.id}) }}"><span class="fa fa-file"></span> </a> &nbsp 
 &nbsp 
 
 <a href="{{ path('espace_update_user',{'id': etudiant.id}) }}"><span class="glyphicon glyphicon-pencil"></span> </a> &nbsp 
 &nbsp 
+
+{% endif %}
 
   {% if is_granted('ROLE_ADMIN') %}
 <a href="{{ path('espace_delete_user',{'id': etudiant.id}) }}" onclick='return confirm("Etes vous sûr de vouloir supprimer cet utilisateur?")'><span class="glyphicon glyphicon-trash" ></span> </a> &nbsp 
