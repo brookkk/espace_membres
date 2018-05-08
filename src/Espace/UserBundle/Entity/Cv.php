@@ -112,6 +112,12 @@ class Cv
  
 
 
+     /**
+     * @ORM\Column(type="string", nullable = true)
+     *
+     * @Assert\File(mimeTypes={ "image/*" }, mimeTypesMessage="Merci de choisir votre Cv avec le bon format (image)")
+     */
+    private $cvFile;
 
 
 
@@ -239,6 +245,18 @@ public function __construct()
     public function setViadeoLink($viadeoLink)
     {
         $this->viadeoLink = $viadeoLink;
+    }
+
+
+
+     public function getCvFile()
+    {
+        return $this->cvFile;
+    }
+
+    public function setCvFile($cvFile)
+    {
+        $this->cvFile = $cvFile;
     }
 
 
