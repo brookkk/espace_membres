@@ -252,6 +252,10 @@ public function detailsAction($id)
       $cvFile = $cv->getCvFile();
       $cvFileName = $cvFile.'.'.$cvFile->guessExtension();
 
+
+      $name_tab = explode("\\", $cvFileName);
+      $name = $name_tab[3];
+
      
 
       $new_dir = "./upload/cvs/candidat/".$user->getEmail()."/";
@@ -260,7 +264,9 @@ public function detailsAction($id)
                 $new_dir, $cvFileName
             );
 
-      $cv->setCvFile($new_dir);
+      rename($new_dir.$name, $new_dir.$user->getNom()."_".$user->getPrenom());
+
+      $cv->setCvFile($new_dir.$user->getNom()."_".$user->getPrenom());
 
 
 
