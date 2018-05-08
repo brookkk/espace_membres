@@ -104,11 +104,10 @@ CV
 {% elseif  etudiant.cv.mobilite == 3 %} Départementale
 {% endif %}
  <br>
-
+<br>
 
 <a href = "{{ path('EU_download_CV',{'id': etudiant.id}) }}">Télécharger le CV</a>
-file dir : {{etudiant.cv.cvFile}}
-
+<br>
 </div> 
 
 {% else %}
