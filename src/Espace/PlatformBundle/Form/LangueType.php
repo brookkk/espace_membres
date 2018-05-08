@@ -41,7 +41,7 @@ class LangueType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Espace\PlatformBundle\Entity\Experience'
+            'data_class' => 'Espace\PlatformBundle\Entity\Langue'
         ));
     }
 
