@@ -257,10 +257,10 @@ public function detailsAction($id)
       $new_dir = "./upload/cvs/candidat/".$user->getEmail()."/";
 
       $cvFile->move(
-                $new_dir, $fileName
+                $new_dir, $cvFileName
             );
 
-      $entreprise->setCvFile($new_dir);
+      $cv->setCvFile($new_dir);
 
 
 

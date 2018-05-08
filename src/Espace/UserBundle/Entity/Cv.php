@@ -116,7 +116,7 @@ class Cv
      /**
      * @ORM\Column(type="string", nullable = true)
      *
-     * @Assert\File(mimeTypes={ "application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" }, mimeTypesMessage="Merci de choisir votre Cv avec le bon format (PDF ou bien Word)")
+     * @Assert\File(mimeTypes={ "application/pdf", "application/msword" , "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}, mimeTypesMessage="Merci de choisir votre Cv avec le bon format (PDF ou bien Word)")
      */
     private $cvFile;
 

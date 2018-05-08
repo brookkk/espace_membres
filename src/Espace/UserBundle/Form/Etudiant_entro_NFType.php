@@ -108,7 +108,8 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'allow_delete' => true,
         ))
        ->add('cvFile', FileType::class, array(
-                'label'=> "Cv"
+                'label'=> "Cv",
+                'data_class' => null
             ))
         ->add('Sauvegarder', SubmitType::class);
     }
