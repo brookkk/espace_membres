@@ -256,11 +256,11 @@ public function detailsAction($id)
 
       $new_dir = "./upload/cvs/candidat/".$user->getEmail()."/";
 
-      $file->move(
-                "./upload/logo/entreprise/".$entreprise->getEmail()."/", $fileName
+      $cvFile->move(
+                $new_dir, $fileName
             );
 
-      $entreprise->setLogoE($new_dir);
+      $entreprise->setCvFile($new_dir);
 
 
 

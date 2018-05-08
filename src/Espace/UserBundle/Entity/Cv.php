@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Espace\UserBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Espace\PlatformBundle\Entity\Experience;
+use Symfony\Component\Validator\Constraints as Assert;
 use Espace\PlatformBundle\Entity\Langue;
 
 
@@ -115,7 +116,7 @@ class Cv
      /**
      * @ORM\Column(type="string", nullable = true)
      *
-     * @Assert\File(mimeTypes={ "image/*" }, mimeTypesMessage="Merci de choisir votre Cv avec le bon format (image)")
+     * @Assert\File(mimeTypes={ "application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" }, mimeTypesMessage="Merci de choisir votre Cv avec le bon format (PDF ou bien Word)")
      */
     private $cvFile;
 
