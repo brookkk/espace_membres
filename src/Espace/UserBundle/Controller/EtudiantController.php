@@ -264,9 +264,9 @@ public function detailsAction($id)
                 $new_dir, $cvFileName
             );
 
-      rename($new_dir.$name, $new_dir.$user->getNom()."_".$user->getPrenom());
+      rename($new_dir.$name, $new_dir.$user->getNom()."_".$user->getPrenom().".pdf");
 
-      $cv->setCvFile($new_dir.$user->getNom()."_".$user->getPrenom());
+      $cv->setCvFile($new_dir.$user->getNom()."_".$user->getPrenom().".pdf");
 
 
 
