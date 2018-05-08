@@ -21,6 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Espace\PlatformBundle\Form\ExperienceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Espace\PlatformBundle\Form\LangueType;
 
 
@@ -106,6 +107,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'by_reference' => false,
             'allow_delete' => true,
         ))
+       ->add('cvFile', FileType::class, array(
+                'label'=> "Cv"
+            ))
         ->add('Sauvegarder', SubmitType::class);
     }
 
