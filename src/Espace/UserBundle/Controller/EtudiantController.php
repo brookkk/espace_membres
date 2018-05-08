@@ -283,10 +283,10 @@ public function detailsAction($id)
 }
 
 
-    public function downloadAction()
+    public function download_CvAction($id)
     {
 
-    $pdfPath = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id)-<getCv()->getCvFile();
+    $pdfPath = $this  ->getDoctrine()  ->getManager()  ->getRepository('EspaceUserBundle:User')->find($id)->getCv()->getCvFile();
 
         return $this->file($pdfPath);
     }

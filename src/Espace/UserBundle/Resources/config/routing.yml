@@ -40,3 +40,6 @@ espace_delete_user:
 EU_create_CV:
     path:     /candidat/{id}/create/CV
     defaults: { _controller: EspaceUserBundle:Etudiant:create_CV }
+EU_download_CV:
+    path:     /candidat/{id}/download/CV
+    defaults: { _controller: EspaceUserBundle:Etudiant:download_Cv }
