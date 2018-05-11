@@ -272,6 +272,13 @@ var $collectionHolder2;
 var $addLangLink = $('<a href="#" class="add_lang_link">Ajouter une Langue</a>');
 var $newLinkLi2 = $('<div></div>').append($addLangLink);
 
+
+var $collectionHolder3;
+
+// setup an "add a tag" link
+var $addLogLink = $('<a href="#" class="add_lang_link">Ajouter un Logiciel</a>');
+var $newLinkLi3 = $('<div></div>').append($addLogLink);
+
 jQuery(document).ready(function() {
     // Get the ul that holds the collection of tags
     $collectionHolder = $('div.experiences');
@@ -321,6 +328,31 @@ jQuery(document).ready(function() {
 
         // add a new tag form (see next code block)
         addLangForm($collectionHolder2, $newLinkLi2);
+    });
+
+
+
+
+       // Get the ul that holds the collection of tags
+    $collectionHolder3 = $('div.logiciels');
+
+    $collectionHolder3.find('div.logg').each(function() {
+        addLangFormDeleteLink($(this));
+    });
+
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolder3.append($newLinkLi3);
+
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolder3.data('index', $collectionHolder3.find(':input').length);
+
+    $addLangLink.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // add a new tag form (see next code block)
+        addLangForm($collectionHolder3, $newLinkLi3);
     });
 
 
