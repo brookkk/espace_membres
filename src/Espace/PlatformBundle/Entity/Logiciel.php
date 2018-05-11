@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Langue
  *
  * @ORM\Table(name="logiciel")
- * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\LangueRepository")
+ * @ORM\Entity(repositoryClass="Espace\PlatformBundle\Repository\LogicielRepository")
  */
 class Logiciel
 {
