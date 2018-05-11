@@ -176,6 +176,43 @@
 
 
 
+<h3>Logiciels</h3>
+
+    <div class="langues" data-prototype="{{ form_widget(form.logiciels.vars.prototype)|e('html_attr') }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for lang in form.langues %}
+           <div class="langg" >
+
+
+<div >
+  &nbsp    {{ form_label(lang.langue) }}  
+    {{ form_errors(lang.langue) }}
+    {{ form_widget(lang.langue) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(lang.niveau) }}  &nbsp 
+    {{ form_errors(lang.niveau) }} 
+    {{ form_widget(lang.niveau) }}
+
+
+</div>
+
+
+            </div>
+
+
+
+        {% endfor %}
+        
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 
