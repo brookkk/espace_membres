@@ -336,14 +336,14 @@ public function removeLangue(Langue $langue)
     }
 
 
-    public function addLogiciel(Langue $logiciel)
+    public function addLogiciel(Logiciel $logiciel)
         {
             $this->logiciels[] = $logiciel;
         }
 
      
 
-public function removeLogiciel(Langue $logiciel)
+public function removeLogiciel(Logiciel $logiciel)
         {
             $this->logiciels->removeElement($logiciel);
         }
