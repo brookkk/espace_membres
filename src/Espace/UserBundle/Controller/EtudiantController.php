@@ -254,7 +254,7 @@ public function detailsAction($id)
 
 
       $name_tab = explode("\\", $cvFileName);
-      $name = $name_tab[3];
+      //$name = $name_tab[3];
 
      
 
@@ -266,7 +266,7 @@ public function detailsAction($id)
 
       $new_file = $new_dir.$user->getPrenom()."_".$user->getNom().".pdf";
 
-      rename($new_dir.$name, $new_file);
+      //rename($new_dir.$name, $new_file);
 
       $cv->setCvFile($new_file);
 
