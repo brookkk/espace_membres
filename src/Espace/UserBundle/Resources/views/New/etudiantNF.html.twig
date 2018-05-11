@@ -178,20 +178,20 @@
 
 <h3>Logiciels</h3>
 
-    <div class="langues" data-prototype="{{ form_widget(form.logiciels.vars.prototype)|e('html_attr') }}">
+    <div class="logiciels" data-prototype="{{ form_widget(form.logiciels.vars.prototype)|e('html_attr') }}">
         {# iterate over each existing tag and render its only field: name #}
-        {% for lang in form.langues %}
+        {% for log in form.logiciels %}
            <div class="langg" >
 
 
 <div >
-  &nbsp    {{ form_label(lang.langue) }}  
-    {{ form_errors(lang.langue) }}
-    {{ form_widget(lang.langue) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  &nbsp    {{ form_label(log.logiciel) }}  
+    {{ form_errors(log.logiciel) }}
+    {{ form_widget(log.logiciel) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 
-     {{ form_label(lang.niveau) }}  &nbsp 
-    {{ form_errors(lang.niveau) }} 
-    {{ form_widget(lang.niveau) }}
+     {{ form_label(log.niveau) }}  &nbsp 
+    {{ form_errors(log.niveau) }} 
+    {{ form_widget(log.niveau) }}
 
 
 </div>
