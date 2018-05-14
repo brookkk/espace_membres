@@ -35,9 +35,9 @@ class Formation
     /**     
      * @var string      
      *      
-     * @ORM\Column(name="langue", type="string", length=255)       
+     * @ORM\Column(name="langue", type="integer", length=255)       
      */     
-    private $logiciel;  
+    private $annee;  
 
 
 
@@ -47,9 +47,40 @@ class Formation
          /**
      * @var string
      *
-     * @ORM\Column(name="niveau", type="integer",  nullable=true)
+     * @ORM\Column(name="niveau", type="string",  nullable=true)
      */
-    private $niveau;    
+    private $formation;    
+
+
+
+         /**
+     * @var string
+     *
+     * @ORM\Column(name="niveau", type="string",  nullable=true)
+     */
+    private $etablissement;   
+
+
+       /**
+     * @var string
+     *
+    * @Assert\Length(
+     *      min = 5,
+     *      max = 5,
+     *      exactMessage = "Le code postal doit être composé de 5 chiffres",
+     *      
+     * )     
+     * @ORM\Column(name="codePostal", type="integer",  nullable=true)
+     */
+    private $codePostal;    
+
+
+         /**
+     * @var string
+     *
+     * @ORM\Column(name="niveau", type="string",  nullable=true)
+     */
+    private $ville;   
 
 
 
