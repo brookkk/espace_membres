@@ -54,6 +54,14 @@ class Cv
     private $logiciels;
 
 
+
+      /**        
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Formation", cascade={"persist"})
+   */
+
+    private $formations;
+
+
   
 
 
@@ -346,6 +354,27 @@ public function removeLangue(Langue $langue)
 public function removeLogiciel(Logiciel $logiciel)
         {
             $this->logiciels->removeElement($logiciel);
+        }
+
+
+
+
+              public function getFormations()
+    {
+        return $this->formations;
+    }
+
+
+    public function addFormation(Formation $formation)
+        {
+            $this->formations[] = $formation;
+        }
+
+     
+
+public function removeFormation(Formation $formation)
+        {
+            $this->formations->removeElement($formation);
         }
     
 }
