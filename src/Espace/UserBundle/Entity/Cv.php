@@ -359,7 +359,7 @@ public function removeLogiciel(Logiciel $logiciel)
 
 
 
-              public function getFormations()
+ public function getFormations()
     {
         return $this->formations;
     }
