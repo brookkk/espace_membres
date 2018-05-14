@@ -95,25 +95,62 @@ class Formation
  
 
 
-     public function getLogiciel()
+     public function getAnnee()
     {
-        return $this->logiciel;
+        return $this->annee;
     }
 
-    public function setLogiciel($logiciel)
+    public function setAnnee($annee)
     {
-        $this->logiciel = $logiciel;
+        $this->annee = $annee;
     }
 
 
-   public function getNiveau()
+   public function getFormation()
     {
-        return $this->niveau;
+        return $this->formation;
     }
 
-    public function setNiveau($niveau)
+    public function setFormation($formation)
     {
-        $this->niveau = $niveau;
+        $this->formation = $formation;
+    }
+
+
+
+    public function getEtablissement()
+    {
+        return $this->etablissement;
+    }
+
+    public function setEtablissement($etablissement)
+    {
+        $this->etablissement = $etablissement;
+    }
+
+
+
+
+     public function getCodePostal()
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+    }
+
+
+
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
     }
 
   
