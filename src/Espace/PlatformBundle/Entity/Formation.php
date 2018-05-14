@@ -47,7 +47,7 @@ class Formation
          /**
      * @var string
      *
-     * @ORM\Column(name="niveau", type="string",  nullable=true)
+     * @ORM\Column(name="formation", type="string",  nullable=true)
      */
     private $formation;    
 
@@ -56,7 +56,7 @@ class Formation
          /**
      * @var string
      *
-     * @ORM\Column(name="niveau", type="string",  nullable=true)
+     * @ORM\Column(name="etablissement", type="string",  nullable=true)
      */
     private $etablissement;   
 
@@ -78,7 +78,7 @@ class Formation
          /**
      * @var string
      *
-     * @ORM\Column(name="niveau", type="string",  nullable=true)
+     * @ORM\Column(name="ville", type="string",  nullable=true)
      */
     private $ville;   
 

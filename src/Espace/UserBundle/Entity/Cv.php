@@ -9,6 +9,7 @@ use Espace\PlatformBundle\Entity\Experience;
 use Symfony\Component\Validator\Constraints as Assert;
 use Espace\PlatformBundle\Entity\Langue;
 use Espace\PlatformBundle\Entity\Logiciel;
+use Espace\PlatformBundle\Entity\Formation;
 
 
 /**
