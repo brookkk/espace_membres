@@ -19,11 +19,17 @@ class FormationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('annee')->add('formation')
-                ->add('etablissement')
-                ->add('codePostal')
-                ->add('ville')
-                ;
+        $builder->add('annee', IntegerType::class, array(
+                    'label'=> "année"
+                ))
+                ->add('formation')
+                ->add('etablissement', TextType::class, array(
+                    'label'=> "Etablissement"
+                ))
+                ->add('codePostal', IntegerType::class, array(
+                    'label'=> "Code postal"
+                ))                                                                                              
+                ->add('ville');
                 
                
     }
