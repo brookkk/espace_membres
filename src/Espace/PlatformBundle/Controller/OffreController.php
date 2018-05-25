@@ -54,7 +54,7 @@ $user= $this->getUser();
       $em->persist($offre);
       $em->flush();
 
-      $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistrée.');
+      $request->getSession()->getFlashBag()->add('success', 'Offre créée.');
 
 
 
