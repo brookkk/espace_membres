@@ -186,7 +186,7 @@ public function delete_offreAction(Request $request, $id)
     $em->remove($offre);
     $em->flush();
 
-    $request->getSession()->getFlashBag()->add('notice', 'Offre a été supprimée');
+    $request->getSession()->getFlashBag()->add('success', 'Offre supprimée');
 
     return $this->redirectToRoute('EP_show_offre');
 
