@@ -9,6 +9,15 @@
  
 </ul>
 
+
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
 <h3>Liste des Offres</h3>
 
  {% block search_body %}

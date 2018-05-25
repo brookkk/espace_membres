@@ -145,7 +145,7 @@ foreach($listOffres as $offre){
         $em->persist($offre);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('success', 'Offre modifiée.');
 
        
 
