@@ -77,5 +77,8 @@ swiftmailer:
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
+   # port: 25
+   # encryption: ssl
     spool: { type: memory }
+    
 # gregwar_captcha: ~

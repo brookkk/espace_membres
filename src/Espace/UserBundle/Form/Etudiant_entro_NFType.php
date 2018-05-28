@@ -23,6 +23,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Espace\PlatformBundle\Form\ExperienceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Espace\PlatformBundle\Form\LangueType;
+use Espace\PlatformBundle\Form\LogicielType;
+use Espace\PlatformBundle\Form\FormationType;
 
 
 class Etudiant_entro_NFType extends AbstractType
@@ -101,6 +103,22 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ))
        ->add('langues', CollectionType::class, array(
             'entry_type' => LangueType::class,
+            'entry_options' => array('label' => false),
+            'allow_add' => true,
+            'label' => false,
+            'by_reference' => false,
+            'allow_delete' => true,
+        ))
+       ->add('logiciels', CollectionType::class, array(
+            'entry_type' => LogicielType::class,
+            'entry_options' => array('label' => false),
+            'allow_add' => true,
+            'label' => false,
+            'by_reference' => false,
+            'allow_delete' => true,
+        ))
+       ->add('formations', CollectionType::class, array(
+            'entry_type' => FormationType::class,
             'entry_options' => array('label' => false),
             'allow_add' => true,
             'label' => false,

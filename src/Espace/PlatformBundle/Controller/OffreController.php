@@ -54,7 +54,7 @@ $user= $this->getUser();
       $em->persist($offre);
       $em->flush();
 
-      $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistrée.');
+      $request->getSession()->getFlashBag()->add('success', 'Offre créée.');
 
 
 
@@ -145,7 +145,7 @@ foreach($listOffres as $offre){
         $em->persist($offre);
         $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Offre Bien enregistré.');
+        $request->getSession()->getFlashBag()->add('success', 'Offre modifiée.');
 
        
 
@@ -186,7 +186,7 @@ public function delete_offreAction(Request $request, $id)
     $em->remove($offre);
     $em->flush();
 
-    $request->getSession()->getFlashBag()->add('notice', 'Offre a été supprimée');
+    $request->getSession()->getFlashBag()->add('success', 'Offre supprimée');
 
     return $this->redirectToRoute('EP_show_offre');
 

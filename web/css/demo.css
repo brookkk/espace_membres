@@ -100,8 +100,38 @@ footer{
 	header { padding-top:40px; }
 }
 .brook_main{
-	min-height: 70% ;
+	/*min-height: 70% ;
     min-height: -webkit-calc(100% - 170px) ;
     min-height: -moz-calc(100% - 170px) ;
-    min-height: calc(100% - 70px) ;
+    min-height: calc(100% - 70px) ;*/
+
+
+
+
+    min-height: 80vh;
+    height: 100%;
+	position:relative;
+
+    margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
+
+    min-width: 80vh;
+    width: 100%;
+
+
 }
+
+
+
+.brook_footer {
+	margin-bottom:  0vh;
+	position:relative;
+}
+
+.brook_cont {
+	margin: auto;
+}
+
+.brook_logo {
+	margin-left:5vh;
+}
+

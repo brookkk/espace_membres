@@ -9,6 +9,17 @@
  
 </ul>
 
+
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    
+
 <h3>Liste des Offres</h3>
 
  {% block search_body %}
@@ -22,7 +33,6 @@
         
         <th>Réf</th>
         <th>Titre de l'offre</th>
-        <th>Ville</th>
         <th>Entreprise</th>
         <th>Details</th>
         {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
@@ -45,7 +55,6 @@
       <tr>
         <th>Réf</th>
         <th>Titre de l'offre</th>
-        <th>Ville</th>
         <th>Entreprise</th>
         <th>Details</th>
         {% if is_granted('ROLE_ETUDIANT') and not is_granted('ROLE_ADMIN') %}
@@ -74,8 +83,17 @@
   <tr>
   <td> {{ offre.refOffre|date('Y-m-d') }} </td>
   <td> {{ offre.titreOffre |capitalize}} </td>
-  <td> {{ offre.villeE |capitalize}} </td>
-  <td> {{ offre.entreprise.nom   |capitalize}} </td>
+  <td>  <a href="{{ path('espace_details_entreprise',{'id': offre.entreprise.id}) }}" target="_blank">{{ offre.entreprise.nom   |capitalize}} </a></td>
+
+
+
+
+
+
+
+
+
+
   <td>
 <a href="{{ path('EP_details_offre',{'id': offre.id}) }}" target="_blank"><span class="fa fa-list" ></span> </a> &nbsp 
 </td>
@@ -131,7 +149,7 @@
 
 {% if offre.etat==0  %} <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}" title="Soumettre l'offre"><span class="glyphicon glyphicon-check"></span> </a> &nbsp 
     {%elseif offre.etat==1%} <td> 
-    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
+    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"><span class=" fa fa-archive"></span></a> 
     {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}" title="Soumettre l'offre"><span class="glyphicon glyphicon-check"></span> </a> 
     {%elseif offre.etat==4%}  <td style="color:black"> 
     {% endif %}
@@ -143,8 +161,8 @@
     {%elseif offre.etat==1%} <td> <a href="{{ path('EP_admin_offre_valider',{'id': offre.id}) }}" title="Valider l'offre" ><span class="glyphicon glyphicon-thumbs-up"></span> </a> &nbsp  
        <a href="{{ path('EP_admin_offre_refuser',{'id': offre.id}) }}" style="color:red"><span class="glyphicon glyphicon-thumbs-down"></span> </a> 
     
-    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"> Archiver </a> 
-    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}">Soumettre </a>  
+    {%elseif offre.etat==2%}  <td> <a href="{{ path('EP_entro_offre_archiver',{'id': offre.id}) }}"> <span class="  fa fa-archive"></span> </a> 
+    {%elseif offre.etat==3%}  <td> <a href="{{ path('EP_entro_offre_soumis',{'id': offre.id}) }}"><span class="glyphicon glyphicon-check"> </a>  
     {%elseif offre.etat==4%}  <td style="color:black">
     {% endif %}
 

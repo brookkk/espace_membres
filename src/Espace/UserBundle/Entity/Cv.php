@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Espace\PlatformBundle\Entity\Experience;
 use Symfony\Component\Validator\Constraints as Assert;
 use Espace\PlatformBundle\Entity\Langue;
+use Espace\PlatformBundle\Entity\Logiciel;
+use Espace\PlatformBundle\Entity\Formation;
 
 
 /**
@@ -44,6 +46,21 @@ class Cv
    */
 
     private $langues;
+
+
+      /**        
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Logiciel", cascade={"persist"})
+   */
+
+    private $logiciels;
+
+
+
+      /**        
+  * @ORM\ManyToMany(targetEntity="Espace\PlatformBundle\Entity\Formation", cascade={"persist"})
+   */
+
+    private $formations;
 
 
   
@@ -314,14 +331,51 @@ public function removeExperience(Experience $experience)
             $this->langues[] = $langue;
         }
 
-      /*  public function setLangue($langue)
-    {
-        $this->langues = $langue;
-    }*/
+     
 
 public function removeLangue(Langue $langue)
         {
             $this->langues->removeElement($langue);
+        }
+
+
+        public function getLogiciels()
+    {
+        return $this->logiciels;
+    }
+
+
+    public function addLogiciel(Logiciel $logiciel)
+        {
+            $this->logiciels[] = $logiciel;
+        }
+
+     
+
+public function removeLogiciel(Logiciel $logiciel)
+        {
+            $this->logiciels->removeElement($logiciel);
+        }
+
+
+
+
+ public function getFormations()
+    {
+        return $this->formations;
+    }
+
+
+    public function addFormation(Formation $formation)
+        {
+            $this->formations[] = $formation;
+        }
+
+     
+
+public function removeFormation(Formation $formation)
+        {
+            $this->formations->removeElement($formation);
         }
     
 }

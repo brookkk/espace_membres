@@ -169,11 +169,93 @@
 
 
 
+<h3>Logiciels</h3>
+
+    <div class="logiciels" data-prototype="{{ form_widget(form.logiciels.vars.prototype)|e('html_attr') }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for log in form.logiciels %}
+           <div class="logg" >
+
+
+<div >
+  &nbsp    {{ form_label(log.logiciel) }}  
+    {{ form_errors(log.logiciel) }}
+    {{ form_widget(log.logiciel) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(log.niveau) }}  &nbsp 
+    {{ form_errors(log.niveau) }} 
+    {{ form_widget(log.niveau) }}
+
+
+</div>
+
+
+            </div>
+
+
+
+        {% endfor %}
+        
+    </div>
 
 
 
 
 
+
+
+<h3>Formations</h3>
+
+    <div class="formations" data-prototype="{{ form_widget(form.formations.vars.prototype)|e('html_attr') }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for forma in form.formations %}
+           <div class="formm" >
+
+
+<div >
+  &nbsp    {{ form_label(forma.annee) }}  
+    {{ form_errors(forma.annee) }}
+    {{ form_widget(forma.annee) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(forma.formation) }}  &nbsp 
+    {{ form_errors(forma.formation) }} 
+    {{ form_widget(forma.formation) }}
+
+
+</div>
+
+
+<div >
+  &nbsp    {{ form_label(forma.etablissement) }}  
+    {{ form_errors(forma.etablissement) }}
+    {{ form_widget(forma.etablissement) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+     {{ form_label(forma.codePostal) }}  &nbsp 
+    {{ form_errors(forma.codePostal) }} 
+    {{ form_widget(forma.codePostal) }}
+
+
+</div>
+
+
+<div >
+  &nbsp    {{ form_label(forma.ville) }}  
+    {{ form_errors(forma.ville) }}
+    {{ form_widget(forma.ville) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+  
+
+
+</div>
+
+
+            </div>
+
+
+
+        {% endfor %}
+        
+    </div>
 
 
 

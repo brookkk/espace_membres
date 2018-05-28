@@ -55,3 +55,6 @@ EP_task_edit:
 EP_cvtheque_search:
     path:     /cvtheque
     defaults: { _controller: EspacePlatformBundle:Cvtheque:search }
+EP_mail:
+    path:     /mail
+    defaults: { _controller: EspacePlatformBundle:Default:send_mail }
