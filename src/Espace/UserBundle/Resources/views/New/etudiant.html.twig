@@ -170,6 +170,13 @@
     {{ form_widget(form.pcLien) }} 
     </div>
 
+    <div class="form-group col-md-6">
+     <br>
+     <br>
+     <br>
+     <br>
+    </div>
+
     <div class="form-group col-md-12">
   
     </div>
@@ -187,16 +194,14 @@
     </div>
 
      <div class="form-group col-md-6">
-    {{ form_label(form.plainPassword.first) }}  <br>
-    {{ form_errors(form.plainPassword.first) }}
-    {{ form_widget(form.plainPassword.first) }} 
+    {{ form_row(form.plainPassword.first) }}
     </div>
 
-      <div class="form-group col-md-6">
-    {{ form_label(form.plainPassword.second) }}  <br>
-    {{ form_errors(form.plainPassword.second) }}
-    {{ form_widget(form.plainPassword.second) }} 
+    <div class="form-group col-md-6">
+    {{ form_row(form.plainPassword.second) }}
     </div>
+
+ 
 
    
 
