@@ -101,7 +101,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> "Avez-vous trouvé une entreprise ?",
             'choices' => array(
                  'Oui' => true,
-                 'Nom' => false,
+                 'Non' => false,
                  ),
             'expanded' => true,
             'multiple' => false,
@@ -113,7 +113,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> "J’accepte de recevoir la newsletter",
             'choices' => array(
                  'Oui' => true,
-                 'Nom' => false,
+                 'Non' => false,
                  ),
             'expanded' => true,
             'multiple' => false,
