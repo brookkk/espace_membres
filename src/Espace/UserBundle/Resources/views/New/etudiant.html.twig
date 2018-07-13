@@ -32,8 +32,7 @@
  
 
 
-
-    <div class="form-group">
+     <div class="form-group">
     {{ form_label(form.civilite) }}
     {{ form_errors(form.civilite) }}
     {{ form_widget(form.civilite) }} 
@@ -103,10 +102,14 @@
     {{ form_widget(form.niveauFormation) }} 
     </div>
 
-<div class="form-group col-md-12">
-     
+    <div class="form-group col-md-12">
+    {{ form_label(form.diplome) }}  <br>
+    {{ form_errors(form.diplome) }}
+    {{ form_widget(form.diplome) }} 
     </div>
 
+ 
+ 
    <h4 class="subtitle">
  <b>Personne à contacter en cas d'urgence</b>
 
@@ -161,70 +164,43 @@
     {{ form_widget(form.pcTelephonePortable) }} 
     </div>
 
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcLien) }}  <br>
+    {{ form_errors(form.pcLien) }}
+    {{ form_widget(form.pcLien) }} 
+    </div>
 
+    <div class="form-group col-md-12">
+  
+    </div>
 
-<!--
+    <div class="form-group col-md-6">
+    {{ form_label(form.foundEntro) }}  <br>
+    {{ form_errors(form.foundEntro) }}
+    {{ form_widget(form.foundEntro) }} 
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.newsletter) }}  <br>
+    {{ form_errors(form.newsletter) }}
+    {{ form_widget(form.newsletter) }} 
+    </div>
+
+     <div class="form-group col-md-6">
+    {{ form_label(form.plainPassword.first) }}  <br>
+    {{ form_errors(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first) }} 
+    </div>
+
+      <div class="form-group col-md-6">
+    {{ form_label(form.plainPassword.second) }}  <br>
+    {{ form_errors(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second) }} 
+    </div>
+
+   
 
  
-
- 
-
-
-
-<div>
-  &nbsp  &nbsp &nbsp   {{ form_label(form.pcNom) }}  
-    {{ form_errors(form.pcNom) }}
-    {{ form_widget(form.pcNom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-
-
-     {{ form_label(form.pcPrenom) }}  &nbsp &nbsp &nbsp 
-    {{ form_errors(form.pcPrenom) }} 
-    {{ form_widget(form.pcPrenom) }}
-</div>
-
- 
- <div>
- 
-    {{ form_label(form.pcAdresse) }}  
-    {{ form_errors(form.pcAdresse) }}
-    {{ form_widget(form.pcAdresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp 
-
-
-     {{ form_label(form.pcCodePostal) }}  
-    {{ form_errors(form.pcCodePostal) }}
-    {{ form_widget(form.pcCodePostal) }}
-
-
-
- </div>
- <div class = "margin32">
-  {{ form_row(form.pcVille) }}
- </div>
-
-
-
-<div>
-{{ form_label(form.pcEmail) }}  
-    {{ form_errors(form.pcEmail) }}
-    {{ form_widget(form.pcEmail) }}
-
-{{ form_label(form.pcTelephone) }}  
-    {{ form_errors(form.pcTelephone) }}
-    {{ form_widget(form.pcTelephone) }}
-
-
-</div>
-<div class = "margin12">
-  {{ form_row(form.pcTelephonePortable) }}
- </div>
-
- <div class = "margin12">
-  {{ form_row(form.pcLien) }}
- </div>
-
-
-
--->
 {{ form_end(form) }}
 
 
