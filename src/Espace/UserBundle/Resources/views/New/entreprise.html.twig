@@ -12,104 +12,131 @@
   <li>MAJ</li>
  
 <h3>Entreprise</h3>
-	
+  
 
 
-<div class="margin10">
+<div class="margin102">
 {{ form_start(form) }}
     {{ form_errors(form) }}
 <br>
 
-<div class="margin32">
+
+     <div class="form-group">
     {{ form_label(form.civilite) }}
     {{ form_errors(form.civilite) }}
     {{ form_widget(form.civilite) }} 
-</div>
+    </div>
 
-<div>
-  &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.nom) }}  <br>
     {{ form_errors(form.nom) }}
-    {{ form_widget(form.nom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.nom) }} 
+    </div>
 
-
-     {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp 
+     <div class="form-group col-md-6">
+    {{ form_label(form.prenom) }} <br>
     {{ form_errors(form.prenom) }} 
-    {{ form_widget(form.prenom) }}
-</div>
+    {{ form_widget(form.prenom) }} 
+    </div>
 
 
-
-<div>
-  &nbsp  &nbsp    {{ form_label(form.email) }}  
+        <div class="form-group col-md-6">
+    {{ form_label(form.email) }}  <br>
     {{ form_errors(form.email) }}
-    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp 
+    {{ form_widget(form.email) }} 
+    </div>
 
-
-     {{ form_label(form.telephone) }}  &nbsp &nbsp 
+     <div class="form-group col-md-6">
+    {{ form_label(form.telephone) }} <br>
     {{ form_errors(form.telephone) }} 
-    {{ form_widget(form.telephone) }}
-</div>
+    {{ form_widget(form.telephone) }} 
+    </div>
 
 
-
-
-<h4 class="subtitle">
+       <h4 class="subtitle">
  <b>Entreprise</b>
 
 </h4>
 
-  <div >
 
-   {{ form_label(form.nomE) }}  &nbsp &nbsp 
-    {{ form_errors(form.nomE) }} 
-    {{ form_widget(form.nomE) }}
- </div>
+    <div class="form-group col-md-6">
+    {{ form_label(form.nomE) }}  <br>
+    {{ form_errors(form.nomE) }}
+    {{ form_widget(form.nomE) }} 
+    </div>
 
-   <div >
-
-
-   {{ form_label(form.descriptionE) }}  
+     <div class="form-group col-md-6">
+    {{ form_label(form.descriptionE) }} <br>
     {{ form_errors(form.descriptionE) }} 
-    {{ form_widget(form.descriptionE) }}
- </div>
-
-    <div >
-  {{ form_row(form.logoE) }}
- </div>
-
-   <div >
+    {{ form_widget(form.descriptionE) }} 
+    </div>
 
 
-   {{ form_label(form.adresseE) }}  &nbsp &nbsp &nbsp  
+    <div class="form-group col-md-6">
+    {{ form_label(form.logoE) }}  <br>
+    {{ form_errors(form.logoE) }}
+    {{ form_widget(form.logoE) }} 
+    </div>
+
+     <div class="form-group col-md-6">
+    {{ form_label(form.adresseE) }} <br>
     {{ form_errors(form.adresseE) }} 
-    {{ form_widget(form.adresseE) }}
- </div>
+    {{ form_widget(form.adresseE) }} 
+    </div>
 
-   <div >
 
-  {{ form_label(form.codePostalE) }}  
-    {{ form_errors(form.codePostalE) }} 
-    {{ form_widget(form.codePostalE) }}
- </div>
-   <div >
+    <div class="form-group col-md-6">
+    {{ form_label(form.codePostalE) }}  <br>
+    {{ form_errors(form.codePostalE) }}
+    {{ form_widget(form.codePostalE) }} 
+    </div>
 
-   {{ form_label(form.villeE) }}  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp   &nbsp 
+     <div class="form-group col-md-6">
+    {{ form_label(form.villeE) }} <br>
     {{ form_errors(form.villeE) }} 
-    {{ form_widget(form.villeE) }}
- </div>
+    {{ form_widget(form.villeE) }} 
+    </div>
 
 
-    <div >
+    <div class="form-group col-md-6">
+    {{ form_label(form.votreFonction) }}  <br>
+    {{ form_errors(form.votreFonction) }}
+    {{ form_widget(form.votreFonction) }} 
+    </div>
 
-   {{ form_label(form.votreFonction) }}  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp  &nbsp &nbsp &nbsp   
-    {{ form_errors(form.votreFonction) }} 
-    {{ form_widget(form.votreFonction) }}
- </div>
+     <div class="form-group col-md-6">
+    {{ form_label(form.secteurActivite) }} <br>
+    {{ form_errors(form.secteurActivite) }} 
+    {{ form_widget(form.secteurActivite) }} 
+    </div>
 
 
-  <div >
-  {{ form_row(form.secteurActivite) }}
- </div>
+    <div class="form-group col-md-12">
+    {{ form_label(form.enquete) }}  <br>
+    {{ form_errors(form.enquete) }}
+    {{ form_widget(form.enquete) }} 
+    </div>
+
+    <div class="form-group col-md-12">
+    {{ form_label(form.newsletter) }}  <br>
+    {{ form_errors(form.newsletter) }}
+    {{ form_widget(form.newsletter) }} 
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_row(form.plainPassword.first) }}
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_row(form.plainPassword.second) }}
+    </div>
+
+
+<!--
+
+ 
+
 
 <br>
   <div >
@@ -124,6 +151,8 @@
   {{ form_row(form.plainPassword) }}
  </div>
 
+
+-->
 
     {{ form_end(form) }}
 
