@@ -18,7 +18,12 @@
 </div>
 #}
 
-<div class="margin10">
+<div class="margin102">
+
+
+
+
+
 {{ form_start(form) }}
 
     {{ form_errors(form) }}
@@ -27,145 +32,182 @@
  
 
 
-
-<div>
+     <div class="form-group">
     {{ form_label(form.civilite) }}
     {{ form_errors(form.civilite) }}
     {{ form_widget(form.civilite) }} 
-</div>
+    </div>
+     
 
-
-<div>
-  &nbsp  &nbsp &nbsp   {{ form_label(form.nom) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.nom) }}  <br>
     {{ form_errors(form.nom) }}
-    {{ form_widget(form.nom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.nom) }} 
+    </div>
 
-
-     {{ form_label(form.prenom) }}  &nbsp &nbsp &nbsp 
+     <div class="form-group col-md-6">
+    {{ form_label(form.prenom) }} <br>
     {{ form_errors(form.prenom) }} 
-    {{ form_widget(form.prenom) }}
-</div>
+    {{ form_widget(form.prenom) }} 
+    </div>
 
- 
- <div>
- 
-    {{ form_label(form.adresse) }}  
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.adresse) }}  <br>
     {{ form_errors(form.adresse) }}
-    {{ form_widget(form.adresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.adresse) }} 
+    </div>
 
-
-     {{ form_label(form.codePostal) }}  
+     <div class="form-group col-md-6">
+    {{ form_label(form.codePostal) }}  <br>
     {{ form_errors(form.codePostal) }}
-    {{ form_widget(form.codePostal) }}
+    {{ form_widget(form.codePostal) }} 
+    </div>
 
 
-
- </div>
- <div class = "margin32">
-  {{ form_row(form.ville) }}
- </div>
-
-
-<br>
+    <div class="form-group col-md-6">
+    {{ form_label(form.ville) }}  <br>
+    {{ form_errors(form.ville) }}
+    {{ form_widget(form.ville) }} 
+    </div>
 
 
- <div>
-  &nbsp  &nbsp  {{ form_label(form.email) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.email) }}  <br>
     {{ form_errors(form.email) }}
-    {{ form_widget(form.email) }}&nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.email) }} 
+    </div>
 
+     <div class="form-group col-md-6">
+    {{ form_label(form.telephone) }}  <br>
+    {{ form_errors(form.telephone) }}
+    {{ form_widget(form.telephone) }} 
+    </div>
 
-     {{ form_label(form.telephone) }}  &nbsp &nbsp 
-    {{ form_errors(form.telephone) }} 
-    {{ form_widget(form.telephone) }}
-</div>
-
- <br>
- <div class="margin32">
- 
-    {{ form_label(form.ddn) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.ddn) }}  <br>
     {{ form_errors(form.ddn) }}
-    {{ form_widget(form.ddn) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-</div>
-<div>
-     {{ form_label(form.numIne) }}  
+    {{ form_widget(form.ddn) }} 
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.numIne) }}  <br>
     {{ form_errors(form.numIne) }}
-    {{ form_widget(form.numIne) }} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.numIne) }} 
+    </div>
 
+    <div class="form-group col-md-6">
+    {{ form_label(form.niveauFormation) }}  <br>
+    {{ form_errors(form.niveauFormation) }}
+    {{ form_widget(form.niveauFormation) }} 
+    </div>
 
+    <div class="form-group col-md-12">
+    {{ form_label(form.diplome) }}  <br>
+    {{ form_errors(form.diplome) }}
+    {{ form_widget(form.diplome) }} 
+    </div>
 
-
- </div>
- <br>
- <div >
-  {{ form_row(form.niveauFormation) }}
- </div>
-<br>
-  <div >
-  {{ form_row(form.diplome) }}
- </div>
-
-
-
-<h4 class="subtitle">
+ 
+ 
+   <h4 class="subtitle">
  <b>Personne à contacter en cas d'urgence</b>
 
 </h4>
 
-
-
-<div>
-  &nbsp  &nbsp &nbsp   {{ form_label(form.pcNom) }}  
+<div class="form-group col-md-6">
+    {{ form_label(form.pcNom) }}  <br>
     {{ form_errors(form.pcNom) }}
-    {{ form_widget(form.pcNom) }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    {{ form_widget(form.pcNom) }} 
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcPrenom) }}  <br>
+    {{ form_errors(form.pcPrenom) }}
+    {{ form_widget(form.pcPrenom) }} 
+    </div>
 
 
-     {{ form_label(form.pcPrenom) }}  &nbsp &nbsp &nbsp 
-    {{ form_errors(form.pcPrenom) }} 
-    {{ form_widget(form.pcPrenom) }}
-</div>
-
- 
- <div>
- 
-    {{ form_label(form.pcAdresse) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcAdresse) }}  <br>
     {{ form_errors(form.pcAdresse) }}
-    {{ form_widget(form.pcAdresse) }}&nbsp &nbsp &nbsp &nbsp &nbsp 
+    {{ form_widget(form.pcAdresse) }} 
+    </div>
 
-
-     {{ form_label(form.pcCodePostal) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcCodePostal) }}  <br>
     {{ form_errors(form.pcCodePostal) }}
-    {{ form_widget(form.pcCodePostal) }}
+    {{ form_widget(form.pcCodePostal) }} 
+    </div>
 
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcVille) }}  <br>
+    {{ form_errors(form.pcVille) }}
+    {{ form_widget(form.pcVille) }} 
+    </div>
 
-
- </div>
- <div class = "margin32">
-  {{ form_row(form.pcVille) }}
- </div>
-
-
-
-<div>
-{{ form_label(form.pcEmail) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcEmail) }}  <br>
     {{ form_errors(form.pcEmail) }}
-    {{ form_widget(form.pcEmail) }}
+    {{ form_widget(form.pcEmail) }} 
+    </div>
 
-{{ form_label(form.pcTelephone) }}  
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcTelephone) }}  <br>
     {{ form_errors(form.pcTelephone) }}
-    {{ form_widget(form.pcTelephone) }}
+    {{ form_widget(form.pcTelephone) }} 
+    </div>
 
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcTelephonePortable) }}  <br>
+    {{ form_errors(form.pcTelephonePortable) }}
+    {{ form_widget(form.pcTelephonePortable) }} 
+    </div>
 
-</div>
-<div class = "margin12">
-  {{ form_row(form.pcTelephonePortable) }}
- </div>
+    <div class="form-group col-md-6">
+    {{ form_label(form.pcLien) }}  <br>
+    {{ form_errors(form.pcLien) }}
+    {{ form_widget(form.pcLien) }} 
+    </div>
 
- <div class = "margin12">
-  {{ form_row(form.pcLien) }}
- </div>
+    <div class="form-group col-md-6">
+     <br>
+     <br>
+     <br>
+     <br>
+    </div>
 
+    <div class="form-group col-md-12">
+  
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.foundEntro) }}  <br>
+    {{ form_errors(form.foundEntro) }}
+    {{ form_widget(form.foundEntro) }} 
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_label(form.newsletter) }}  <br>
+    {{ form_errors(form.newsletter) }}
+    {{ form_widget(form.newsletter) }} 
+    </div>
+
+     <div class="form-group col-md-6">
+    {{ form_row(form.plainPassword.first) }}
+    </div>
+
+    <div class="form-group col-md-6">
+    {{ form_row(form.plainPassword.second) }}
+    </div>
+
+ 
+
+   
+
+ 
 {{ form_end(form) }}
+
 
 </div>
 
