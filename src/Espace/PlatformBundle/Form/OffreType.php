@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 
@@ -62,7 +63,7 @@ $builder->add('titreOffre', TextType::class, array(
                     'class' => 'radio-inline'
                 ),
                 ))
-        ->add('pieceJointeOffre', TextType::class, array(
+        ->add('pieceJointeOffre', FileType::class, array(
                 'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) "
             ))
         ->add('Sauvegarder',      SubmitType::class);
