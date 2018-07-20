@@ -64,7 +64,8 @@ $builder->add('titreOffre', TextType::class, array(
                 ),
                 ))
         ->add('pieceJointeOffre', FileType::class, array(
-                'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) "
+                'label'=> "Pièce jointe d'une taille de 5024Ko et au format (pdf, doc, png, jpeg) ",
+                'data_class'=> null
             ))
         ->add('Sauvegarder',      SubmitType::class);
     }
