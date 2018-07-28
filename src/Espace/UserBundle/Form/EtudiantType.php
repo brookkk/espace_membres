@@ -34,8 +34,9 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('civilite', ChoiceType::class, array(
             'label'=> "Civilité",
             'choices' => array(
-                 'Homme' => true,
                  'Femme' => false,
+                 'Homme' => true,
+                    
                  ),
             'expanded' => true,
             'multiple' => false,
