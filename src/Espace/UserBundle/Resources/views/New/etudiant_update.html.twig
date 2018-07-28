@@ -167,6 +167,10 @@
   {{ form_row(form.pcLien) }}
  </div>
 
+
+ {% do form.plainPassword.first.setRendered %}
+ {% do form.plainPassword.second.setRendered %}
+
 {{ form_end(form) }}
 
 </div>

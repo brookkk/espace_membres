@@ -47,7 +47,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('nom')->add('prenom')
         
          ->add('adresse')->add('codePostal')->add('ville')->add('email', EmailType::class)
-         ->add('telephone', IntegerType::class)
+         ->add('telephone', TextType::class)
          ->add('ddn', DateType::class, array(
             'widget' => 'choice',
             'years' => range(2017,1940),
