@@ -58,7 +58,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
                 'first_options'  => array('label' => 'Mot de passe'),
                 'second_options' => array('label' => 'Confirmer votre mot de passe'),
             ))
-        ->add('email', EmailType::class)->add('telephone', IntegerType::class)
+        ->add('email', EmailType::class)->add('telephone', TextType::class)
         ->add('nomE', TextType::class, array(
                 'label'=> "Nom de votre entreprise"
             ))
