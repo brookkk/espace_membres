@@ -104,7 +104,7 @@ class User   implements UserInterface
     * @Assert\Length(
      *      min = 11,
      *      max = 11,
-     *      exactMessage = "Le numéro INE doit être composé de 11 charactères",
+     *      exactMessage = "Le numéro INE doit être composé de 11 caractères",
      *      
      * )     
      * @ORM\Column(name="numIne", type="string",  nullable=true)
