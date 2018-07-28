@@ -4,7 +4,7 @@
 {% block body %}
 
 <ul class="breadcrumb">
-  <li><a href="{{ path('espace_show_user') }}">Entreprise</a></li>
+  <li>Entreprise</li>
   <li>Details</li>
  
 </ul>
@@ -18,7 +18,7 @@
 Coordonnées
 </h4>
 
-Civilité : {% if entreprise.civilite==1 %} Monsieur {% else %} Madame {% endif %} <br>
+Civilité : {% if entreprise.civilite==1 %} Homme {% else %} Femme {% endif %} <br>
 Prénom : {{entreprise.prenom | capitalize}} <br>
 Nom : {{entreprise.nom | capitalize}} <br>
 Email : {{entreprise.email}} <br>
