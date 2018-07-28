@@ -1,0 +1,76 @@
+
+  {% extends "EspaceUserBundle::layout_register.html.twig" %}
+
+{% block body %}
+
+<div class="alert alert-danger">
+
+<h2>Oops! Un problème vient de survenir :</h1>
+        <h3>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</h2>
+
+
+<br><br>
+
+
+        {% if status_code == 403 %}
+        <div>
+            Désolé, vous n'avez pas le droit de consulter cette page.<br> <br><br>
+            <a href="{{ path('espace_platform_homepage') }}">Retourner vers la page d'accueil</a> 
+        </div>
+
+        {% else %}
+        <div>
+            Désolé, un problème vient de survenir.<br>
+            Merci de contacter <a href="mailto:test@support.com">test@support.com</a>
+            On va résoudre votre problème aussitôt que possible.<br>
+
+         <br><br>
+
+            <a href="{{ path('espace_platform_homepage') }}">Retourner vers la page d'accueil</a> 
+
+        </div>
+        {% endif%}
+
+
+        </div>
+
+ {% endblock %}
+
+
+{#
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <title>Un problème vient de survenir : {{ status_text }}</title>
+    </head>
+    <body>
+        <h1>Oops! Un problème vient de survenir :</h1>
+        <h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</h2>
+
+
+
+
+
+        {% if status_code == 403 %}
+        <div>
+            Désolé, vous n'avez pas le droit de consulter cette page.<br> <br>
+            <a href="{{ path('espace_platform_homepage') }}">Retourner vers la page d'accueil</a> 
+        </div>
+
+        {% else %}
+        <div>
+            Désolé, un problème vient de survenir.<br>
+            Merci de contacter <a href="mailto:test@support.com">test@support.com</a>
+            On va résoudre votre problème aussitôt que possible.<br>
+
+        </div>
+        <div>
+
+            <a href="{{ path('espace_platform_homepage') }}">Retourner vers la page d'accueil</a> 
+
+        </div>
+        {% endif%}
+    </body>
+</html>
+#}

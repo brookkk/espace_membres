@@ -4,7 +4,7 @@ parameters:
     database_port: null
     database_name: espace_membres
     database_user: root
-    database_password: root
+    database_password: 
     mailer_transport: gmail
     mailer_host: localhost
     mailer_user: sim.rmay.no3@gmail.com

@@ -82,6 +82,24 @@
     .langg2 .form-group{
         margin-bottom: 5px; display: inline-block;width: 45%;
     }
+
+     .logo{
+
+            float: left;
+    text-align: center;
+    width: 28.2%!important;
+    height: 86.2%!important;
+    padding-bottom: 13px;
+    transition: 0.2s padding-top;
+    background-color: #003a6c;
+    }
+
+    .header-logo{
+   /* width:81.2%!important;*/
+    width: 81%;
+    height:90.2%!important;
+
+    }
   </style>
     
     
@@ -92,13 +110,13 @@
 <body style="font-family: Oswald; font-size: 16px; color: #003a6c;">
     <main class= "brook_main">
 
-   <div  class="col-md-3 brook_logo">     
+  <!-- <div  class="col-md-3 brook_logo">     
 
  <a id="logo" href="#" title="Accueil" rel="home">
       <img src="{{ asset('img/logo.png') }}" alt="Logo Campus Redon Industries" class="header-logo" >
     </a>
 
-</div>
+</div>-->
 <div class="col-md-7">
  <nav class="navbar navbar-default" id="colorful-nav">
         <div class="container">
@@ -114,8 +132,12 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
 
-                    <li  class="home"><a href="{{ path('espace_platform_homepage') }}"><span class="glyphicon glyphicon-home"></span><h5>Accueil</h5></a></li>
-                
+                    <li class="logo"><a href="#" title="Accéder au campus" rel="home">
+                        <img src="{{ asset('img/logo.png') }}" alt="Logo Campus Redon Industries" class="header-logo" >
+                    </a></li>
+
+                    <!--<li  class="home"><a href="{{ path('espace_platform_homepage') }}"><span class="glyphicon glyphicon-home"></span><h5>Accueil</h5></a></li>
+                -->
                     <li class="search"><a href="{{ path('EP_show_offre') }}"><span class="glyphicon glyphicon-briefcase"></span><h5>Offres</h5></a></li>
                     {% if is_granted('ROLE_ENTREPRISE')  %}
                     <li class="lists"><a href="{{ path('EP_cvtheque_search') }}"><span class="glyphicon glyphicon-list-alt"></span><h5>Cv-thèque</h5></a></li>
