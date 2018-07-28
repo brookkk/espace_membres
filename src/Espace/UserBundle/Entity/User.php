@@ -101,6 +101,7 @@ class User   implements UserInterface
     /**
      * @var string
      *
+     * @Assert\Blank()
     * @Assert\Length(
      *      min = 11,
      *      max = 11,

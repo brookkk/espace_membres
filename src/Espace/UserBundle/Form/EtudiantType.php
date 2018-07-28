@@ -56,7 +56,8 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             'label'=> 'Date de naissance'
             ))
          ->add('numIne', TextType::class, array(
-            'label'=> 'Numéro INE'
+            'label'=> 'Numéro INE',
+            'required' => false,
             ))
         ->add('niveauFormation', EntityType::class, array(
                 'class'        => 'EspacePlatformBundle:Niveau_de_formation',
